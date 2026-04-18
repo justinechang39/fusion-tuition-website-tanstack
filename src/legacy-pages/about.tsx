@@ -111,10 +111,19 @@ export default function About() {
 
           {/* Teachers */}
           <section className="mb-16">
-            <h2 className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-              Meet the teachers
-            </h2>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="mb-10">
+              <h2 className="mb-3 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
+                Just the two of us.
+              </h2>
+              <p className="max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg md:leading-8">
+                No rotating tutors. No substitute teachers. When your child
+                signs up, they get Justine or Qi Hui — the same teacher, every
+                single lesson. We know each student by name, by weakness, by
+                progress. That's the whole point.
+              </p>
+            </div>
+
+            <div className="space-y-6">
               {teachers.map((teacher, idx) => (
                 <motion.div
                   key={teacher.name}
@@ -122,28 +131,24 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.4 }}
-                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-[border-color] duration-200 hover:border-orange-300"
+                  className={`group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-[border-color] duration-200 hover:border-orange-300 md:flex-row ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
                 >
                   {/* Photo */}
-                  <div className="relative h-[280px] overflow-hidden sm:h-[320px]">
+                  <div className="relative h-[240px] shrink-0 overflow-hidden sm:h-[280px] md:h-auto md:w-[280px]">
                     <img
                       src={teacher.imageSrc}
                       alt={teacher.name}
                       className="h-full w-full object-cover object-top"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                    {/* Name overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-2xl font-bold text-white">
-                        {teacher.name}
-                      </h3>
-                      <p className="text-sm font-medium text-orange-300">
-                        {teacher.role}
-                      </p>
-                    </div>
                   </div>
-                  {/* Details */}
-                  <div className="p-6">
+                  {/* Info */}
+                  <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
+                    <h3 className="mb-1 text-2xl font-bold text-slate-900">
+                      {teacher.name}
+                    </h3>
+                    <p className="mb-3 text-sm font-medium text-orange-600">
+                      {teacher.role}
+                    </p>
                     <p className="text-sm leading-relaxed text-slate-500">
                       {teacher.background}
                     </p>
