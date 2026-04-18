@@ -24,7 +24,7 @@ export function Registration2026Banner() {
           </div>
           <div className="flex-shrink-0">
             <Link
-              to="/connect"
+              to="/contact"
               className="group inline-flex items-center gap-2 rounded-full bg-orange-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:bg-orange-700 hover:shadow-xl"
             >
               Register Now

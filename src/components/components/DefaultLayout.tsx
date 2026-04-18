@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../Footer'
+import { ScrollProgress } from '../ScrollProgress'
 import Navbar from './Navbar'
 import { NextHeadComponent } from './NextHeadComponent'
 
@@ -18,6 +19,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
           {children}
         </main>
         <Footer />
+        <ScrollProgress />
       </div>
     </>
   )

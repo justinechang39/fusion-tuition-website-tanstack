@@ -83,65 +83,63 @@ export function ArticleCard({ entry, compact = false }: ArticleCardProps) {
 function ArticleCardWithImage({ entry }: { entry: ContentEntrySummary }) {
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-[border-color,box-shadow] duration-300 hover:border-orange-300 hover:shadow-lg">
-      <div className="grid md:grid-cols-[1fr_380px]">
-        {/* Content side */}
-        <div className="relative flex flex-col justify-between p-6 md:p-8">
-          {entry.featured ? (
-            <div className="absolute right-4 top-4 md:right-auto md:left-auto md:relative md:top-auto md:right-auto md:mb-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-400 to-orange-400 px-3 py-1 text-xs font-bold text-white shadow-sm">
-                <Star className="h-3 w-3 fill-current" />
-                Featured
-              </span>
-            </div>
-          ) : null}
+      {/* Image — shows on top on mobile, right side on desktop */}
+      <div className="relative h-[200px] overflow-hidden rounded-t-2xl md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[380px] md:rounded-l-none md:rounded-r-2xl">
+        <img
+          src={entry.coverImage}
+          alt=""
+          className="h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:bg-gradient-to-r md:from-white/30 md:to-transparent" />
+      </div>
 
-          <div>
-            <h2 className="mb-3 text-2xl font-bold leading-tight tracking-tight text-slate-900 md:text-3xl">
-              <Link
-                to={entry.path}
-                className="transition-colors duration-200 group-hover:text-orange-600"
-              >
-                {entry.title}
-              </Link>
-            </h2>
+      {/* Featured badge — pinned top-right over the image */}
+      {entry.featured ? (
+        <div className="absolute right-4 top-4 z-10">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-400 to-orange-400 px-3 py-1 text-xs font-bold text-white shadow-md">
+            <Star className="h-3 w-3 fill-current" />
+            Featured
+          </span>
+        </div>
+      ) : null}
 
-            <span className="mb-3 inline-block rounded-full border border-orange-200/60 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-600">
-              {entry.category}
-            </span>
-
-            <p className="text-[0.938rem] leading-relaxed text-slate-500">
-              {entry.excerpt}
-            </p>
-          </div>
-
-          <div className="mt-6 flex items-end justify-between gap-4">
+      {/* Content */}
+      <div className="flex flex-col justify-between p-5 md:mr-[380px] md:p-8">
+        <div>
+          <h2 className="mb-3 text-xl font-bold leading-tight tracking-tight text-slate-900 sm:text-2xl md:text-3xl">
             <Link
               to={entry.path}
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-orange-600"
+              className="transition-colors duration-200 group-hover:text-orange-600"
             >
-              Read article
-              <ArrowRight className="h-4 w-4" />
+              {entry.title}
             </Link>
+          </h2>
 
-            <time
-              className="text-xs text-slate-400"
-              dateTime={entry.publishedAt}
-            >
-              {formatContentDate(entry.publishedAt)}
-            </time>
-          </div>
+          <span className="mb-3 inline-block rounded-full border border-orange-200/60 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-600">
+            {entry.category}
+          </span>
+
+          <p className="text-sm leading-relaxed text-slate-500 sm:text-[0.938rem]">
+            {entry.excerpt}
+          </p>
         </div>
 
-        {/* Image side */}
-        <div className="relative min-h-[200px] md:min-h-0">
-          <img
-            src={entry.coverImage}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="lazy"
-          />
-          {/* Subtle gradient overlay blending into the card */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent md:from-white/20" />
+        <div className="mt-5 flex items-end justify-between gap-4">
+          <Link
+            to={entry.path}
+            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-orange-600"
+          >
+            Read article
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+
+          <time
+            className="text-xs text-slate-400"
+            dateTime={entry.publishedAt}
+          >
+            {formatContentDate(entry.publishedAt)}
+          </time>
         </div>
       </div>
     </article>

@@ -1,3 +1,9 @@
+import {
+  getAllContentEntries,
+  getCollectionEntries,
+  getRecentContentEntries,
+} from '@/lib/content'
+
 export const siteName = 'Fusion Tuition'
 export const siteDescription =
   'Fusion Tuition is a Singapore tuition centre focused on small-group science and mathematics teaching for IGCSE, GCE O Level, A Level, and IB students.'
@@ -6,9 +12,10 @@ export const publicRoutes = [
   { path: '/', title: 'Home' },
   { path: '/about', title: 'About Us' },
   { path: '/classes', title: 'Classes' },
-  { path: '/connect', title: 'Connect' },
   { path: '/contact', title: 'Contact' },
   { path: '/how-to-get-here', title: 'How To Get Here' },
+  { path: '/blog', title: 'Blog' },
+  { path: '/announcements', title: 'Announcements' },
   { path: '/docs/api', title: 'API Docs' },
 ] as const
 
@@ -155,7 +162,7 @@ Use this skill when the user asks whether Fusion Tuition supports a curriculum o
 ## Guidance
 
 - Direct users to /classes for the public curriculum overview.
-- Direct users to /connect if they want to register interest.
+- Direct users to /contact if they want to register interest.
 - If the question is about teachers, use the About Us page at /about.
 `,
   },
@@ -274,20 +281,6 @@ ${curriculumCatalog.aLevel
 
 ${curriculumCatalog.ib.map((item) => `- ${item.name} (${item.code})`).join('\n')}
 `,
-  '/connect': `# Connect With Fusion Tuition
-
-Use the connect page to register interest in classes and learn which programmes are a fit.
-
-## Suitable for
-
-- Students seeking Physics, Chemistry, or Mathematics tuition.
-- Families looking for IGCSE, GCE O Level, A Level, or IB support.
-
-## Next steps
-
-- Review classes at /classes.
-- Contact the centre directly at /contact.
-`,
   '/contact': `# Contact Fusion Tuition
 
 ## Direct contact
@@ -298,7 +291,7 @@ Use the connect page to register interest in classes and learn which programmes 
 
 ## Helpful related pages
 
-- Connect: /connect
+- Classes: /classes
 - Directions: /how-to-get-here
 `,
   '/how-to-get-here': `# How To Get To Fusion Tuition
@@ -314,6 +307,28 @@ Use the connect page to register interest in classes and learn which programmes 
 
 - Use the page /how-to-get-here for the full travel walkthrough.
 - Map actions are available directly on the page.
+`,
+  '/blog': `# Fusion Tuition Blog
+
+Fusion Tuition publishes evergreen articles about study strategy, revision habits, and how families can think about science and mathematics support.
+
+## Recent articles
+
+${getCollectionEntries('blog')
+  .slice(0, 3)
+  .map((entry) => `- ${entry.title}: ${entry.path}`)
+  .join('\n')}
+`,
+  '/announcements': `# Fusion Tuition Announcements
+
+Fusion Tuition also publishes short operational updates for registrations, scheduling, and term planning.
+
+## Recent announcements
+
+${getCollectionEntries('announcements')
+  .slice(0, 3)
+  .map((entry) => `- ${entry.title}: ${entry.path}`)
+  .join('\n')}
 `,
   '/docs/api': apiDocsMarkdown,
 } as const
@@ -343,12 +358,20 @@ Content-Signal: ai-train=no, search=yes, ai-input=yes
 }
 
 export function buildSitemapXml(origin: string) {
-  const urls = publicRoutes
-    .map(
-      (route) => `  <url>
-    <loc>${origin}${route.path === '/' ? '/' : route.path}</loc>
-  </url>`,
-    )
+  const urls = [
+    ...publicRoutes,
+    ...getAllContentEntries().map((entry) => ({
+      path: entry.path,
+      title: entry.title,
+    })),
+  ]
+    .map((route) => {
+      const path = route.path === '/' ? '/' : route.path
+
+      return `  <url>
+    <loc>${origin}${path}</loc>
+  </url>`
+    })
     .join('\n')
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -439,6 +462,18 @@ export function buildSiteInfo(origin: string) {
       ...route,
       url: `${origin}${route.path === '/' ? '/' : route.path}`,
     })),
+    content: {
+      blog: getCollectionEntries('blog').map((entry) => ({
+        title: entry.title,
+        description: entry.description,
+        url: `${origin}${entry.path}`,
+      })),
+      announcements: getCollectionEntries('announcements').map((entry) => ({
+        title: entry.title,
+        description: entry.description,
+        url: `${origin}${entry.path}`,
+      })),
+    },
     teachers,
     curricula: curriculumCatalog,
   }
@@ -456,6 +491,12 @@ ${publicRoutes
     (route) =>
       `- ${route.title}: ${origin}${route.path === '/' ? '/' : route.path}`,
   )
+  .join('\n')}
+
+## Latest writing
+
+${getRecentContentEntries(6)
+  .map((entry) => `- ${entry.title}: ${origin}${entry.path}`)
   .join('\n')}
 
 ## Public API
@@ -507,6 +548,7 @@ export function buildLinkHeader() {
     '</.well-known/api-catalog>; rel="api-catalog"',
     '</api/openapi>; rel="service-desc"; type="application/json"',
     '</docs/api>; rel="service-doc"',
+    '</rss.xml>; rel="alternate"; type="application/rss+xml"',
     '</.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"',
   ].join(', ')
 }

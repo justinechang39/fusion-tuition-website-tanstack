@@ -24,7 +24,7 @@ export default function Navbar() {
     { href: '/', label: 'Home' },
     { href: '/classes', label: 'Classes' },
     { href: '/about', label: 'About Us' },
-    { href: '/connect', label: 'Connect' },
+    { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
   ]
 

@@ -84,7 +84,7 @@ function BlogIndexPage() {
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-orange-600">
               From Our Teachers
             </p>
-            <h1 className="mb-5 max-w-3xl text-4xl font-bold tracking-tight text-slate-900 md:text-6xl md:leading-[1.1]">
+            <h1 className="mb-5 max-w-3xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-6xl md:leading-[1.1]">
               Insights for{' '}
               <Highlight className="bg-gradient-to-r from-orange-300 to-amber-300 text-slate-900">
                 smarter

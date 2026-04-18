@@ -1,4 +1,5 @@
 import { ArticleCard } from '@/components/content/ArticleCard'
+import { HeroHighlight } from '@/components/ui/hero-highlight'
 import { getCollectionEntries } from '@/lib/content'
 import {
   buildBreadcrumbJsonLd,
@@ -6,6 +7,7 @@ import {
   buildSeoHead,
 } from '@/lib/seo'
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
 const announcementEntries = getCollectionEntries('announcements')
@@ -37,39 +39,36 @@ export const Route = createFileRoute('/announcements/')({
 function AnnouncementsIndexPage() {
   return (
     <div className="-mx-4 -mt-8">
-      {/* Dark hero banner */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-4 pb-12 pt-10 md:px-8 md:pb-16 md:pt-14">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-32 -top-20 h-[360px] w-[360px] rounded-full bg-teal-500/10 blur-[120px]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-20 bottom-0 h-[280px] w-[280px] rounded-full bg-cyan-400/8 blur-[100px]"
-        />
-
-        <div className="relative mx-auto max-w-6xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-teal-400">
-            What's New
-          </p>
-          <h1 className="mb-4 max-w-3xl text-3xl font-bold tracking-tight text-white md:text-5xl md:leading-[1.15]">
-            Stay in the Loop
-          </h1>
-          <p className="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg md:leading-8">
-            Class schedules, registration windows, and important dates —
-            everything you need to stay up to date with Fusion Tuition.
-          </p>
-          <p className="mt-5">
-            <Link
-              to="/blog"
-              className="group inline-flex items-center gap-1.5 text-sm font-medium text-orange-400 transition-colors duration-200 hover:text-orange-300"
-            >
-              Browse long-form articles instead
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </Link>
-          </p>
+      {/* Hero with dot-pattern highlight effect */}
+      <HeroHighlight containerClassName="rounded-none bg-gradient-to-t from-slate-50 to-gray-100">
+        <div className="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }}
+          >
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-teal-600">
+              What's New
+            </p>
+            <h1 className="mb-4 max-w-3xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl md:leading-[1.15]">
+              Stay in the Loop
+            </h1>
+            <p className="max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg md:leading-8">
+              Class schedules, registration windows, and important dates —
+              everything you need to stay up to date with Fusion Tuition.
+            </p>
+            <p className="mt-5">
+              <Link
+                to="/blog"
+                className="group inline-flex items-center gap-1.5 text-sm font-medium text-orange-600 transition-colors duration-200 hover:text-orange-700"
+              >
+                Browse long-form articles instead
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+              </Link>
+            </p>
+          </motion.div>
         </div>
-      </div>
+      </HeroHighlight>
 
       <div className="h-1 bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-500" />
 
