@@ -24,8 +24,8 @@
       "subject": "Chemistry",
       "description": "Focused Chemistry chapter rescue classes for Sec 3 and Sec 4 students.",
       "image": {
-        "src": "/chemistry_sec4_2025_fusion_tuition.png",
-        "alt": "Fusion Tuition O Level Chemistry class"
+        "src": "/chemistry_ala_carte.png",
+        "alt": "Glowing Chemistry formulas and lab glassware for Fusion Tuition O Level Chemistry"
       },
       "displayOrder": 1,
       "isActive": true
@@ -38,8 +38,8 @@
       "subject": "Physics",
       "description": "Short, targeted Physics classes for students who need help with specific topics.",
       "image": {
-        "src": "/physics_sec4_2025_fusion_tuition.png",
-        "alt": "Fusion Tuition O Level Physics class"
+        "src": "/physics_ala_carte.png",
+        "alt": "Glowing Physics formulas and science instruments for Fusion Tuition O Level Physics"
       },
       "displayOrder": 2,
       "isActive": true
