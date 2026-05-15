@@ -328,8 +328,8 @@ function AlaCartePage() {
             Targeted help. No long term commitments.
           </h1>
           <p className="mt-5 max-w-2xl text-lg font-semibold leading-8 text-slate-700 sm:text-xl">
-            Pick a subject, choose one focused class, and we&apos;ll call you to
-            arrange timing.
+            Pick a subject, choose one or more focused classes, and we&apos;ll
+            call you to arrange timing.
           </p>
 
           <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

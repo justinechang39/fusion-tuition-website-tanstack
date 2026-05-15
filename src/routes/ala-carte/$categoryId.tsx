@@ -103,8 +103,8 @@ function AlaCarteCategoryPage() {
                 {category.label}
               </h1>
               <p className="mt-4 max-w-2xl text-base font-bold leading-relaxed text-orange-50 drop-shadow sm:text-xl">
-                Pick one targeted class. We&apos;ll arrange timing after
-                checkout.
+                Pick one or more targeted classes. We&apos;ll arrange timing
+                after checkout.
               </p>
               <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.14em] text-white sm:text-sm">
                 <span className="rounded-full border border-white/20 bg-white/15 px-3 py-2 backdrop-blur">
