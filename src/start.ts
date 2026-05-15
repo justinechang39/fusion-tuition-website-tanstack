@@ -8,6 +8,7 @@ import {
   getAgentSkill,
   getPageMarkdown,
 } from '@/lib/agent-ready'
+import { buildRssXml } from '@/lib/content'
 import { siteOrigin } from '@/lib/seo'
 import { createMiddleware, createStart } from '@tanstack/react-start'
 
@@ -67,6 +68,15 @@ const agentReadinessMiddleware = createMiddleware().server(
           status: 200,
           headers: {
             'content-type': 'text/plain; charset=utf-8',
+          },
+        })
+      }
+
+      if (pathname === '/rss.xml') {
+        return new Response(isHeadRequest ? null : buildRssXml(origin), {
+          status: 200,
+          headers: {
+            'content-type': 'application/rss+xml; charset=utf-8',
           },
         })
       }

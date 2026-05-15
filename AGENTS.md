@@ -57,6 +57,10 @@
   - `/about`
   - `/classes`
   - `/classes/$slug` (redirects to `/classes`)
+  - `/blog`
+  - `/blog/$slug`
+  - `/announcements`
+  - `/announcements/$slug`
   - `/connect`
   - `/contact`
   - `/how-to-get-here`
@@ -65,6 +69,9 @@
 - TanStack Start metadata uses route-level `head()` declarations plus `<HeadContent />` in `src/routes/__root.tsx`.
 - Canonical URLs, Open Graph tags, Twitter cards, favicon links, web app manifest tags, and JSON-LD structured data are now defined for the main public marketing routes.
 - The app favicon is served from `public/favicon.ico`, and app icons in `public/logo192.png` and `public/logo512.png` were regenerated from that favicon to replace the starter React icons.
+- Blog and announcement content now lives in MDX files under `src/content/blog/` and `src/content/announcements/`.
+- Content metadata is loaded from `src/lib/content.ts`, while rendered MDX entry lookup lives in `src/lib/content-render.ts`.
+- New content automatically flows into `/blog`, `/announcements`, `/sitemap.xml`, `/rss.xml`, and article-level SEO metadata.
 
 ## Environment Variables
 
@@ -101,6 +108,8 @@
 - Browser-side WebMCP registration lives in `src/components/WebMcpProvider.tsx` for safe, read-only site tools.
 - Root document metadata now includes favicon, `apple-touch-icon`, manifest, `theme-color`, organization JSON-LD, and website JSON-LD.
 - Public route metadata now includes canonical tags plus route-specific titles/descriptions for `/`, `/about`, `/classes`, `/connect`, `/contact`, and `/how-to-get-here`.
+- `/rss.xml` is now published for the MDX-backed content system.
+- Developer instructions for publishing content live in `docs/content-authoring.md`.
 
 ## Known Issues / Deferred Work
 
@@ -111,6 +120,7 @@
 - OAuth discovery metadata and OAuth protected resource metadata are intentionally not published yet because this frontend-only site does not expose protected APIs.
 - A standalone MCP server and SEP-1649 server card are still deferred; the site currently exposes browser-local tools through WebMCP instead.
 - Social sharing currently uses the horizontal Fusion Tuition logo asset as the fallback Open Graph image. A dedicated `1200x630` share image would be a stronger future upgrade.
+- The current blog system is intentionally git-backed and developer-authored. If non-developers need an editor later, keep the same route structure and swap the content source behind `src/lib/content.ts`.
 
 ## Next Steps
 

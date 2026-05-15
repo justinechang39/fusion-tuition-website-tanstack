@@ -73,6 +73,7 @@ export interface CartItem {
 
 export interface OrderFormState {
   name: string
+  email: string
   phone: string
   studentLevel: string
   notes: string
@@ -89,6 +90,7 @@ export const items = [...alaCarteData.items]
   .sort((a, b) => a.displayOrder - b.displayOrder) as AlaCarteItem[]
 
 export const itemById = new Map(items.map((item) => [item.id, item]))
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export const Route = createFileRoute('/ala-carte/')({
   head: () =>
@@ -135,6 +137,7 @@ export function useAlaCarteOrder() {
   const [hasMounted, setHasMounted] = useState(false)
   const [orderForm, setOrderForm] = useState<OrderFormState>({
     name: '',
+    email: '',
     phone: '',
     studentLevel: '',
     notes: '',
@@ -155,7 +158,7 @@ export function useAlaCarteOrder() {
           (item) =>
             itemById.has(item.itemId) &&
             Number.isInteger(item.quantity) &&
-            item.quantity > 0,
+            item.quantity === 1,
         ),
       )
     } catch {
@@ -227,10 +230,22 @@ export function useAlaCarteOrder() {
       return
     }
 
-    if (!orderForm.name.trim() || !orderForm.phone.trim()) {
+    const trimmedEmail = orderForm.email.trim()
+    const trimmedPhone = orderForm.phone.trim()
+
+    if (!orderForm.name.trim() || (!trimmedEmail && !trimmedPhone)) {
       toast({
-        title: 'Name and phone required',
-        description: 'We need these so Fusion Tuition can call you back.',
+        title: 'Contact details required',
+        description: 'Please provide your email or phone so we can follow up.',
+        variant: 'destructive',
+      })
+      return
+    }
+
+    if (trimmedEmail && !emailPattern.test(trimmedEmail)) {
+      toast({
+        title: 'Check your email address',
+        description: 'Please enter a valid email address or leave it blank.',
         variant: 'destructive',
       })
       return
@@ -248,13 +263,20 @@ export function useAlaCarteOrder() {
       if (!response.ok) throw new Error('Order failed')
 
       setCartItems([])
-      setOrderForm({ name: '', phone: '', studentLevel: '', notes: '' })
+      setOrderForm({
+        name: '',
+        email: '',
+        phone: '',
+        studentLevel: '',
+        notes: '',
+      })
       setIsCartOpen(false)
       window.localStorage.removeItem(CART_STORAGE_KEY)
       toast({
         title: 'Order submitted',
-        description:
-          'Thank you! Fusion Tuition will call to arrange timing and invoice details.',
+        description: trimmedEmail
+          ? 'Thank you! We emailed a confirmation and will follow up to arrange timing.'
+          : 'Thank you! Fusion Tuition will call to arrange timing and invoice details.',
       })
     } catch {
       toast({
@@ -595,8 +617,8 @@ export function CartSheet({
               Your ala-carte order
             </SheetTitle>
             <SheetDescription className="text-base leading-7">
-              Submit your classes and we&apos;ll call to understand what your
-              child needs, arrange timing, then send invoice/payment info.
+              Submit your classes and we&apos;ll follow up to understand what
+              your child needs, arrange timing, then send invoice/payment info.
             </SheetDescription>
           </SheetHeader>
 
@@ -660,19 +682,24 @@ export function CartSheet({
                   What happens next
                 </p>
                 <p className="mt-2 font-semibold leading-7 text-slate-100">
-                  We&apos;ll call you, confirm the best timing, then send
-                  payment details after the call.
+                  We&apos;ll contact you, confirm the best timing, then send
+                  payment details after that conversation.
                 </p>
               </div>
             </div>
           )}
 
           <form className="space-y-4" onSubmit={submitOrder}>
+            <p className="rounded-2xl bg-orange-50 px-4 py-3 text-sm font-semibold text-orange-900">
+              Name is required. Provide email or phone so we can follow up. If
+              you provide email, we&apos;ll send a confirmation too.
+            </p>
             <div className="grid gap-3 sm:grid-cols-2">
               <label className="block">
-                <span className="text-sm font-black">Name</span>
+                <span className="text-sm font-black">Name *</span>
                 <Input
                   className="mt-2 h-12 rounded-2xl"
+                  required
                   value={orderForm.name}
                   onChange={(event) =>
                     setOrderForm((current) => ({
@@ -684,20 +711,36 @@ export function CartSheet({
                 />
               </label>
               <label className="block">
-                <span className="text-sm font-black">Phone number</span>
+                <span className="text-sm font-black">Email</span>
                 <Input
                   className="mt-2 h-12 rounded-2xl"
-                  value={orderForm.phone}
+                  type="email"
+                  value={orderForm.email}
                   onChange={(event) =>
                     setOrderForm((current) => ({
                       ...current,
-                      phone: event.target.value,
+                      email: event.target.value,
                     }))
                   }
-                  placeholder="WhatsApp / mobile"
+                  placeholder="For confirmation email"
                 />
               </label>
             </div>
+            <label className="block">
+              <span className="text-sm font-black">Phone number</span>
+              <Input
+                className="mt-2 h-12 rounded-2xl"
+                type="tel"
+                value={orderForm.phone}
+                onChange={(event) =>
+                  setOrderForm((current) => ({
+                    ...current,
+                    phone: event.target.value,
+                  }))
+                }
+                placeholder="WhatsApp / mobile"
+              />
+            </label>
             <label className="block">
               <span className="text-sm font-black">
                 Student level (optional)

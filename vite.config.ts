@@ -1,4 +1,6 @@
+import mdx from '@mdx-js/rollup'
 import { devtools } from '@tanstack/devtools-vite'
+import remarkGfm from 'remark-gfm'
 import { defineConfig } from 'vite'
 
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
@@ -15,8 +17,16 @@ const config = defineConfig({
     neon,
     cloudflare({ viteEnvironment: { name: 'ssr' } }),
     tailwindcss(),
+    {
+      enforce: 'pre',
+      ...mdx({
+        remarkPlugins: [remarkGfm],
+      }),
+    },
     tanstackStart(),
-    viteReact(),
+    viteReact({
+      include: /\.(jsx|js|mdx|md|tsx|ts)$/,
+    }),
   ],
 })
 

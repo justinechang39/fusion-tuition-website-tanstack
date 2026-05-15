@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+  runtime  = "cloudflare"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model AlaCarteOrder {
+  id            String   @id
+  createdAt     DateTime @default(now())
+  status        String   @default("new")
+
+  customerName  String
+  customerEmail String?
+  customerPhone String?
+  studentLevel  String?
+  notes         String?
+
+  source        String   @default("ala-carte")
+  campaignSlug  String?
+  rawPayload    String?
+
+  items         AlaCarteOrderItem[]
+}
+
+model AlaCarteOrderItem {
+  id          String @id
+  orderId     String
+  order       AlaCarteOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  itemId      String
+  title       String
+  level       String
+  subject     String
+  durationMin Int
+  price       Int
+  currency    String
+  instruction String?
+}

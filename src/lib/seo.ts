@@ -6,6 +6,7 @@ import {
   siteName,
   teachers,
 } from '@/lib/agent-ready'
+import type { ContentEntrySummary } from '@/lib/content'
 
 const fallbackSiteOrigin = 'https://fusiontuition.com'
 const defaultSocialImagePath = '/fusion_tuition_logo_horizontal.png'
@@ -16,6 +17,13 @@ export const siteOrigin =
   import.meta.env.VITE_PUBLIC_SITE_URL || fallbackSiteOrigin
 
 type JsonLdValue = Record<string, unknown>
+type MetaDescriptor = {
+  charSet?: string
+  content?: string
+  name?: string
+  property?: string
+  title?: string
+}
 
 type BreadcrumbItem = {
   name: string
@@ -30,6 +38,7 @@ type SeoHeadInput = {
   ogType?: 'website' | 'article'
   noIndex?: boolean
   jsonLd?: JsonLdValue | JsonLdValue[]
+  extraMeta?: MetaDescriptor[]
 }
 
 type PageSchemaInput = {
@@ -137,6 +146,7 @@ export function buildSeoHead({
   ogType = 'website',
   noIndex = false,
   jsonLd,
+  extraMeta = [],
 }: SeoHeadInput) {
   const fullTitle = buildPageTitle(title)
   const canonicalUrl = buildCanonicalUrl(path)
@@ -189,6 +199,7 @@ export function buildSeoHead({
         name: 'twitter:image',
         content: imageUrl,
       },
+      ...extraMeta,
     ],
     links: [
       {
@@ -320,6 +331,63 @@ export function buildContactPageJsonLd(title: string, description: string) {
     }),
     mainEntity: {
       '@id': `${siteOrigin}/#organization`,
+    },
+  }
+}
+
+export function buildCollectionPageJsonLd({
+  path,
+  title,
+  description,
+  entries,
+}: {
+  path: string
+  title: string
+  description: string
+  entries: ContentEntrySummary[]
+}) {
+  return {
+    ...buildPageJsonLd({
+      path,
+      title,
+      description,
+      pageType: 'CollectionPage',
+    }),
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: entries.map((entry, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: buildCanonicalUrl(entry.path),
+        name: entry.title,
+      })),
+    },
+  }
+}
+
+export function buildArticleJsonLd(entry: ContentEntrySummary) {
+  const canonicalUrl = buildCanonicalUrl(entry.path)
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': entry.collection === 'blog' ? 'BlogPosting' : 'Article',
+    '@id': `${canonicalUrl}#article`,
+    headline: entry.title,
+    description: entry.description,
+    datePublished: entry.publishedAt,
+    dateModified: entry.updatedAt ?? entry.publishedAt,
+    articleSection: entry.category,
+    keywords: entry.tags.join(', '),
+    author: {
+      '@type': 'Organization',
+      name: entry.author,
+    },
+    publisher: {
+      '@id': `${siteOrigin}/#organization`,
+    },
+    image: buildAbsoluteUrl(entry.ogImage ?? defaultSocialImagePath),
+    mainEntityOfPage: {
+      '@id': `${canonicalUrl}#webpage`,
     },
   }
 }

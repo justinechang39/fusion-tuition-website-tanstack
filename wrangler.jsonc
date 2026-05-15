@@ -3,5 +3,14 @@
   "name": "fusion-tuition-website",
   "compatibility_date": "2025-09-02",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "@tanstack/react-start/server-entry"
+  "main": "@tanstack/react-start/server-entry",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "fusion-tuition",
+      "database_id": "db29d30b-dc2a-40f0-bfa6-e9c9945d7410",
+      "migrations_dir": "prisma/migrations"
+    }
+  ],
+  "send_email": [{ "name": "EMAIL" }]
 }
