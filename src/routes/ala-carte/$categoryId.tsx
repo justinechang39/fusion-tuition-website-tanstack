@@ -68,7 +68,7 @@ function AlaCarteCategoryPage() {
         <div className="sticky top-20 z-30 -mb-16 flex items-center justify-between gap-3 px-4 pt-4 sm:px-6 md:top-24 lg:px-8">
           <Button
             asChild
-            className="rounded-full border-white/70 bg-white/90 shadow-xl shadow-slate-950/15 backdrop-blur hover:bg-white"
+            className="rounded-full border-white/70 bg-white/90 text-slate-950 shadow-xl shadow-slate-950/15 backdrop-blur hover:bg-white hover:text-slate-950"
             variant="outline"
           >
             <Link to="/ala-carte">
@@ -77,7 +77,7 @@ function AlaCarteCategoryPage() {
             </Link>
           </Button>
           <Button
-            className="rounded-full border-white/70 bg-white/90 shadow-xl shadow-slate-950/15 backdrop-blur hover:bg-white"
+            className="rounded-full border-white/70 bg-white/90 text-slate-950 shadow-xl shadow-slate-950/15 backdrop-blur hover:bg-white hover:text-slate-950"
             variant="outline"
             onClick={() => order.setIsCartOpen(true)}
           >
