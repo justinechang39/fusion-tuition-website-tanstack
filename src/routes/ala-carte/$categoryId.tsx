@@ -64,11 +64,11 @@ function AlaCarteCategoryPage() {
         <div className="absolute inset-0 bg-dot-thick-orange-500 opacity-[0.05] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
       </div>
 
-      <section className="relative mx-auto max-w-5xl px-4 pb-6 pt-8 sm:px-6 md:pt-12 lg:px-8">
-        <div className="mb-5 flex items-center justify-between gap-3">
+      <section className="relative w-full pb-8 pt-0 md:pt-4">
+        <div className="sticky top-20 z-30 -mb-16 flex items-center justify-between gap-3 px-4 pt-4 sm:px-6 md:top-24 lg:px-8">
           <Button
             asChild
-            className="rounded-full bg-white/80"
+            className="rounded-full border-white/70 bg-white/90 shadow-xl shadow-slate-950/15 backdrop-blur hover:bg-white"
             variant="outline"
           >
             <Link to="/ala-carte">
@@ -77,7 +77,7 @@ function AlaCarteCategoryPage() {
             </Link>
           </Button>
           <Button
-            className="rounded-full bg-white/80"
+            className="rounded-full border-white/70 bg-white/90 shadow-xl shadow-slate-950/15 backdrop-blur hover:bg-white"
             variant="outline"
             onClick={() => order.setIsCartOpen(true)}
           >
@@ -86,24 +86,39 @@ function AlaCarteCategoryPage() {
           </Button>
         </div>
 
-        <div className="overflow-hidden rounded-[2rem] border border-orange-100 bg-white shadow-2xl shadow-orange-100 md:grid md:grid-cols-[0.95fr_1.05fr]">
-          <div className="h-52 overflow-hidden bg-orange-100 md:h-full">
-            <img
-              src={category.image.src}
-              alt={category.image.alt}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="p-5 md:p-8">
-            <Badge className="mb-4 bg-orange-400 text-slate-950 hover:bg-orange-400">
-              {category.level}
-            </Badge>
-            <h1 className="text-4xl font-black tracking-[-0.05em] text-slate-950 sm:text-6xl">
-              {category.label}
-            </h1>
-            <p className="mt-3 text-lg font-semibold text-slate-600">
-              Pick one targeted class. We&apos;ll arrange timing after checkout.
-            </p>
+        <div className="relative min-h-[560px] overflow-hidden bg-slate-950 shadow-2xl shadow-orange-200/70 sm:min-h-[620px] md:min-h-[680px] lg:min-h-[720px]">
+          <img
+            src={category.image.src}
+            alt={category.image.alt}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-5 pb-8 sm:p-8 md:p-10 lg:p-14 xl:p-16">
+            <div className="max-w-4xl text-white">
+              <Badge className="mb-4 bg-orange-400 text-slate-950 hover:bg-orange-400">
+                {category.level}
+              </Badge>
+              <h1 className="text-5xl font-black leading-[0.88] tracking-[-0.06em] text-white drop-shadow-2xl sm:text-7xl md:text-8xl lg:text-9xl">
+                {category.label}
+              </h1>
+              <p className="mt-4 max-w-2xl text-base font-bold leading-relaxed text-orange-50 drop-shadow sm:text-xl">
+                Pick one targeted class. We&apos;ll arrange timing after
+                checkout.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.14em] text-white sm:text-sm">
+                <span className="rounded-full border border-white/20 bg-white/15 px-3 py-2 backdrop-blur">
+                  June holidays
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/15 px-3 py-2 backdrop-blur">
+                  Small group
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/15 px-3 py-2 backdrop-blur">
+                  {categoryItems.length} menu item
+                  {categoryItems.length === 1 ? '' : 's'}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
