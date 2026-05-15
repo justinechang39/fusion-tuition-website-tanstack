@@ -22,6 +22,7 @@ export default function Navbar() {
 
   const menuItems = [
     { href: '/', label: 'Home' },
+    { href: '/ala-carte', label: 'À La Carte' },
     { href: '/classes', label: 'Classes' },
     { href: '/about', label: 'About Us' },
     { href: '/blog', label: 'Blog' },

@@ -1,0 +1,274 @@
+{
+  "campaign": {
+    "name": "June Holiday À La Carte Classes",
+    "slug": "june-holiday-2026",
+    "isActive": true,
+    "currency": "SGD",
+    "defaultPrice": 100,
+    "defaultMaxClassSize": 4,
+    "paymentMode": "invoice_after_call",
+    "summary": "Pick the chapters your child needs help with. Submit an order and Fusion Tuition will call to arrange a suitable timing and send payment details after the call.",
+    "notes": [
+      "June holidays only",
+      "Small group classes with fewer than 5 students",
+      "No fixed timetable shown on the page; Fusion Tuition will call to arrange timing",
+      "Payment is not collected on the website"
+    ]
+  },
+  "categories": [
+    {
+      "id": "o-level-chemistry",
+      "label": "O Level Chemistry",
+      "shortLabel": "Chemistry",
+      "level": "O Level",
+      "subject": "Chemistry",
+      "description": "Focused Chemistry chapter rescue classes for Sec 3 and Sec 4 students.",
+      "image": {
+        "src": "/chemistry_sec4_2025_fusion_tuition.png",
+        "alt": "Fusion Tuition O Level Chemistry class"
+      },
+      "displayOrder": 1,
+      "isActive": true
+    },
+    {
+      "id": "o-level-physics",
+      "label": "O Level Physics",
+      "shortLabel": "Physics",
+      "level": "O Level",
+      "subject": "Physics",
+      "description": "Short, targeted Physics classes for students who need help with specific topics.",
+      "image": {
+        "src": "/physics_sec4_2025_fusion_tuition.png",
+        "alt": "Fusion Tuition O Level Physics class"
+      },
+      "displayOrder": 2,
+      "isActive": true
+    },
+    {
+      "id": "o-level-additional-mathematics",
+      "label": "O Level Additional Mathematics",
+      "shortLabel": "A Math",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "description": "À la carte A Math sessions for students who want focused practice on weak chapters.",
+      "image": {
+        "src": "/fusion_tuition_logo_horizontal.png",
+        "alt": "Fusion Tuition Additional Mathematics class"
+      },
+      "displayOrder": 3,
+      "isActive": true
+    },
+    {
+      "id": "igcse-chemistry",
+      "label": "IGCSE Chemistry",
+      "shortLabel": "IGCSE Chem",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "description": "Focused IGCSE Chemistry classes for students who want targeted help during the June holidays.",
+      "image": {
+        "src": "/chemistry_sec3_2025_fusion_tuition.png",
+        "alt": "Fusion Tuition IGCSE Chemistry class"
+      },
+      "displayOrder": 4,
+      "isActive": true
+    },
+    {
+      "id": "igcse-physics",
+      "label": "IGCSE Physics",
+      "shortLabel": "IGCSE Physics",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "description": "Short IGCSE Physics classes for students who need help with selected chapters.",
+      "image": {
+        "src": "/physics_sec3_2025_fusion_tuition.png",
+        "alt": "Fusion Tuition IGCSE Physics class"
+      },
+      "displayOrder": 5,
+      "isActive": true
+    }
+  ],
+  "items": [
+    {
+      "id": "o-chem-mole-concept",
+      "categoryId": "o-level-chemistry",
+      "title": "Mole Concept Rescue",
+      "subtitle": "Calculations, formulae and common exam traps",
+      "level": "O Level",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/chemistry_sec4_2025_fusion_tuition.png",
+        "alt": "Mole Concept Chemistry à la carte class"
+      },
+      "chapters": ["Mole Concept", "Chemical Calculations"],
+      "description": "For students who know the formulas but still get stuck choosing the correct calculation method.",
+      "whatStudentsWillDo": [
+        "Revise key mole concept formulas",
+        "Practise structured calculation questions",
+        "Identify common careless mistakes in exam answers"
+      ],
+      "additionalInstructionLabel": "Anything specific about mole concept you want us to focus on?",
+      "isActive": true,
+      "displayOrder": 1
+    },
+    {
+      "id": "o-chem-acids-bases-salts",
+      "categoryId": "o-level-chemistry",
+      "title": "Acids, Bases and Salts",
+      "subtitle": "Salt preparation, pH and reactions",
+      "level": "O Level",
+      "subject": "Chemistry",
+      "durationMinutes": 120,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/chemistry_sec3_2025_fusion_tuition.png",
+        "alt": "Acids bases and salts Chemistry class"
+      },
+      "chapters": ["Acids, Bases and Salts"],
+      "description": "A shorter focused session for students who need clarity on reactions and salt preparation methods.",
+      "whatStudentsWillDo": [
+        "Review acid and alkali properties",
+        "Compare salt preparation methods",
+        "Practise explanation questions"
+      ],
+      "additionalInstructionLabel": "Tell us which parts are confusing, if any.",
+      "isActive": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "o-physics-electricity",
+      "categoryId": "o-level-physics",
+      "title": "Electricity and Circuits",
+      "subtitle": "Current, voltage, resistance and circuit questions",
+      "level": "O Level",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/physics_sec4_2025_fusion_tuition.png",
+        "alt": "Electricity and circuits Physics à la carte class"
+      },
+      "chapters": ["Current Electricity", "D.C. Circuits"],
+      "description": "For students who find circuit diagrams, formulas and explanation questions messy.",
+      "whatStudentsWillDo": [
+        "Revise current, potential difference and resistance",
+        "Practise series and parallel circuit questions",
+        "Learn how to present explanations clearly"
+      ],
+      "additionalInstructionLabel": "Any specific circuit topic or school worksheet to mention?",
+      "isActive": true,
+      "displayOrder": 1
+    },
+    {
+      "id": "o-physics-forces",
+      "categoryId": "o-level-physics",
+      "title": "Forces and Motion",
+      "subtitle": "Graphs, Newton's laws and calculation practice",
+      "level": "O Level",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/physics_sec3_2025_fusion_tuition.png",
+        "alt": "Forces and motion Physics class"
+      },
+      "chapters": ["Kinematics", "Forces"],
+      "description": "A focused session for students who need help connecting concepts, graphs and formulas.",
+      "whatStudentsWillDo": [
+        "Revise motion graphs",
+        "Work through calculation questions",
+        "Clarify force diagrams and Newton's laws"
+      ],
+      "additionalInstructionLabel": "Tell us which type of question your child struggles with most.",
+      "isActive": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "o-amath-differentiation",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Differentiation Starter Pack",
+      "subtitle": "Rules, applications and question confidence",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/fusion_tuition_logo_horizontal.png",
+        "alt": "Additional Mathematics differentiation à la carte class"
+      },
+      "chapters": ["Differentiation"],
+      "description": "For students who need a guided reset on differentiation before tackling exam-style applications.",
+      "whatStudentsWillDo": [
+        "Revise basic differentiation rules",
+        "Practise tangent, normal and rate of change questions",
+        "Build confidence with step-by-step working"
+      ],
+      "additionalInstructionLabel": "Any school worksheet or question type to focus on?",
+      "isActive": true,
+      "displayOrder": 1
+    },
+    {
+      "id": "igcse-chem-stoichiometry",
+      "categoryId": "igcse-chemistry",
+      "title": "IGCSE Stoichiometry Focus",
+      "subtitle": "Formulae, equations and quantitative chemistry",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/chemistry_refresher_2024_fusion_tuition.png",
+        "alt": "IGCSE Chemistry stoichiometry class"
+      },
+      "chapters": ["Stoichiometry", "Quantitative Chemistry"],
+      "description": "A focused IGCSE Chemistry session for students who need support with calculation-heavy questions.",
+      "whatStudentsWillDo": [
+        "Revise balanced equations and reacting masses",
+        "Practise mole-based calculations",
+        "Clarify common IGCSE marking expectations"
+      ],
+      "additionalInstructionLabel": "Tell us your school syllabus or weak subtopic, if known.",
+      "isActive": true,
+      "displayOrder": 1
+    },
+    {
+      "id": "igcse-physics-waves",
+      "categoryId": "igcse-physics",
+      "title": "IGCSE Waves Clinic",
+      "subtitle": "Wave properties, light and sound questions",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 120,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/physics_sec3_2025_fusion_tuition.png",
+        "alt": "IGCSE Physics waves ala-carte class"
+      },
+      "chapters": ["Waves", "Light", "Sound"],
+      "description": "A short IGCSE Physics session for students who need a cleaner way to handle wave diagrams and explanation questions.",
+      "whatStudentsWillDo": [
+        "Revise wave terms and diagrams",
+        "Practise light and sound explanation questions",
+        "Identify keywords needed for full marks"
+      ],
+      "additionalInstructionLabel": "Tell us which wave topic feels weakest, if any.",
+      "isActive": true,
+      "displayOrder": 1
+    }
+  ]
+}

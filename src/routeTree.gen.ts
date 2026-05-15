@@ -15,15 +15,22 @@ import { Route as ConnectRouteImport } from './routes/connect'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ClassesIndexRouteImport } from './routes/classes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as AnnouncementsIndexRouteImport } from './routes/announcements/index'
+import { Route as AlaCarteIndexRouteImport } from './routes/ala-carte/index'
 import { Route as DocsApiRouteImport } from './routes/docs/api'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoNeonRouteImport } from './routes/demo/neon'
 import { Route as DemoDrizzleRouteImport } from './routes/demo/drizzle'
 import { Route as DemoBetterAuthRouteImport } from './routes/demo/better-auth'
 import { Route as ClassesSlugRouteImport } from './routes/classes/$slug'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as ApiSiteInfoRouteImport } from './routes/api/site-info'
 import { Route as ApiOpenapiRouteImport } from './routes/api/openapi'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
+import { Route as ApiAlaCarteOrdersRouteImport } from './routes/api/ala-carte-orders'
+import { Route as AnnouncementsSlugRouteImport } from './routes/announcements/$slug'
+import { Route as AlaCarteCategoryIdRouteImport } from './routes/ala-carte/$categoryId'
 import { Route as DemoSentryTestingRouteImport } from './routes/demo/sentry.testing'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
@@ -57,6 +64,21 @@ const ClassesIndexRoute = ClassesIndexRouteImport.update({
   path: '/classes/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnnouncementsIndexRoute = AnnouncementsIndexRouteImport.update({
+  id: '/announcements/',
+  path: '/announcements/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlaCarteIndexRoute = AlaCarteIndexRouteImport.update({
+  id: '/ala-carte/',
+  path: '/ala-carte/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsApiRoute = DocsApiRouteImport.update({
   id: '/docs/api',
   path: '/docs/api',
@@ -87,6 +109,11 @@ const ClassesSlugRoute = ClassesSlugRouteImport.update({
   path: '/classes/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiSiteInfoRoute = ApiSiteInfoRouteImport.update({
   id: '/api/site-info',
   path: '/api/site-info',
@@ -100,6 +127,21 @@ const ApiOpenapiRoute = ApiOpenapiRouteImport.update({
 const ApiHealthRoute = ApiHealthRouteImport.update({
   id: '/api/health',
   path: '/api/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAlaCarteOrdersRoute = ApiAlaCarteOrdersRouteImport.update({
+  id: '/api/ala-carte-orders',
+  path: '/api/ala-carte-orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnnouncementsSlugRoute = AnnouncementsSlugRouteImport.update({
+  id: '/announcements/$slug',
+  path: '/announcements/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlaCarteCategoryIdRoute = AlaCarteCategoryIdRouteImport.update({
+  id: '/ala-carte/$categoryId',
+  path: '/ala-carte/$categoryId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoSentryTestingRoute = DemoSentryTestingRouteImport.update({
@@ -119,15 +161,22 @@ export interface FileRoutesByFullPath {
   '/connect': typeof ConnectRoute
   '/contact': typeof ContactRoute
   '/how-to-get-here': typeof HowToGetHereRoute
+  '/ala-carte/$categoryId': typeof AlaCarteCategoryIdRoute
+  '/announcements/$slug': typeof AnnouncementsSlugRoute
+  '/api/ala-carte-orders': typeof ApiAlaCarteOrdersRoute
   '/api/health': typeof ApiHealthRoute
   '/api/openapi': typeof ApiOpenapiRoute
   '/api/site-info': typeof ApiSiteInfoRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/demo/better-auth': typeof DemoBetterAuthRoute
   '/demo/drizzle': typeof DemoDrizzleRoute
   '/demo/neon': typeof DemoNeonRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/docs/api': typeof DocsApiRoute
+  '/ala-carte/': typeof AlaCarteIndexRoute
+  '/announcements/': typeof AnnouncementsIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/classes/': typeof ClassesIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/demo/sentry/testing': typeof DemoSentryTestingRoute
@@ -138,15 +187,22 @@ export interface FileRoutesByTo {
   '/connect': typeof ConnectRoute
   '/contact': typeof ContactRoute
   '/how-to-get-here': typeof HowToGetHereRoute
+  '/ala-carte/$categoryId': typeof AlaCarteCategoryIdRoute
+  '/announcements/$slug': typeof AnnouncementsSlugRoute
+  '/api/ala-carte-orders': typeof ApiAlaCarteOrdersRoute
   '/api/health': typeof ApiHealthRoute
   '/api/openapi': typeof ApiOpenapiRoute
   '/api/site-info': typeof ApiSiteInfoRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/demo/better-auth': typeof DemoBetterAuthRoute
   '/demo/drizzle': typeof DemoDrizzleRoute
   '/demo/neon': typeof DemoNeonRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/docs/api': typeof DocsApiRoute
+  '/ala-carte': typeof AlaCarteIndexRoute
+  '/announcements': typeof AnnouncementsIndexRoute
+  '/blog': typeof BlogIndexRoute
   '/classes': typeof ClassesIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/demo/sentry/testing': typeof DemoSentryTestingRoute
@@ -158,15 +214,22 @@ export interface FileRoutesById {
   '/connect': typeof ConnectRoute
   '/contact': typeof ContactRoute
   '/how-to-get-here': typeof HowToGetHereRoute
+  '/ala-carte/$categoryId': typeof AlaCarteCategoryIdRoute
+  '/announcements/$slug': typeof AnnouncementsSlugRoute
+  '/api/ala-carte-orders': typeof ApiAlaCarteOrdersRoute
   '/api/health': typeof ApiHealthRoute
   '/api/openapi': typeof ApiOpenapiRoute
   '/api/site-info': typeof ApiSiteInfoRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/classes/$slug': typeof ClassesSlugRoute
   '/demo/better-auth': typeof DemoBetterAuthRoute
   '/demo/drizzle': typeof DemoDrizzleRoute
   '/demo/neon': typeof DemoNeonRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/docs/api': typeof DocsApiRoute
+  '/ala-carte/': typeof AlaCarteIndexRoute
+  '/announcements/': typeof AnnouncementsIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/classes/': typeof ClassesIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/demo/sentry/testing': typeof DemoSentryTestingRoute
@@ -179,15 +242,22 @@ export interface FileRouteTypes {
     | '/connect'
     | '/contact'
     | '/how-to-get-here'
+    | '/ala-carte/$categoryId'
+    | '/announcements/$slug'
+    | '/api/ala-carte-orders'
     | '/api/health'
     | '/api/openapi'
     | '/api/site-info'
+    | '/blog/$slug'
     | '/classes/$slug'
     | '/demo/better-auth'
     | '/demo/drizzle'
     | '/demo/neon'
     | '/demo/tanstack-query'
     | '/docs/api'
+    | '/ala-carte/'
+    | '/announcements/'
+    | '/blog/'
     | '/classes/'
     | '/api/auth/$'
     | '/demo/sentry/testing'
@@ -198,15 +268,22 @@ export interface FileRouteTypes {
     | '/connect'
     | '/contact'
     | '/how-to-get-here'
+    | '/ala-carte/$categoryId'
+    | '/announcements/$slug'
+    | '/api/ala-carte-orders'
     | '/api/health'
     | '/api/openapi'
     | '/api/site-info'
+    | '/blog/$slug'
     | '/classes/$slug'
     | '/demo/better-auth'
     | '/demo/drizzle'
     | '/demo/neon'
     | '/demo/tanstack-query'
     | '/docs/api'
+    | '/ala-carte'
+    | '/announcements'
+    | '/blog'
     | '/classes'
     | '/api/auth/$'
     | '/demo/sentry/testing'
@@ -217,15 +294,22 @@ export interface FileRouteTypes {
     | '/connect'
     | '/contact'
     | '/how-to-get-here'
+    | '/ala-carte/$categoryId'
+    | '/announcements/$slug'
+    | '/api/ala-carte-orders'
     | '/api/health'
     | '/api/openapi'
     | '/api/site-info'
+    | '/blog/$slug'
     | '/classes/$slug'
     | '/demo/better-auth'
     | '/demo/drizzle'
     | '/demo/neon'
     | '/demo/tanstack-query'
     | '/docs/api'
+    | '/ala-carte/'
+    | '/announcements/'
+    | '/blog/'
     | '/classes/'
     | '/api/auth/$'
     | '/demo/sentry/testing'
@@ -237,15 +321,22 @@ export interface RootRouteChildren {
   ConnectRoute: typeof ConnectRoute
   ContactRoute: typeof ContactRoute
   HowToGetHereRoute: typeof HowToGetHereRoute
+  AlaCarteCategoryIdRoute: typeof AlaCarteCategoryIdRoute
+  AnnouncementsSlugRoute: typeof AnnouncementsSlugRoute
+  ApiAlaCarteOrdersRoute: typeof ApiAlaCarteOrdersRoute
   ApiHealthRoute: typeof ApiHealthRoute
   ApiOpenapiRoute: typeof ApiOpenapiRoute
   ApiSiteInfoRoute: typeof ApiSiteInfoRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   ClassesSlugRoute: typeof ClassesSlugRoute
   DemoBetterAuthRoute: typeof DemoBetterAuthRoute
   DemoDrizzleRoute: typeof DemoDrizzleRoute
   DemoNeonRoute: typeof DemoNeonRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
   DocsApiRoute: typeof DocsApiRoute
+  AlaCarteIndexRoute: typeof AlaCarteIndexRoute
+  AnnouncementsIndexRoute: typeof AnnouncementsIndexRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   ClassesIndexRoute: typeof ClassesIndexRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   DemoSentryTestingRoute: typeof DemoSentryTestingRoute
@@ -295,6 +386,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClassesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/announcements/': {
+      id: '/announcements/'
+      path: '/announcements'
+      fullPath: '/announcements/'
+      preLoaderRoute: typeof AnnouncementsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ala-carte/': {
+      id: '/ala-carte/'
+      path: '/ala-carte'
+      fullPath: '/ala-carte/'
+      preLoaderRoute: typeof AlaCarteIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/api': {
       id: '/docs/api'
       path: '/docs/api'
@@ -337,6 +449,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClassesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/site-info': {
       id: '/api/site-info'
       path: '/api/site-info'
@@ -356,6 +475,27 @@ declare module '@tanstack/react-router' {
       path: '/api/health'
       fullPath: '/api/health'
       preLoaderRoute: typeof ApiHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ala-carte-orders': {
+      id: '/api/ala-carte-orders'
+      path: '/api/ala-carte-orders'
+      fullPath: '/api/ala-carte-orders'
+      preLoaderRoute: typeof ApiAlaCarteOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/announcements/$slug': {
+      id: '/announcements/$slug'
+      path: '/announcements/$slug'
+      fullPath: '/announcements/$slug'
+      preLoaderRoute: typeof AnnouncementsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ala-carte/$categoryId': {
+      id: '/ala-carte/$categoryId'
+      path: '/ala-carte/$categoryId'
+      fullPath: '/ala-carte/$categoryId'
+      preLoaderRoute: typeof AlaCarteCategoryIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/sentry/testing': {
@@ -381,15 +521,22 @@ const rootRouteChildren: RootRouteChildren = {
   ConnectRoute: ConnectRoute,
   ContactRoute: ContactRoute,
   HowToGetHereRoute: HowToGetHereRoute,
+  AlaCarteCategoryIdRoute: AlaCarteCategoryIdRoute,
+  AnnouncementsSlugRoute: AnnouncementsSlugRoute,
+  ApiAlaCarteOrdersRoute: ApiAlaCarteOrdersRoute,
   ApiHealthRoute: ApiHealthRoute,
   ApiOpenapiRoute: ApiOpenapiRoute,
   ApiSiteInfoRoute: ApiSiteInfoRoute,
+  BlogSlugRoute: BlogSlugRoute,
   ClassesSlugRoute: ClassesSlugRoute,
   DemoBetterAuthRoute: DemoBetterAuthRoute,
   DemoDrizzleRoute: DemoDrizzleRoute,
   DemoNeonRoute: DemoNeonRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
   DocsApiRoute: DocsApiRoute,
+  AlaCarteIndexRoute: AlaCarteIndexRoute,
+  AnnouncementsIndexRoute: AnnouncementsIndexRoute,
+  BlogIndexRoute: BlogIndexRoute,
   ClassesIndexRoute: ClassesIndexRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   DemoSentryTestingRoute: DemoSentryTestingRoute,
