@@ -1,3 +1,4 @@
+import { useLocation } from '@tanstack/react-router'
 import React from 'react'
 import Footer from '../Footer'
 import { ScrollProgress } from '../ScrollProgress'
@@ -9,17 +10,26 @@ interface DefaultLayoutProps {
 }
 
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
+  const location = useLocation()
+  const isAlaCartePage = location.pathname.startsWith('/ala-carte')
+
   return (
     <>
       <NextHeadComponent title="fusion tuition | home" />
       <div className="flex min-h-screen flex-col">
-        <Navbar />
+        {!isAlaCartePage && <Navbar />}
         {/* Main Content */}
-        <main className="container mx-auto mt-[80px] flex-grow px-4 py-8 pb-32">
+        <main
+          className={
+            isAlaCartePage
+              ? 'flex-grow'
+              : 'container mx-auto mt-[80px] flex-grow px-4 py-8 pb-32'
+          }
+        >
           {children}
         </main>
-        <Footer />
-        <ScrollProgress />
+        {!isAlaCartePage && <Footer />}
+        {!isAlaCartePage && <ScrollProgress />}
       </div>
     </>
   )
