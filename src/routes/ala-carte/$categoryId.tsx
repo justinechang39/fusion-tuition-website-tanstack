@@ -57,18 +57,18 @@ function AlaCarteCategoryPage() {
   }
 
   return (
-    <div className="relative -mx-4 -my-8 min-h-screen overflow-hidden bg-[#fffaf3] pb-28 text-slate-950 lg:-mx-8">
+    <div className="relative -mx-4 -my-8 min-h-screen bg-[#fffaf3] pb-28 text-slate-950 [overflow-x:clip] lg:-mx-8">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 top-12 h-72 w-72 rounded-full bg-orange-200/60 blur-3xl" />
         <div className="absolute right-[-9rem] top-80 h-96 w-96 rounded-full bg-teal-200/50 blur-3xl" />
         <div className="absolute inset-0 bg-dot-thick-orange-500 opacity-[0.05] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
       </div>
 
-      <section className="relative w-full pb-8 pt-0 md:pt-4">
-        <div className="sticky top-20 z-30 -mb-16 flex items-center justify-between gap-3 px-4 pt-4 sm:px-6 md:top-24 lg:px-8">
+      <div className="sticky top-20 z-40 mx-auto -mb-20 max-w-5xl px-4 pt-4 sm:px-6 md:top-24 lg:px-8">
+        <div className="flex items-center justify-between gap-3 rounded-full border border-white/70 bg-white/80 p-1.5 shadow-2xl shadow-orange-200/60 backdrop-blur-xl">
           <Button
             asChild
-            className="rounded-full border-white/70 bg-white/90 text-slate-950 shadow-xl shadow-slate-950/15 backdrop-blur hover:bg-white hover:text-slate-950"
+            className="h-11 rounded-full border-transparent bg-white px-4 font-black text-slate-950 shadow-sm hover:bg-orange-50 hover:text-orange-700"
             variant="outline"
           >
             <Link to="/ala-carte">
@@ -77,15 +77,16 @@ function AlaCarteCategoryPage() {
             </Link>
           </Button>
           <Button
-            className="rounded-full border-white/70 bg-white/90 text-slate-950 shadow-xl shadow-slate-950/15 backdrop-blur hover:bg-white hover:text-slate-950"
-            variant="outline"
+            className="hidden h-11 rounded-full border-transparent bg-slate-950 px-4 font-black text-white shadow-sm hover:bg-orange-600 sm:inline-flex"
             onClick={() => order.setIsCartOpen(true)}
           >
             Cart{order.cartCount > 0 ? ` · ${order.cartCount}` : ''}
             <ShoppingBag className="ml-2 h-4 w-4" />
           </Button>
         </div>
+      </div>
 
+      <section className="relative w-full pb-8 pt-0 md:pt-4">
         <div className="relative min-h-[560px] overflow-hidden bg-slate-950 shadow-2xl shadow-orange-200/70 sm:min-h-[620px] md:min-h-[680px] lg:min-h-[720px]">
           <img
             src={category.image.src}
@@ -203,7 +204,7 @@ function AlaCarteCategoryPage() {
                     ) : (
                       <Plus className="mr-1 h-4 w-4" />
                     )}
-                    {isSelected ? 'Selected' : 'Add'}
+                    {isSelected ? 'Selected' : 'Add to cart'}
                   </Button>
                 </div>
               </article>

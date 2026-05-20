@@ -17,6 +17,7 @@ import { toast } from '@/hooks/use-toast'
 import { buildBreadcrumbJsonLd, buildPageJsonLd, buildSeoHead } from '@/lib/seo'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import {
+  ArrowLeft,
   ArrowRight,
   CheckCircle2,
   Clock3,
@@ -308,11 +309,33 @@ function AlaCartePage() {
   const order = useAlaCarteOrder()
 
   return (
-    <div className="relative -mx-4 -my-8 overflow-hidden bg-[#fffaf3] pb-28 text-slate-950 lg:-mx-8">
+    <div className="relative -mx-4 -my-8 bg-[#fffaf3] pb-28 text-slate-950 [overflow-x:clip] lg:-mx-8">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 top-8 h-72 w-72 rounded-full bg-orange-200/60 blur-3xl" />
         <div className="absolute right-[-9rem] top-72 h-96 w-96 rounded-full bg-teal-200/50 blur-3xl" />
         <div className="absolute inset-0 bg-dot-thick-orange-500 opacity-[0.06] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
+      </div>
+
+      <div className="sticky top-20 z-40 mx-auto mb-2 max-w-5xl px-4 pt-4 sm:px-6 md:top-24 lg:px-8">
+        <div className="flex items-center justify-between gap-3 rounded-full border border-white/70 bg-white/80 p-1.5 shadow-2xl shadow-orange-200/60 backdrop-blur-xl">
+          <Button
+            asChild
+            className="h-11 rounded-full border-transparent bg-white px-4 font-black text-slate-950 shadow-sm hover:bg-orange-50 hover:text-orange-700"
+            variant="outline"
+          >
+            <Link to="/">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back home
+            </Link>
+          </Button>
+          <Button
+            className="hidden h-11 rounded-full border-transparent bg-slate-950 px-4 font-black text-white shadow-sm hover:bg-orange-600 sm:inline-flex"
+            onClick={() => order.setIsCartOpen(true)}
+          >
+            Cart{order.cartCount > 0 ? ` · ${order.cartCount}` : ''}
+            <ShoppingBag className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
       </div>
 
       <section className="relative mx-auto max-w-5xl px-4 pb-8 pt-10 sm:px-6 md:pb-12 md:pt-16 lg:px-8">
@@ -387,7 +410,7 @@ function AlaCartePage() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:gap-6">
+        <div className="grid gap-4 sm:grid-cols-2 md:gap-6">
           {categories.map((category) => (
             <CategoryCard key={category.id} category={category} />
           ))}
@@ -424,7 +447,7 @@ function CategoryCard({ category }: { category: AlaCarteCategory }) {
       params={{ categoryId: category.id }}
       className="group overflow-hidden rounded-[1.65rem] border border-orange-100 bg-white shadow-xl shadow-orange-100 transition duration-300 hover:-translate-y-1 hover:shadow-2xl md:rounded-[2rem]"
     >
-      <div className="h-36 overflow-hidden bg-orange-100 md:h-56">
+      <div className="h-44 overflow-hidden bg-orange-100 sm:h-36 md:h-56">
         <img
           src={category.image.src}
           alt={category.image.alt}
@@ -453,29 +476,36 @@ export function FloatingCartButton({
   cartCount: number
   openCart: () => void
 }) {
-  if (cartCount === 0) return null
-
   return (
     <>
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-orange-200 bg-white/95 p-3 shadow-2xl backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-orange-200/80 bg-white/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 shadow-[0_-18px_40px_rgba(251,146,60,0.18)] backdrop-blur-xl md:hidden">
         <Button
-          className="h-14 w-full rounded-2xl text-base shadow-xl shadow-orange-500/20"
+          className={
+            cartCount === 0
+              ? 'h-14 w-full rounded-2xl border-orange-200 bg-white text-base font-black text-slate-950 shadow-sm hover:bg-orange-50 hover:text-slate-950'
+              : 'h-14 w-full rounded-2xl text-base font-black shadow-xl shadow-orange-500/20'
+          }
           onClick={openCart}
+          variant={cartCount === 0 ? 'outline' : 'default'}
         >
           <ShoppingBag className="mr-2 h-5 w-5" />
-          Cart · {cartCount} class{cartCount > 1 ? 'es' : ''}
+          {cartCount === 0
+            ? 'View cart'
+            : `Cart · ${cartCount} class${cartCount > 1 ? 'es' : ''}`}
         </Button>
       </div>
-      <button
-        type="button"
-        className="fixed bottom-6 right-6 z-40 hidden rounded-full bg-slate-950 px-5 py-4 font-black text-white shadow-2xl shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600 md:block"
-        onClick={openCart}
-      >
-        <span className="flex items-center gap-3">
-          <ShoppingBag className="h-5 w-5" />
-          Cart · {cartCount}
-        </span>
-      </button>
+      {cartCount > 0 && (
+        <button
+          type="button"
+          className="fixed bottom-6 right-6 z-40 hidden rounded-full bg-slate-950 px-5 py-4 font-black text-white shadow-2xl shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600 md:block"
+          onClick={openCart}
+        >
+          <span className="flex items-center gap-3">
+            <ShoppingBag className="h-5 w-5" />
+            Cart · {cartCount}
+          </span>
+        </button>
+      )}
     </>
   )
 }
