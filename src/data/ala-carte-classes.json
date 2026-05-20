@@ -100,8 +100,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_ala_carte.png",
-        "alt": "O Level Chemistry ala-carte class artwork with formulas and lab glassware"
+        "src": "/ala-carte/o-chem-mole-concept.webp",
+        "alt": "Mole Concept and Chemical Calculations ala-carte class artwork"
       },
       "chapters": ["Mole Concept", "Chemical Calculations", "Stoichiometry"],
       "description": "For students who know some formulas but still get stuck deciding which calculation method to use.",
@@ -126,8 +126,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_ala_carte.png",
-        "alt": "O Level Chemistry ala-carte class artwork with formulas and lab glassware"
+        "src": "/ala-carte/o-chem-atomic-bonding-periodic-table.webp",
+        "alt": "Atomic Structure, Bonding and Periodic Table ala-carte class artwork"
       },
       "chapters": ["Atomic Structure", "Chemical Bonding", "Periodic Table"],
       "description": "A concept-building session for students who mix up particles, bonding and property explanations.",
@@ -152,8 +152,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_ala_carte.png",
-        "alt": "O Level Chemistry ala-carte class artwork with formulas and lab glassware"
+        "src": "/ala-carte/o-chem-equations-reactions.webp",
+        "alt": "Chemical Reactions and Equation Writing ala-carte class artwork"
       },
       "chapters": [
         "Chemical Equations",
@@ -182,8 +182,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_ala_carte.png",
-        "alt": "O Level Chemistry ala-carte class artwork with formulas and lab glassware"
+        "src": "/ala-carte/o-chem-acids-bases-salts.webp",
+        "alt": "Acids, Bases and Salts ala-carte class artwork"
       },
       "chapters": ["Acids, Bases and Salts", "Salt Preparation", "pH"],
       "description": "A focused class for students who need a clearer method for salt preparation and reaction questions.",
@@ -208,8 +208,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_ala_carte.png",
-        "alt": "O Level Chemistry ala-carte class artwork with formulas and lab glassware"
+        "src": "/ala-carte/o-chem-qualitative-analysis.webp",
+        "alt": "Qualitative Analysis and Practical Skills ala-carte class artwork"
       },
       "chapters": [
         "Qualitative Analysis",
@@ -238,8 +238,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_ala_carte.png",
-        "alt": "O Level Chemistry ala-carte class artwork with formulas and lab glassware"
+        "src": "/ala-carte/o-chem-metals-reactivity-redox.webp",
+        "alt": "Metals, Reactivity and Redox ala-carte class artwork"
       },
       "chapters": ["Metals", "Reactivity Series", "Redox"],
       "description": "A booster for students who find metal reactions and redox explanations hard to connect.",
@@ -264,8 +264,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_ala_carte.png",
-        "alt": "O Level Chemistry ala-carte class artwork with formulas and lab glassware"
+        "src": "/ala-carte/o-chem-electrolysis.webp",
+        "alt": "Electrolysis Made Clear ala-carte class artwork"
       },
       "chapters": ["Electrolysis", "Electrode Products", "Electroplating"],
       "description": "For students who need a reliable way to predict products and explain what happens at each electrode.",
@@ -290,8 +290,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_ala_carte.png",
-        "alt": "O Level Chemistry ala-carte class artwork with formulas and lab glassware"
+        "src": "/ala-carte/o-chem-energy-rate-organic.webp",
+        "alt": "Energy, Rate and Organic Chemistry Booster ala-carte class artwork"
       },
       "chapters": ["Energy Changes", "Rate of Reaction", "Organic Chemistry"],
       "description": "A high-yield revision class for students who want guided practice across common scoring topics.",
@@ -316,8 +316,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_ala_carte.png",
-        "alt": "O Level Physics ala-carte class artwork with formulas and science instruments"
+        "src": "/ala-carte/o-physics-measurement-graph-skills.webp",
+        "alt": "Measurement, Units and Graph Skills ala-carte class artwork"
       },
       "chapters": [
         "Physical Quantities",
@@ -346,8 +346,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_ala_carte.png",
-        "alt": "O Level Physics ala-carte class artwork with formulas and science instruments"
+        "src": "/ala-carte/o-physics-kinematics-motion-graphs.webp",
+        "alt": "Kinematics and Motion Graphs ala-carte class artwork"
       },
       "chapters": ["Kinematics", "Motion Graphs"],
       "description": "For students who find distance-time and velocity-time graphs confusing or inconsistent.",
@@ -372,8 +372,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_ala_carte.png",
-        "alt": "O Level Physics ala-carte class artwork with formulas and science instruments"
+        "src": "/ala-carte/o-physics-dynamics-forces.webp",
+        "alt": "Dynamics and Forces ala-carte class artwork"
       },
       "chapters": ["Dynamics", "Forces", "Newton’s Laws"],
       "description": "A focused session for students who need help connecting force diagrams, concepts and calculations.",
@@ -398,8 +398,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_ala_carte.png",
-        "alt": "O Level Physics ala-carte class artwork with formulas and science instruments"
+        "src": "/ala-carte/o-physics-moments-pressure-energy.webp",
+        "alt": "Moments, Pressure and Energy ala-carte class artwork"
       },
       "chapters": ["Turning Effect of Forces", "Pressure", "Energy"],
       "description": "For students who can memorise formulas but need practice choosing the correct one in mixed questions.",
@@ -424,8 +424,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_ala_carte.png",
-        "alt": "O Level Physics ala-carte class artwork with formulas and science instruments"
+        "src": "/ala-carte/o-physics-thermal-physics.webp",
+        "alt": "Thermal Physics Rescue ala-carte class artwork"
       },
       "chapters": [
         "Kinetic Particle Model",
@@ -454,8 +454,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_ala_carte.png",
-        "alt": "O Level Physics ala-carte class artwork with formulas and science instruments"
+        "src": "/ala-carte/o-physics-waves-light-spectrum.webp",
+        "alt": "Waves, Light and Electromagnetic Spectrum ala-carte class artwork"
       },
       "chapters": [
         "General Properties of Waves",
@@ -484,8 +484,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_ala_carte.png",
-        "alt": "O Level Physics ala-carte class artwork with formulas and science instruments"
+        "src": "/ala-carte/o-physics-electricity-circuits.webp",
+        "alt": "Electricity and D.C. Circuits ala-carte class artwork"
       },
       "chapters": [
         "Current Electricity",
@@ -514,8 +514,8 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_ala_carte.png",
-        "alt": "O Level Physics ala-carte class artwork with formulas and science instruments"
+        "src": "/ala-carte/o-physics-magnetism-radioactivity.webp",
+        "alt": "Magnetism, Electromagnetism and Radioactivity ala-carte class artwork"
       },
       "chapters": [
         "Magnetism",

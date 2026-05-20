@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-05-20T08:03:53.790Z",
+  "imageConfig": {
+    "aspectRatio": "21:9",
+    "imageSize": "2K",
+    "targetSize": "1916x821"
+  },
+  "model": "gemini-3-pro-image-preview",
+  "promptFile": "scripts/ala-carte-image-prompts.json",
+  "results": [
+    {
+      "id": "o-chem-mole-concept",
+      "promptHash": "8e64468693a923d7",
+      "src": "/ala-carte/o-chem-mole-concept.webp",
+      "title": "Mole Concept and Chemical Calculations"
+    },
+    {
+      "id": "o-chem-atomic-bonding-periodic-table",
+      "promptHash": "18bbc4d5fdc2331b",
+      "src": "/ala-carte/o-chem-atomic-bonding-periodic-table.webp",
+      "title": "Atomic Structure, Bonding and Periodic Table"
+    },
+    {
+      "id": "o-chem-equations-reactions",
+      "promptHash": "d2936e23479e18ef",
+      "src": "/ala-carte/o-chem-equations-reactions.webp",
+      "title": "Chemical Reactions and Equation Writing"
+    },
+    {
+      "id": "o-chem-acids-bases-salts",
+      "promptHash": "16ecda1221b5f2e2",
+      "src": "/ala-carte/o-chem-acids-bases-salts.webp",
+      "title": "Acids, Bases and Salts"
+    },
+    {
+      "id": "o-chem-qualitative-analysis",
+      "promptHash": "b30ce591ce4f0774",
+      "src": "/ala-carte/o-chem-qualitative-analysis.webp",
+      "title": "Qualitative Analysis and Practical Skills"
+    },
+    {
+      "id": "o-chem-metals-reactivity-redox",
+      "promptHash": "647e24d371a03be5",
+      "src": "/ala-carte/o-chem-metals-reactivity-redox.webp",
+      "title": "Metals, Reactivity and Redox"
+    },
+    {
+      "id": "o-chem-electrolysis",
+      "promptHash": "344b35b2d5a5cb90",
+      "src": "/ala-carte/o-chem-electrolysis.webp",
+      "title": "Electrolysis Made Clear"
+    },
+    {
+      "id": "o-chem-energy-rate-organic",
+      "promptHash": "d40a11bf56dfb2a8",
+      "src": "/ala-carte/o-chem-energy-rate-organic.webp",
+      "title": "Energy, Rate and Organic Chemistry Booster"
+    },
+    {
+      "id": "o-physics-measurement-graph-skills",
+      "promptHash": "3c545d224d182253",
+      "src": "/ala-carte/o-physics-measurement-graph-skills.webp",
+      "title": "Measurement, Units and Graph Skills"
+    },
+    {
+      "id": "o-physics-kinematics-motion-graphs",
+      "promptHash": "aad619ea0460dfe4",
+      "src": "/ala-carte/o-physics-kinematics-motion-graphs.webp",
+      "title": "Kinematics and Motion Graphs"
+    },
+    {
+      "id": "o-physics-dynamics-forces",
+      "promptHash": "41b62d3645a13740",
+      "src": "/ala-carte/o-physics-dynamics-forces.webp",
+      "title": "Dynamics and Forces"
+    },
+    {
+      "id": "o-physics-moments-pressure-energy",
+      "promptHash": "2e1b39845bb3fefd",
+      "src": "/ala-carte/o-physics-moments-pressure-energy.webp",
+      "title": "Moments, Pressure and Energy"
+    },
+    {
+      "id": "o-physics-thermal-physics",
+      "promptHash": "eed26efbe645c333",
+      "src": "/ala-carte/o-physics-thermal-physics.webp",
+      "title": "Thermal Physics Rescue"
+    },
+    {
+      "id": "o-physics-waves-light-spectrum",
+      "promptHash": "4b2f1bdb1e00cc97",
+      "src": "/ala-carte/o-physics-waves-light-spectrum.webp",
+      "title": "Waves, Light and Electromagnetic Spectrum"
+    },
+    {
+      "id": "o-physics-electricity-circuits",
+      "promptHash": "1f227adaea918737",
+      "src": "/ala-carte/o-physics-electricity-circuits.webp",
+      "title": "Electricity and D.C. Circuits"
+    },
+    {
+      "id": "o-physics-magnetism-radioactivity",
+      "promptHash": "d029891f34a1bb86",
+      "src": "/ala-carte/o-physics-magnetism-radioactivity.webp",
+      "title": "Magnetism, Electromagnetism and Radioactivity"
+    }
+  ],
+  "serviceTier": "standard"
+}

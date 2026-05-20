@@ -20,7 +20,8 @@
     "db:pull": "drizzle-kit pull",
     "db:studio": "drizzle-kit studio",
     "start": "wrangler dev --config dist/server/wrangler.json",
-    "deploy": "bun run build && wrangler deploy --config dist/server/wrangler.json"
+    "deploy": "bun run build && wrangler deploy --config dist/server/wrangler.json",
+    "generate:ala-carte-images": "bun run scripts/generate-ala-carte-images.ts"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.26.0",
