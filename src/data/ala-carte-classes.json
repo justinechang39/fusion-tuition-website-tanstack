@@ -64,10 +64,10 @@
       "shortLabel": "IGCSE Chem",
       "level": "IGCSE",
       "subject": "Chemistry",
-      "description": "Focused IGCSE Chemistry classes for students who want targeted help during the June holidays.",
+      "description": "Cambridge IGCSE Chemistry 0620 chapter clinics for Core and Extended syllabus topics.",
       "image": {
-        "src": "/chemistry_sec3_2025_fusion_tuition.png",
-        "alt": "Fusion Tuition IGCSE Chemistry class"
+        "src": "/ala-carte/igcse-chem-states-diffusion.webp",
+        "alt": "IGCSE Chemistry ala-carte class artwork"
       },
       "displayOrder": 4,
       "isActive": true
@@ -78,10 +78,10 @@
       "shortLabel": "IGCSE Physics",
       "level": "IGCSE",
       "subject": "Physics",
-      "description": "Short IGCSE Physics classes for students who need help with selected chapters.",
+      "description": "Cambridge IGCSE Physics 0625 chapter clinics for Core and Extended syllabus topics.",
       "image": {
-        "src": "/physics_sec3_2025_fusion_tuition.png",
-        "alt": "Fusion Tuition IGCSE Physics class"
+        "src": "/ala-carte/igcse-physics-measurement-vectors.webp",
+        "alt": "IGCSE Physics ala-carte class artwork"
       },
       "displayOrder": 5,
       "isActive": true
@@ -1172,10 +1172,10 @@
       "displayOrder": 13
     },
     {
-      "id": "igcse-chem-stoichiometry",
+      "id": "igcse-chem-states-diffusion",
       "categoryId": "igcse-chemistry",
-      "title": "IGCSE Stoichiometry Focus",
-      "subtitle": "Formulae, equations and quantitative chemistry",
+      "title": "States of Matter and Diffusion",
+      "subtitle": "Kinetic particle theory, heating/cooling curves and gas behaviour",
       "level": "IGCSE",
       "subject": "Chemistry",
       "durationMinutes": 180,
@@ -1183,45 +1183,987 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/chemistry_refresher_2024_fusion_tuition.png",
-        "alt": "IGCSE Chemistry stoichiometry class"
+        "src": "/ala-carte/igcse-chem-states-diffusion.webp",
+        "alt": "States of Matter and Diffusion ala-carte class artwork"
       },
-      "chapters": ["Stoichiometry", "Quantitative Chemistry"],
-      "description": "A focused IGCSE Chemistry session for students who need support with calculation-heavy questions.",
+      "chapters": ["States of Matter", "Kinetic Particle Theory", "Diffusion"],
+      "description": "For students who need particle explanations, diffusion and gas behaviour to feel more precise.",
       "whatStudentsWillDo": [
-        "Revise balanced equations and reacting masses",
-        "Practise mole-based calculations",
-        "Clarify common IGCSE marking expectations"
+        "Compare solids, liquids and gases using particle separation, arrangement and motion",
+        "Explain changes of state, heating and cooling curves using kinetic particle theory",
+        "Practise diffusion and gas-volume questions using relative molecular mass ideas"
       ],
-      "additionalInstructionLabel": "Tell us your school syllabus or weak subtopic, if known.",
+      "additionalInstructionLabel": "Tell us if particle theory, heating curves or diffusion should take priority.",
       "isActive": true,
       "displayOrder": 1
     },
     {
-      "id": "igcse-physics-waves",
-      "categoryId": "igcse-physics",
-      "title": "IGCSE Waves Clinic",
-      "subtitle": "Wave properties, light and sound questions",
+      "id": "igcse-chem-atomic-structure-isotopes",
+      "categoryId": "igcse-chemistry",
+      "title": "Atomic Structure, Isotopes and Periodic Table Basics",
+      "subtitle": "Atoms, ions, electronic configuration, isotopes and Ar calculations",
       "level": "IGCSE",
-      "subject": "Physics",
-      "durationMinutes": 120,
+      "subject": "Chemistry",
+      "durationMinutes": 180,
       "price": 100,
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/physics_sec3_2025_fusion_tuition.png",
-        "alt": "IGCSE Physics waves ala-carte class"
+        "src": "/ala-carte/igcse-chem-atomic-structure-isotopes.webp",
+        "alt": "Atomic Structure, Isotopes and Periodic Table Basics ala-carte class artwork"
       },
-      "chapters": ["Waves", "Light", "Sound"],
-      "description": "A short IGCSE Physics session for students who need a cleaner way to handle wave diagrams and explanation questions.",
+      "chapters": ["Atomic Structure", "Isotopes", "Periodic Table Basics"],
+      "description": "A foundations class for students who mix up subatomic particles, ions, isotopes and electronic structure.",
       "whatStudentsWillDo": [
-        "Revise wave terms and diagrams",
-        "Practise light and sound explanation questions",
-        "Identify keywords needed for full marks"
+        "Revise proton number, mass number, charges and relative masses",
+        "Practise electronic configurations for elements and ions up to proton number 20",
+        "Work through isotope notation and relative atomic mass questions"
       ],
-      "additionalInstructionLabel": "Tell us which wave topic feels weakest, if any.",
+      "additionalInstructionLabel": "Any atomic structure, ion or isotope question type to focus on?",
+      "isActive": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "igcse-chem-bonding-structures",
+      "categoryId": "igcse-chemistry",
+      "title": "Bonding, Structures and Properties",
+      "subtitle": "Ionic, covalent, giant covalent and metallic bonding explained clearly",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-bonding-structures.webp",
+        "alt": "Bonding, Structures and Properties ala-carte class artwork"
+      },
+      "chapters": [
+        "Ionic Bonding",
+        "Covalent Bonding",
+        "Giant Structures",
+        "Metallic Bonding"
+      ],
+      "description": "For students who need to link bonding diagrams and structures to melting point, conductivity and uses.",
+      "whatStudentsWillDo": [
+        "Practise dot-and-cross diagrams for ionic and covalent substances",
+        "Compare simple molecular, giant ionic, giant covalent and metallic structures",
+        "Build full-mark structure-property explanations for graphite, diamond, silicon dioxide and metals"
+      ],
+      "additionalInstructionLabel": "Tell us if ionic, covalent, giant or metallic bonding is weakest.",
+      "isActive": true,
+      "displayOrder": 3
+    },
+    {
+      "id": "igcse-chem-formulae-stoichiometry",
+      "categoryId": "igcse-chemistry",
+      "title": "Formulae, Equations and Stoichiometry",
+      "subtitle": "Formulae, symbol equations, moles, gas volume, titration and yield",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-formulae-stoichiometry.webp",
+        "alt": "Formulae, Equations and Stoichiometry ala-carte class artwork"
+      },
+      "chapters": [
+        "Formulae",
+        "Relative Masses",
+        "Mole Concept",
+        "Stoichiometry"
+      ],
+      "description": "A calculation-focused class for students who need a reliable method for quantitative chemistry.",
+      "whatStudentsWillDo": [
+        "Construct word, symbol, ionic and state-symbol equations",
+        "Practise moles, reacting masses, gas volumes and solution concentration",
+        "Handle limiting reactants, empirical formula, molecular formula, yield, purity and titration data"
+      ],
+      "additionalInstructionLabel": "Any mole, equation, titration or yield calculation to prioritise?",
+      "isActive": true,
+      "displayOrder": 4
+    },
+    {
+      "id": "igcse-chem-electrolysis-fuel-cells",
+      "categoryId": "igcse-chemistry",
+      "title": "Electrolysis and Fuel Cells",
+      "subtitle": "Molten and aqueous electrolysis, half-equations, electroplating and hydrogen fuel cells",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-electrolysis-fuel-cells.webp",
+        "alt": "Electrolysis and Fuel Cells ala-carte class artwork"
+      },
+      "chapters": [
+        "Electrolysis",
+        "Electroplating",
+        "Hydrogen–Oxygen Fuel Cells"
+      ],
+      "description": "For students who need a clearer way to predict products and explain charge transfer at electrodes.",
+      "whatStudentsWillDo": [
+        "Identify anode, cathode, electrolyte and product observations",
+        "Predict molten and aqueous electrolysis products, including halide solutions and copper sulfate",
+        "Practise ionic half-equations and compare fuel cells with petrol engines"
+      ],
+      "additionalInstructionLabel": "Tell us if product prediction, half-equations or fuel cells should take priority.",
+      "isActive": true,
+      "displayOrder": 5
+    },
+    {
+      "id": "igcse-chem-energetics",
+      "categoryId": "igcse-chemistry",
+      "title": "Chemical Energetics and Bond Energy",
+      "subtitle": "Exothermic, endothermic, activation energy and enthalpy-change calculations",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-energetics.webp",
+        "alt": "Chemical Energetics and Bond Energy ala-carte class artwork"
+      },
+      "chapters": [
+        "Chemical Energetics",
+        "Reaction Pathway Diagrams",
+        "Bond Energies"
+      ],
+      "description": "A focused energetics class for students who need energy-profile diagrams and bond-energy calculations to feel systematic.",
+      "whatStudentsWillDo": [
+        "Interpret and draw exothermic and endothermic reaction pathway diagrams",
+        "Use activation energy and enthalpy-change language accurately",
+        "Calculate enthalpy change from bond breaking and bond making"
+      ],
+      "additionalInstructionLabel": "Tell us if pathway diagrams or bond-energy calculations are hardest.",
+      "isActive": true,
+      "displayOrder": 6
+    },
+    {
+      "id": "igcse-chem-rates-equilibrium",
+      "categoryId": "igcse-chemistry",
+      "title": "Rates of Reaction and Equilibrium",
+      "subtitle": "Collision theory, rate experiments, reversible reactions, Haber and Contact processes",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-rates-equilibrium.webp",
+        "alt": "Rates of Reaction and Equilibrium ala-carte class artwork"
+      },
+      "chapters": [
+        "Rates of Reaction",
+        "Reversible Reactions",
+        "Equilibrium",
+        "Haber and Contact Processes"
+      ],
+      "description": "For students who need stronger explanations for rate graphs, collision theory and equilibrium conditions.",
+      "whatStudentsWillDo": [
+        "Explain rate changes using concentration, pressure, surface area, temperature and catalysts",
+        "Interpret rate experiment data and evaluate practical methods",
+        "Apply equilibrium ideas to the Haber process and Contact process conditions"
+      ],
+      "additionalInstructionLabel": "Any rate graph, collision theory or equilibrium process to focus on?",
+      "isActive": true,
+      "displayOrder": 7
+    },
+    {
+      "id": "igcse-chem-redox-oxidation-numbers",
+      "categoryId": "igcse-chemistry",
+      "title": "Redox and Oxidation Numbers",
+      "subtitle": "Oxidation, reduction, oxidising agents, reducing agents and colour tests",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-redox-oxidation-numbers.webp",
+        "alt": "Redox and Oxidation Numbers ala-carte class artwork"
+      },
+      "chapters": [
+        "Redox",
+        "Oxidation Numbers",
+        "Oxidising and Reducing Agents"
+      ],
+      "description": "A compact redox class for students who need to identify electron transfer and oxidation-number changes confidently.",
+      "whatStudentsWillDo": [
+        "Compare redox definitions using oxygen, electrons and oxidation number",
+        "Assign oxidation numbers in compounds and ions",
+        "Identify oxidising and reducing agents, including manganate(VII) and iodide colour changes"
+      ],
+      "additionalInstructionLabel": "Tell us if oxidation numbers or agent identification should take priority.",
+      "isActive": true,
+      "displayOrder": 8
+    },
+    {
+      "id": "igcse-chem-acids-bases-salts",
+      "categoryId": "igcse-chemistry",
+      "title": "Acids, Bases, Oxides and Salts",
+      "subtitle": "Acid-base reactions, pH, strong/weak acids, oxides, solubility and salt preparation",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-acids-bases-salts.webp",
+        "alt": "Acids, Bases, Oxides and Salts ala-carte class artwork"
+      },
+      "chapters": [
+        "Acids and Bases",
+        "Oxides",
+        "Salt Preparation",
+        "Solubility Rules"
+      ],
+      "description": "For students who need salt-preparation methods, acid-base definitions and solubility rules organised clearly.",
+      "whatStudentsWillDo": [
+        "Review acid, base, alkali, neutralisation and pH indicator questions",
+        "Compare acidic, basic and amphoteric oxides",
+        "Practise soluble and insoluble salt preparation with correct separation and purification steps"
+      ],
+      "additionalInstructionLabel": "Any acid-base, oxide, solubility or salt-preparation question to prioritise?",
+      "isActive": true,
+      "displayOrder": 9
+    },
+    {
+      "id": "igcse-chem-periodic-table-groups",
+      "categoryId": "igcse-chemistry",
+      "title": "Periodic Table Groups and Trends",
+      "subtitle": "Group I, Group VII, transition elements and noble gases",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-periodic-table-groups.webp",
+        "alt": "Periodic Table Groups and Trends ala-carte class artwork"
+      },
+      "chapters": [
+        "Periodic Table",
+        "Group I",
+        "Group VII",
+        "Transition Elements",
+        "Noble Gases"
+      ],
+      "description": "A trends-focused class for students who need to connect electronic structure with group properties.",
+      "whatStudentsWillDo": [
+        "Review periods, groups, metallic character and ion charges",
+        "Practise Group I and Group VII trends and halogen displacement reactions",
+        "Compare transition elements and noble gases using IGCSE keywords"
+      ],
+      "additionalInstructionLabel": "Tell us if group trends, halogens or transition elements should take priority.",
+      "isActive": true,
+      "displayOrder": 10
+    },
+    {
+      "id": "igcse-chem-metals-reactivity-extraction",
+      "categoryId": "igcse-chemistry",
+      "title": "Metals, Reactivity and Extraction",
+      "subtitle": "Metal properties, alloys, reactivity series, corrosion and extraction",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-metals-reactivity-extraction.webp",
+        "alt": "Metals, Reactivity and Extraction ala-carte class artwork"
+      },
+      "chapters": [
+        "Metals",
+        "Alloys",
+        "Reactivity Series",
+        "Corrosion",
+        "Extraction of Metals"
+      ],
+      "description": "For students who need one map connecting metal reactions, alloys, extraction and rust prevention.",
+      "whatStudentsWillDo": [
+        "Compare metal and non-metal properties and alloy structures",
+        "Use the reactivity series for displacement, reduction and extraction questions",
+        "Practise corrosion, barrier methods, sacrificial protection and aluminium extraction ideas"
+      ],
+      "additionalInstructionLabel": "Tell us if reactivity, alloys, corrosion or extraction should be prioritised.",
+      "isActive": true,
+      "displayOrder": 11
+    },
+    {
+      "id": "igcse-chem-water-air-environment",
+      "categoryId": "igcse-chemistry",
+      "title": "Water, Fertilisers, Air Quality and Climate",
+      "subtitle": "Water treatment, NPK fertilisers, air pollutants, greenhouse gases and climate change",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-water-air-environment.webp",
+        "alt": "Water, Fertilisers, Air Quality and Climate ala-carte class artwork"
+      },
+      "chapters": ["Water", "Fertilisers", "Air Quality", "Climate"],
+      "description": "A context-heavy class for students who need environmental chemistry answers to be precise and mark-scheme friendly.",
+      "whatStudentsWillDo": [
+        "Review water treatment, tests for water and water quality concerns",
+        "Practise fertiliser and NPK nutrient questions",
+        "Explain air pollutants, greenhouse gases and climate-change evidence using correct keywords"
+      ],
+      "additionalInstructionLabel": "Any water, fertiliser, pollutant or climate question to focus on?",
+      "isActive": true,
+      "displayOrder": 12
+    },
+    {
+      "id": "igcse-chem-organic-fuels-naming",
+      "categoryId": "igcse-chemistry",
+      "title": "Organic Formulae, Naming and Fuels",
+      "subtitle": "Homologous series, displayed formulae, petroleum fractions and cracking basics",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-organic-fuels-naming.webp",
+        "alt": "Organic Formulae, Naming and Fuels ala-carte class artwork"
+      },
+      "chapters": [
+        "Organic Formulae",
+        "Naming Organic Compounds",
+        "Fuels",
+        "Fractional Distillation"
+      ],
+      "description": "For students who need organic naming, formulae and petroleum fractions to feel less overwhelming.",
+      "whatStudentsWillDo": [
+        "Interpret displayed, structural, molecular and general formulae",
+        "Name and draw alkanes, alkenes, alcohols, carboxylic acids and esters up to the syllabus limits",
+        "Review fossil fuels, petroleum fractions and fraction trends"
+      ],
+      "additionalInstructionLabel": "Tell us if formulae, naming or petroleum fractions should take priority.",
+      "isActive": true,
+      "displayOrder": 13
+    },
+    {
+      "id": "igcse-chem-organic-reactions-polymers",
+      "categoryId": "igcse-chemistry",
+      "title": "Organic Reactions, Polymers and Macromolecules",
+      "subtitle": "Alkanes, alkenes, alcohols, carboxylic acids, esters and polymerisation",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-organic-reactions-polymers.webp",
+        "alt": "Organic Reactions, Polymers and Macromolecules ala-carte class artwork"
+      },
+      "chapters": [
+        "Alkanes",
+        "Alkenes",
+        "Alcohols",
+        "Carboxylic Acids",
+        "Polymers"
+      ],
+      "description": "A reaction-map class for students who need organic reactions, conditions and polymer questions structured clearly.",
+      "whatStudentsWillDo": [
+        "Compare combustion, substitution, cracking, addition and oxidation reactions",
+        "Practise alcohol, carboxylic acid and ester reaction pathways",
+        "Handle addition polymers, condensation polymers, PET, nylon and protein linkage questions"
+      ],
+      "additionalInstructionLabel": "Any organic family, reaction condition or polymer question to focus on?",
+      "isActive": true,
+      "displayOrder": 14
+    },
+    {
+      "id": "igcse-chem-experimental-analysis",
+      "categoryId": "igcse-chemistry",
+      "title": "Experimental Techniques and Chemical Analysis",
+      "subtitle": "Apparatus, titration, chromatography, separation, purification and ion/gas tests",
+      "level": "IGCSE",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-chem-experimental-analysis.webp",
+        "alt": "Experimental Techniques and Chemical Analysis ala-carte class artwork"
+      },
+      "chapters": [
+        "Experimental Design",
+        "Titration",
+        "Chromatography",
+        "Separation and Purification",
+        "Qualitative Analysis"
+      ],
+      "description": "A practical-skills class for students who need experimental methods and chemical analysis tables to become usable.",
+      "whatStudentsWillDo": [
+        "Review apparatus choices, variables and experimental method evaluation",
+        "Practise titration, chromatography, Rf values, separation and purity questions",
+        "Organise anion, cation, gas and flame tests into a clear observation-inference framework"
+      ],
+      "additionalInstructionLabel": "Tell us if titration, chromatography, separation or QA tests should take priority.",
+      "isActive": true,
+      "displayOrder": 15
+    },
+    {
+      "id": "igcse-physics-measurement-vectors",
+      "categoryId": "igcse-physics",
+      "title": "Measurement, Scalars and Vectors",
+      "subtitle": "Measuring length, time and volume plus scalar-vector resultants",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-measurement-vectors.webp",
+        "alt": "Measurement, Scalars and Vectors ala-carte class artwork"
+      },
+      "chapters": [
+        "Physical Quantities",
+        "Measurement Techniques",
+        "Scalars and Vectors"
+      ],
+      "description": "A starter class for students who lose marks on measurement methods, units and vector-resultant questions.",
+      "whatStudentsWillDo": [
+        "Review rulers, measuring cylinders, timers and repeated-measurement methods",
+        "Compare scalar and vector quantities using syllabus examples",
+        "Practise graphical and calculation methods for right-angle resultants"
+      ],
+      "additionalInstructionLabel": "Tell us if measurement techniques, units or vectors should take priority.",
       "isActive": true,
       "displayOrder": 1
+    },
+    {
+      "id": "igcse-physics-motion-graphs-free-fall",
+      "categoryId": "igcse-physics",
+      "title": "Motion Graphs and Free Fall",
+      "subtitle": "Speed, velocity, acceleration, distance-time graphs, speed-time graphs and terminal velocity",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-motion-graphs-free-fall.webp",
+        "alt": "Motion Graphs and Free Fall ala-carte class artwork"
+      },
+      "chapters": ["Motion", "Motion Graphs", "Acceleration", "Free Fall"],
+      "description": "For students who need a reliable method for motion graphs, gradients, areas and falling-body explanations.",
+      "whatStudentsWillDo": [
+        "Use speed, velocity, average speed and acceleration equations correctly",
+        "Practise gradient and area methods on distance-time and speed-time graphs",
+        "Explain free fall, air resistance and terminal velocity in a uniform gravitational field"
+      ],
+      "additionalInstructionLabel": "Any motion graph, free-fall or acceleration question to focus on?",
+      "isActive": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "igcse-physics-mass-weight-density-pressure",
+      "categoryId": "igcse-physics",
+      "title": "Mass, Weight, Density and Pressure",
+      "subtitle": "Gravitational field strength, density experiments, floating and pressure in fluids",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-mass-weight-density-pressure.webp",
+        "alt": "Mass, Weight, Density and Pressure ala-carte class artwork"
+      },
+      "chapters": ["Mass and Weight", "Density", "Pressure"],
+      "description": "A calculation-and-practical class for students who need better setup for density, weight and pressure questions.",
+      "whatStudentsWillDo": [
+        "Distinguish mass, weight and gravitational field strength",
+        "Practise density experiments for liquids, regular solids and irregular solids",
+        "Use pressure equations for solids and liquids, including pressure change with depth"
+      ],
+      "additionalInstructionLabel": "Tell us if density, floating, weight or pressure should take priority.",
+      "isActive": true,
+      "displayOrder": 3
+    },
+    {
+      "id": "igcse-physics-forces-springs-momentum",
+      "categoryId": "igcse-physics",
+      "title": "Forces, Springs and Momentum",
+      "subtitle": "Resultant force, friction, Hooke-style spring graphs, F = ma and conservation of momentum",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-forces-springs-momentum.webp",
+        "alt": "Forces, Springs and Momentum ala-carte class artwork"
+      },
+      "chapters": [
+        "Effects of Forces",
+        "Load-Extension Graphs",
+        "Newton’s Second Law",
+        "Momentum"
+      ],
+      "description": "For students who need force diagrams, spring graphs and momentum calculations to connect cleanly.",
+      "whatStudentsWillDo": [
+        "Interpret load-extension graphs, spring constant and limit of proportionality",
+        "Practise resultant force, F = ma, friction and circular-motion explanations",
+        "Use momentum conservation and resultant-force-as-rate-of-change ideas in exam questions"
+      ],
+      "additionalInstructionLabel": "Any force, spring, F = ma or momentum question to prioritise?",
+      "isActive": true,
+      "displayOrder": 4
+    },
+    {
+      "id": "igcse-physics-moments-centre-gravity",
+      "categoryId": "igcse-physics",
+      "title": "Moments, Equilibrium and Centre of Gravity",
+      "subtitle": "Turning effects, balancing, stability and centre-of-gravity experiments",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-moments-centre-gravity.webp",
+        "alt": "Moments, Equilibrium and Centre of Gravity ala-carte class artwork"
+      },
+      "chapters": [
+        "Turning Effect of Forces",
+        "Equilibrium",
+        "Centre of Gravity"
+      ],
+      "description": "A focused mechanics class for students who need moments and stability questions to feel structured.",
+      "whatStudentsWillDo": [
+        "Apply moment = force × perpendicular distance from pivot",
+        "Practise principle of moments questions with one or more forces each side",
+        "Explain equilibrium, centre of gravity and stability experiments"
+      ],
+      "additionalInstructionLabel": "Tell us if moments, equilibrium or centre of gravity is weakest.",
+      "isActive": true,
+      "displayOrder": 5
+    },
+    {
+      "id": "igcse-physics-energy-work-power-resources",
+      "categoryId": "igcse-physics",
+      "title": "Energy, Work, Power and Resources",
+      "subtitle": "Energy stores, transfers, kinetic/GPE calculations, work, power and energy resources",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-energy-work-power-resources.webp",
+        "alt": "Energy, Work, Power and Resources ala-carte class artwork"
+      },
+      "chapters": ["Energy", "Work", "Power", "Energy Resources"],
+      "description": "For students who can memorise energy formulae but need help choosing and explaining them in context.",
+      "whatStudentsWillDo": [
+        "Connect energy stores, transfers and conservation to practical scenarios",
+        "Practise kinetic energy, gravitational potential energy, work and power calculations",
+        "Compare renewable and non-renewable energy resources with advantage/disadvantage phrasing"
+      ],
+      "additionalInstructionLabel": "Any energy calculation, power question or resource comparison to focus on?",
+      "isActive": true,
+      "displayOrder": 6
+    },
+    {
+      "id": "igcse-physics-particle-model-gases",
+      "categoryId": "igcse-physics",
+      "title": "Particle Model and Gases",
+      "subtitle": "States of matter, Brownian motion, gas pressure and absolute temperature",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-particle-model-gases.webp",
+        "alt": "Particle Model and Gases ala-carte class artwork"
+      },
+      "chapters": [
+        "Kinetic Particle Model",
+        "Brownian Motion",
+        "Gas Pressure",
+        "Absolute Temperature"
+      ],
+      "description": "A concept class for students who need particle explanations for gases and pressure to become clearer.",
+      "whatStudentsWillDo": [
+        "Compare particle structures and motion in solids, liquids and gases",
+        "Explain Brownian motion and microscopic particle movement",
+        "Use Kelvin temperature and the pressure-volume relationship for fixed gas mass"
+      ],
+      "additionalInstructionLabel": "Tell us if particle model, Brownian motion or gas laws should take priority.",
+      "isActive": true,
+      "displayOrder": 7
+    },
+    {
+      "id": "igcse-physics-thermal-properties",
+      "categoryId": "igcse-physics",
+      "title": "Thermal Properties and Temperature",
+      "subtitle": "Thermal expansion, specific heat capacity, melting, boiling and evaporation",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-thermal-properties.webp",
+        "alt": "Thermal Properties and Temperature ala-carte class artwork"
+      },
+      "chapters": [
+        "Thermal Expansion",
+        "Specific Heat Capacity",
+        "Melting and Boiling",
+        "Evaporation"
+      ],
+      "description": "For students who need stronger explanations and calculations for thermal property questions.",
+      "whatStudentsWillDo": [
+        "Review expansion of solids, liquids and gases with everyday applications",
+        "Practise specific heat capacity experiments and calculations",
+        "Compare melting, boiling, evaporation and cooling in particle terms"
+      ],
+      "additionalInstructionLabel": "Any heat capacity, expansion, evaporation or phase-change question to prioritise?",
+      "isActive": true,
+      "displayOrder": 8
+    },
+    {
+      "id": "igcse-physics-thermal-transfer",
+      "categoryId": "igcse-physics",
+      "title": "Thermal Energy Transfer",
+      "subtitle": "Conduction, convection, radiation and everyday thermal applications",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-thermal-transfer.webp",
+        "alt": "Thermal Energy Transfer ala-carte class artwork"
+      },
+      "chapters": [
+        "Conduction",
+        "Convection",
+        "Radiation",
+        "Consequences of Thermal Energy Transfer"
+      ],
+      "description": "A practical explanations class for students who need full-mark heat-transfer answers.",
+      "whatStudentsWillDo": [
+        "Compare conduction, convection and radiation with experiments",
+        "Explain thermal conduction using particles and free electrons",
+        "Apply heat transfer ideas to buildings, cooling, insulation and Earth’s temperature balance"
+      ],
+      "additionalInstructionLabel": "Tell us if conduction, convection, radiation or applications should take priority.",
+      "isActive": true,
+      "displayOrder": 9
+    },
+    {
+      "id": "igcse-physics-wave-properties",
+      "categoryId": "igcse-physics",
+      "title": "General Wave Properties",
+      "subtitle": "Wave terms, transverse and longitudinal waves, reflection, refraction and diffraction",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-wave-properties.webp",
+        "alt": "General Wave Properties ala-carte class artwork"
+      },
+      "chapters": [
+        "General Wave Properties",
+        "Wave Speed",
+        "Reflection and Refraction",
+        "Diffraction"
+      ],
+      "description": "For students who need wave basics and wavefront behaviour separated from optics-ray questions.",
+      "whatStudentsWillDo": [
+        "Clarify amplitude, wavelength, frequency, period, speed and wavefronts",
+        "Compare transverse and longitudinal waves with correct diagrams",
+        "Practise reflection, refraction and diffraction explanations using wavelength and gap size"
+      ],
+      "additionalInstructionLabel": "Any wave term, diagram or diffraction question to focus on?",
+      "isActive": true,
+      "displayOrder": 10
+    },
+    {
+      "id": "igcse-physics-light-optics",
+      "categoryId": "igcse-physics",
+      "title": "Light, Lenses and Dispersion",
+      "subtitle": "Reflection, refraction, total internal reflection, thin lenses and visible spectrum",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-light-optics.webp",
+        "alt": "Light, Lenses and Dispersion ala-carte class artwork"
+      },
+      "chapters": [
+        "Reflection of Light",
+        "Refraction of Light",
+        "Thin Lenses",
+        "Dispersion"
+      ],
+      "description": "A ray-diagram class for students who need optics construction and image descriptions to become consistent.",
+      "whatStudentsWillDo": [
+        "Practise reflection, refraction, critical angle and total internal reflection questions",
+        "Draw converging and diverging lens ray diagrams for real and virtual images",
+        "Explain dispersion and the visible spectrum using frequency and wavelength ideas"
+      ],
+      "additionalInstructionLabel": "Tell us if refraction, lenses or dispersion should take priority.",
+      "isActive": true,
+      "displayOrder": 11
+    },
+    {
+      "id": "igcse-physics-em-spectrum-sound",
+      "categoryId": "igcse-physics",
+      "title": "Electromagnetic Spectrum, Communication and Sound",
+      "subtitle": "EM wave uses, hazards, digital signalling, sound waves and ultrasound",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-em-spectrum-sound.webp",
+        "alt": "Electromagnetic Spectrum, Communication and Sound ala-carte class artwork"
+      },
+      "chapters": [
+        "Electromagnetic Spectrum",
+        "Digital Communication",
+        "Sound",
+        "Ultrasound"
+      ],
+      "description": "For students who need EM-spectrum facts, communication ideas and sound-wave explanations organised clearly.",
+      "whatStudentsWillDo": [
+        "Review EM regions, uses, hazards and wave speed in vacuum",
+        "Compare analogue and digital signalling, sampling and noise",
+        "Practise sound production, echoes, pitch, loudness and ultrasound applications"
+      ],
+      "additionalInstructionLabel": "Any EM spectrum, communication or sound question to prioritise?",
+      "isActive": true,
+      "displayOrder": 12
+    },
+    {
+      "id": "igcse-physics-magnetism-static-electricity",
+      "categoryId": "igcse-physics",
+      "title": "Magnetism and Static Electricity",
+      "subtitle": "Magnetic fields, induced magnetism, electrostatic charging and electric fields",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-magnetism-static-electricity.webp",
+        "alt": "Magnetism and Static Electricity ala-carte class artwork"
+      },
+      "chapters": [
+        "Simple Magnetism",
+        "Magnetic Fields",
+        "Electric Charge",
+        "Electric Fields"
+      ],
+      "description": "A field-pattern class for students who mix up magnetic poles, electrostatic charge and field directions.",
+      "whatStudentsWillDo": [
+        "Draw and interpret magnetic field patterns around magnets",
+        "Compare temporary and permanent magnets plus magnetic materials",
+        "Explain charging by friction, conductors/insulators and simple electric field patterns"
+      ],
+      "additionalInstructionLabel": "Tell us if magnetic fields or static electricity should take priority.",
+      "isActive": true,
+      "displayOrder": 13
+    },
+    {
+      "id": "igcse-physics-electrical-quantities",
+      "categoryId": "igcse-physics",
+      "title": "Electrical Quantities, Resistance and Power",
+      "subtitle": "Charge, current, e.m.f., potential difference, resistance, I–V graphs and kWh",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-electrical-quantities.webp",
+        "alt": "Electrical Quantities, Resistance and Power ala-carte class artwork"
+      },
+      "chapters": [
+        "Electric Current",
+        "E.M.F. and Potential Difference",
+        "Resistance",
+        "Electrical Power"
+      ],
+      "description": "For students who need the core electricity quantities and equations to stop blending together.",
+      "whatStudentsWillDo": [
+        "Use charge-current-time, work-charge, resistance and power equations correctly",
+        "Practise ammeter and voltmeter setup with different ranges",
+        "Interpret I–V graphs for resistors, filament lamps and diodes plus kWh cost questions"
+      ],
+      "additionalInstructionLabel": "Any current, voltage, resistance, I–V graph or power question to focus on?",
+      "isActive": true,
+      "displayOrder": 14
+    },
+    {
+      "id": "igcse-physics-circuits-safety",
+      "categoryId": "igcse-physics",
+      "title": "Electric Circuits and Safety",
+      "subtitle": "Circuit symbols, series/parallel circuits, potential dividers and mains hazards",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-circuits-safety.webp",
+        "alt": "Electric Circuits and Safety ala-carte class artwork"
+      },
+      "chapters": [
+        "Circuit Diagrams",
+        "Series and Parallel Circuits",
+        "Potential Dividers",
+        "Electrical Safety"
+      ],
+      "description": "A circuit-building class for students who need series, parallel and safety questions to feel methodical.",
+      "whatStudentsWillDo": [
+        "Draw and interpret circuit diagrams with syllabus components",
+        "Practise current, potential difference and resistance rules for series and parallel circuits",
+        "Explain potential dividers, component actions, fuses, earthing and electrical hazards"
+      ],
+      "additionalInstructionLabel": "Tell us if series/parallel, potential dividers or safety should take priority.",
+      "isActive": true,
+      "displayOrder": 15
+    },
+    {
+      "id": "igcse-physics-electromagnetic-effects",
+      "categoryId": "igcse-physics",
+      "title": "Electromagnetic Effects, Motors and Transformers",
+      "subtitle": "Induction, generators, electromagnets, motor effect, d.c. motors and transformers",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-electromagnetic-effects.webp",
+        "alt": "Electromagnetic Effects, Motors and Transformers ala-carte class artwork"
+      },
+      "chapters": [
+        "Electromagnetic Induction",
+        "A.C. Generator",
+        "Magnetic Effect of Current",
+        "D.C. Motor",
+        "Transformer"
+      ],
+      "description": "For students who need the electromagnetic-effects chapter broken into clear cause-effect rules.",
+      "whatStudentsWillDo": [
+        "Explain electromagnetic induction and generator output using changing magnetic fields",
+        "Apply right-hand grip-style current-field ideas for coils and electromagnets",
+        "Practise motor-effect and transformer equations, power transmission and efficiency questions"
+      ],
+      "additionalInstructionLabel": "Any induction, generator, motor or transformer question to prioritise?",
+      "isActive": true,
+      "displayOrder": 16
+    },
+    {
+      "id": "igcse-physics-radioactivity-half-life",
+      "categoryId": "igcse-physics",
+      "title": "Nuclear Model, Radioactivity and Half-Life",
+      "subtitle": "Atomic nuclei, isotopes, alpha/beta/gamma, decay, half-life and safety",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-radioactivity-half-life.webp",
+        "alt": "Nuclear Model, Radioactivity and Half-Life ala-carte class artwork"
+      },
+      "chapters": [
+        "Nuclear Model of the Atom",
+        "Radioactivity",
+        "Nuclear Emissions",
+        "Half-Life",
+        "Safety Precautions"
+      ],
+      "description": "A dedicated nuclear physics class for students who need notation, decay and half-life to feel manageable.",
+      "whatStudentsWillDo": [
+        "Review nuclear structure, isotopes and proton/nucleon notation",
+        "Compare alpha, beta and gamma emissions using ionising and penetrating power",
+        "Practise decay equations, half-life graphs and safe-handling explanations"
+      ],
+      "additionalInstructionLabel": "Tell us if emissions, decay equations, half-life or safety should take priority.",
+      "isActive": true,
+      "displayOrder": 17
+    },
+    {
+      "id": "igcse-physics-space-physics",
+      "categoryId": "igcse-physics",
+      "title": "Earth, Stars and the Universe",
+      "subtitle": "Solar System, orbits, stars, galaxies, redshift and the Big Bang",
+      "level": "IGCSE",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/igcse-physics-space-physics.webp",
+        "alt": "Earth, Stars and the Universe ala-carte class artwork"
+      },
+      "chapters": [
+        "Earth and the Solar System",
+        "The Sun as a Star",
+        "Stars",
+        "The Universe"
+      ],
+      "description": "For students who need the newer IGCSE space physics ideas explained with clear diagrams and keywords.",
+      "whatStudentsWillDo": [
+        "Review Earth, Moon, planets, gravitational fields and circular orbits",
+        "Trace star formation, life cycles and supernova outcomes",
+        "Explain galaxies, redshift, Hubble’s law and Big Bang evidence at syllabus depth"
+      ],
+      "additionalInstructionLabel": "Any Solar System, star life cycle, redshift or Big Bang question to focus on?",
+      "isActive": true,
+      "displayOrder": 18
     }
   ]
 }

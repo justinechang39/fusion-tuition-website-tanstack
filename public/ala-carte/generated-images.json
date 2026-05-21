@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T03:00:41.141Z",
+  "generatedAt": "2026-05-21T03:30:14.227Z",
   "imageConfig": {
     "aspectRatio": "21:9",
     "imageSize": "2K",
@@ -235,6 +235,204 @@
       "promptHash": "bea76fbed26eebc2",
       "src": "/ala-carte/o-amath-calculus-kinematics.webp",
       "title": "Calculus Kinematics and Exam Synthesis"
+    },
+    {
+      "id": "igcse-chem-states-diffusion",
+      "promptHash": "f4802a64b52add57",
+      "src": "/ala-carte/igcse-chem-states-diffusion.webp",
+      "title": "States of Matter and Diffusion"
+    },
+    {
+      "id": "igcse-chem-atomic-structure-isotopes",
+      "promptHash": "a491bca06a27adef",
+      "src": "/ala-carte/igcse-chem-atomic-structure-isotopes.webp",
+      "title": "Atomic Structure, Isotopes and Periodic Table Basics"
+    },
+    {
+      "id": "igcse-chem-bonding-structures",
+      "promptHash": "cb3b512f9bc8c550",
+      "src": "/ala-carte/igcse-chem-bonding-structures.webp",
+      "title": "Bonding, Structures and Properties"
+    },
+    {
+      "id": "igcse-chem-formulae-stoichiometry",
+      "promptHash": "fed0802d99b7128a",
+      "src": "/ala-carte/igcse-chem-formulae-stoichiometry.webp",
+      "title": "Formulae, Equations and Stoichiometry"
+    },
+    {
+      "id": "igcse-chem-electrolysis-fuel-cells",
+      "promptHash": "d21c6b6229aab2e1",
+      "src": "/ala-carte/igcse-chem-electrolysis-fuel-cells.webp",
+      "title": "Electrolysis and Fuel Cells"
+    },
+    {
+      "id": "igcse-chem-energetics",
+      "promptHash": "327e29ebe29a05d1",
+      "src": "/ala-carte/igcse-chem-energetics.webp",
+      "title": "Chemical Energetics and Bond Energy"
+    },
+    {
+      "id": "igcse-chem-rates-equilibrium",
+      "promptHash": "511763585b217938",
+      "src": "/ala-carte/igcse-chem-rates-equilibrium.webp",
+      "title": "Rates of Reaction and Equilibrium"
+    },
+    {
+      "id": "igcse-chem-redox-oxidation-numbers",
+      "promptHash": "d0e26d9ace842289",
+      "src": "/ala-carte/igcse-chem-redox-oxidation-numbers.webp",
+      "title": "Redox and Oxidation Numbers"
+    },
+    {
+      "id": "igcse-chem-acids-bases-salts",
+      "promptHash": "98fc70bc916a78f7",
+      "src": "/ala-carte/igcse-chem-acids-bases-salts.webp",
+      "title": "Acids, Bases, Oxides and Salts"
+    },
+    {
+      "id": "igcse-chem-periodic-table-groups",
+      "promptHash": "09c32e9278368126",
+      "src": "/ala-carte/igcse-chem-periodic-table-groups.webp",
+      "title": "Periodic Table Groups and Trends"
+    },
+    {
+      "id": "igcse-chem-metals-reactivity-extraction",
+      "promptHash": "be3d4fe1bcd8be3d",
+      "src": "/ala-carte/igcse-chem-metals-reactivity-extraction.webp",
+      "title": "Metals, Reactivity and Extraction"
+    },
+    {
+      "id": "igcse-chem-water-air-environment",
+      "promptHash": "37a7ea484be7229b",
+      "src": "/ala-carte/igcse-chem-water-air-environment.webp",
+      "title": "Water, Fertilisers, Air Quality and Climate"
+    },
+    {
+      "id": "igcse-chem-organic-fuels-naming",
+      "promptHash": "1688c5de382f6d59",
+      "src": "/ala-carte/igcse-chem-organic-fuels-naming.webp",
+      "title": "Organic Formulae, Naming and Fuels"
+    },
+    {
+      "id": "igcse-chem-organic-reactions-polymers",
+      "promptHash": "5c77e650fbdec32a",
+      "src": "/ala-carte/igcse-chem-organic-reactions-polymers.webp",
+      "title": "Organic Reactions, Polymers and Macromolecules"
+    },
+    {
+      "id": "igcse-chem-experimental-analysis",
+      "promptHash": "7586edb49740c13e",
+      "src": "/ala-carte/igcse-chem-experimental-analysis.webp",
+      "title": "Experimental Techniques and Chemical Analysis"
+    },
+    {
+      "id": "igcse-physics-measurement-vectors",
+      "promptHash": "023d1e2819b9618e",
+      "src": "/ala-carte/igcse-physics-measurement-vectors.webp",
+      "title": "Measurement, Scalars and Vectors"
+    },
+    {
+      "id": "igcse-physics-motion-graphs-free-fall",
+      "promptHash": "566d4342966958d6",
+      "src": "/ala-carte/igcse-physics-motion-graphs-free-fall.webp",
+      "title": "Motion Graphs and Free Fall"
+    },
+    {
+      "id": "igcse-physics-mass-weight-density-pressure",
+      "promptHash": "952683abfc6e9ae8",
+      "src": "/ala-carte/igcse-physics-mass-weight-density-pressure.webp",
+      "title": "Mass, Weight, Density and Pressure"
+    },
+    {
+      "id": "igcse-physics-forces-springs-momentum",
+      "promptHash": "3d09c9052f79440c",
+      "src": "/ala-carte/igcse-physics-forces-springs-momentum.webp",
+      "title": "Forces, Springs and Momentum"
+    },
+    {
+      "id": "igcse-physics-moments-centre-gravity",
+      "promptHash": "f2924d9b1b5d3d64",
+      "src": "/ala-carte/igcse-physics-moments-centre-gravity.webp",
+      "title": "Moments, Equilibrium and Centre of Gravity"
+    },
+    {
+      "id": "igcse-physics-energy-work-power-resources",
+      "promptHash": "51c449cf4db6ffb0",
+      "src": "/ala-carte/igcse-physics-energy-work-power-resources.webp",
+      "title": "Energy, Work, Power and Resources"
+    },
+    {
+      "id": "igcse-physics-particle-model-gases",
+      "promptHash": "e3a2bd15aa0f4521",
+      "src": "/ala-carte/igcse-physics-particle-model-gases.webp",
+      "title": "Particle Model and Gases"
+    },
+    {
+      "id": "igcse-physics-thermal-properties",
+      "promptHash": "e6d71d8fe694edbb",
+      "src": "/ala-carte/igcse-physics-thermal-properties.webp",
+      "title": "Thermal Properties and Temperature"
+    },
+    {
+      "id": "igcse-physics-thermal-transfer",
+      "promptHash": "49619ed63f2caa62",
+      "src": "/ala-carte/igcse-physics-thermal-transfer.webp",
+      "title": "Thermal Energy Transfer"
+    },
+    {
+      "id": "igcse-physics-wave-properties",
+      "promptHash": "6534f44c9dcecb0b",
+      "src": "/ala-carte/igcse-physics-wave-properties.webp",
+      "title": "General Wave Properties"
+    },
+    {
+      "id": "igcse-physics-light-optics",
+      "promptHash": "40f32eacad3ed27c",
+      "src": "/ala-carte/igcse-physics-light-optics.webp",
+      "title": "Light, Lenses and Dispersion"
+    },
+    {
+      "id": "igcse-physics-em-spectrum-sound",
+      "promptHash": "c132623d677053b7",
+      "src": "/ala-carte/igcse-physics-em-spectrum-sound.webp",
+      "title": "Electromagnetic Spectrum, Communication and Sound"
+    },
+    {
+      "id": "igcse-physics-magnetism-static-electricity",
+      "promptHash": "e379a07a860f35a3",
+      "src": "/ala-carte/igcse-physics-magnetism-static-electricity.webp",
+      "title": "Magnetism and Static Electricity"
+    },
+    {
+      "id": "igcse-physics-electrical-quantities",
+      "promptHash": "7c43ce9bc8bf7f5d",
+      "src": "/ala-carte/igcse-physics-electrical-quantities.webp",
+      "title": "Electrical Quantities, Resistance and Power"
+    },
+    {
+      "id": "igcse-physics-circuits-safety",
+      "promptHash": "66220bd5131725ac",
+      "src": "/ala-carte/igcse-physics-circuits-safety.webp",
+      "title": "Electric Circuits and Safety"
+    },
+    {
+      "id": "igcse-physics-electromagnetic-effects",
+      "promptHash": "62a6031d600853a0",
+      "src": "/ala-carte/igcse-physics-electromagnetic-effects.webp",
+      "title": "Electromagnetic Effects, Motors and Transformers"
+    },
+    {
+      "id": "igcse-physics-radioactivity-half-life",
+      "promptHash": "9783c6efb355ede9",
+      "src": "/ala-carte/igcse-physics-radioactivity-half-life.webp",
+      "title": "Nuclear Model, Radioactivity and Half-Life"
+    },
+    {
+      "id": "igcse-physics-space-physics",
+      "promptHash": "d9b67266cdfa0d52",
+      "src": "/ala-carte/igcse-physics-space-physics.webp",
+      "title": "Earth, Stars and the Universe"
     }
   ],
   "serviceTier": "standard"

@@ -1,5 +1,5 @@
 {
-  "filePurpose": "Detailed image-generation prompts for Fusion Tuition O Level ala-carte class banners. These prompts mirror the current Singapore-Cambridge O Level 6091 Physics, 6092 Chemistry and 4049 Additional Mathematics content structures while grouping topics into 3-hour-friendly classes.",
+  "filePurpose": "Detailed image-generation prompts for Fusion Tuition O Level and IGCSE ala-carte class banners. These prompts mirror the current Singapore-Cambridge O Level 6091 Physics, 6092 Chemistry and 4049 Additional Mathematics structures plus Cambridge IGCSE 0625 Physics and 0620 Chemistry content, grouped into 3-hour-friendly classes.",
   "recommendedSettings": {
     "aspectRatio": "1916:821 or 21:9",
     "dimensions": "1916x821",
@@ -274,6 +274,237 @@
       "subject": "Additional Mathematics",
       "title": "Calculus Kinematics and Exam Synthesis",
       "prompt": "Create a wide cinematic hero banner, 1916×821, for a Singapore O Level Additional Mathematics ala-carte class titled “Calculus Kinematics and Exam Synthesis”.\n\nThe banner should match Fusion Tuition’s premium dark academic aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, precise 3D mathematical objects, elegant holographic curves, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: an abstract particle moving along a luminous track while three stacked motion graphs flow behind it, showing displacement, velocity and acceleration as related unreadable curves, with differentiation and integration arrows linking the layers.\n\nMake the topic feel specific, rigorous, and exam-focused for Singapore-Cambridge O Level Additional Mathematics students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formula structures, algebra tiles or coordinate geometry, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-states-diffusion",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "States of Matter and Diffusion",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “States of Matter and Diffusion”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: solid liquid and gas particle chambers, heating and cooling curve silhouettes, diffusion trails between gas jars and pressure-temperature particle motion cues in a dark premium chemistry space.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-atomic-structure-isotopes",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Atomic Structure, Isotopes and Periodic Table Basics",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Atomic Structure, Isotopes and Periodic Table Basics”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: a refined atomic nucleus with electron shells, isotope mass-balance tiles, periodic-table silhouettes and ion formation particles, all as decorative unreadable holograms.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-bonding-structures",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Bonding, Structures and Properties",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Bonding, Structures and Properties”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: ionic lattice, covalent molecule, giant covalent crystal and metallic lattice transforming into property icons for conductivity and melting point, no readable labels.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-formulae-stoichiometry",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Formulae, Equations and Stoichiometry",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE Chemistry class about formulae, equations and stoichiometric calculations. Do not include any title or written label.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: a stoichiometry workstation with balance, volumetric flask, gas syringe, titration flask, mole-particle streams, ratio pathways, solution-concentration glassware and yield/purity calculation motifs shown only as abstract unreadable glyphs.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors only. Absolutely no letters, no numbers, no title overlay, no subject name, no website address, no readable formulas, no logos, no watermark, no typography."
+    },
+    {
+      "id": "igcse-chem-electrolysis-fuel-cells",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Electrolysis and Fuel Cells",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Electrolysis and Fuel Cells”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: electrolysis cells with electrodes, ion migration, bubbles, copper plating and a sleek hydrogen fuel-cell stack connected by amber electron-flow arcs.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-energetics",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Chemical Energetics and Bond Energy",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE Chemistry class about reaction energy changes. Do not include any title or written label.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: exothermic and endothermic reaction pathway curves rising from glowing flasks, activation-energy barriers, bond-breaking and bond-making particle links, heat shimmer and calorimetry cues.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors only. Absolutely no letters, no numbers, no title overlay, no subject name, no website address, no readable formulas, no logos, no watermark, no typography."
+    },
+    {
+      "id": "igcse-chem-rates-equilibrium",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Rates of Reaction and Equilibrium",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Rates of Reaction and Equilibrium”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: fast particle collisions around a catalyst surface, rate graph silhouettes, reversible reaction arrows and industrial reactor shapes for Haber and Contact processes.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-redox-oxidation-numbers",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Redox and Oxidation Numbers",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Redox and Oxidation Numbers”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: electron-transfer arcs between metal ions, oxidation-state ladder motifs, manganate and iodide colour-change glows and oxidising/reducing agent pathways.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-acids-bases-salts",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Acids, Bases, Oxides and Salts",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Acids, Bases, Oxides and Salts”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: acid and alkali glassware meeting in neutralisation bubbles, pH-gradient ribbon, salt crystals, precipitation cloud and titration setup in dark amber-teal light.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-periodic-table-groups",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Periodic Table Groups and Trends",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Periodic Table Groups and Trends”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: periodic-table tile silhouettes, Group I metal drops, Group VII halogen glow, transition-metal crystals and noble-gas halos arranged as a futuristic chemistry map.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-metals-reactivity-extraction",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Metals, Reactivity and Extraction",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Metals, Reactivity and Extraction”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: reactivity-series metal strips, alloy lattice layers, corrosion and sacrificial protection motifs, blast-furnace and electrolysis extraction silhouettes.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-water-air-environment",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Water, Fertilisers, Air Quality and Climate",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Water, Fertilisers, Air Quality and Climate”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: water-treatment layers, ion-test droplets, fertiliser granules, air pollutant particles, greenhouse gas atmosphere and climate arrows over an abstract city.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-organic-fuels-naming",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Organic Formulae, Naming and Fuels",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Organic Formulae, Naming and Fuels”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: hydrocarbon chains flowing through a fractional distillation column, homologous-series molecular models, fuel fraction droplets and naming-card silhouettes without readable text.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-organic-reactions-polymers",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Organic Reactions, Polymers and Macromolecules",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Organic Reactions, Polymers and Macromolecules”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: alkane and alkene reaction pathways, alcohol and carboxylic acid molecules, ester glow, addition and condensation polymer strands, PET and nylon-like repeat patterns.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-chem-experimental-analysis",
+      "categoryId": "igcse-chemistry",
+      "subject": "Chemistry",
+      "title": "Experimental Techniques and Chemical Analysis",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0620 Chemistry ala-carte class about “Experimental Techniques and Chemical Analysis”.\n\nThe banner should match Fusion Tuition’s premium dark chemistry-lab educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: premium practical bench with burette, pipette, chromatography paper, filtration funnel, distillation glassware, flame-test glows and qualitative-analysis test tubes.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-measurement-vectors",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Measurement, Scalars and Vectors",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Measurement, Scalars and Vectors”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: vernier calipers, measuring cylinder, digital timer, ruler edge, pendulum period trails and right-angle vector resultants floating over a dark graph grid.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-motion-graphs-free-fall",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Motion Graphs and Free Fall",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Motion Graphs and Free Fall”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: a moving object with motion trails, distance-time and speed-time graph shapes, shaded area under a graph, acceleration vectors and terminal-velocity airflow.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-mass-weight-density-pressure",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Mass, Weight, Density and Pressure",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Mass, Weight, Density and Pressure”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: balance scale, density displacement cylinder, floating and sinking objects, gravitational field arrows and pressure-depth liquid column in one precise mechanics display.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-forces-springs-momentum",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Forces, Springs and Momentum",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Forces, Springs and Momentum”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: force arrows on a cart, load-extension spring graph, friction texture, circular-motion path and colliding momentum blocks with no readable numbers.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-moments-centre-gravity",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Moments, Equilibrium and Centre of Gravity",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Moments, Equilibrium and Centre of Gravity”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: a balanced beam on a pivot, moment arrows, centre-of-gravity plumb-line lamina, stability base shapes and equilibrium geometry glowing in amber and teal.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-energy-work-power-resources",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Energy, Work, Power and Resources",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Energy, Work, Power and Resources”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: energy-store icons flowing through ramp, pulley and turbine forms, kinetic and gravitational energy trails, power transfer lines and renewable resource silhouettes.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-particle-model-gases",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Particle Model and Gases",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Particle Model and Gases”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: solid liquid gas particle chambers, Brownian-motion specks, piston gas-pressure vessel, kelvin temperature dial and pressure-volume curve silhouette.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-thermal-properties",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Thermal Properties and Temperature",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Thermal Properties and Temperature”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: thermal expansion rods, thermometer glow, specific-heat calorimeter, melting and boiling phase-change plateau and evaporative cooling mist.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-thermal-transfer",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Thermal Energy Transfer",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Thermal Energy Transfer”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: conduction along a metal rod, convection currents in liquid, infrared radiation beams and insulation layers around a model building.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-wave-properties",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "General Wave Properties",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “General Wave Properties”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: transverse and longitudinal waves, wavefront reflection and refraction, diffraction through gaps and wavelength-amplitude markers as abstract unreadable geometry.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-light-optics",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Light, Lenses and Dispersion",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Light, Lenses and Dispersion”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: mirror reflection rays, glass-block refraction, total internal reflection fibre, converging and diverging lens ray diagrams and prism dispersion spectrum.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-em-spectrum-sound",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Electromagnetic Spectrum, Communication and Sound",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Electromagnetic Spectrum, Communication and Sound”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: electromagnetic spectrum ribbon, satellite communication pulses, digital sampling blocks, vibrating speaker wavefronts, echo arcs and ultrasound scan-like abstract shapes.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-magnetism-static-electricity",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Magnetism and Static Electricity",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Magnetism and Static Electricity”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: bar magnets with field lines, compass traces, charged spheres, electric field lines and conductor-insulator particle pathways in a dark field display.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-electrical-quantities",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Electrical Quantities, Resistance and Power",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Electrical Quantities, Resistance and Power”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: charge particles flowing through a conductor, ammeter and voltmeter dials, resistor and filament-lamp I-V curve holograms, power and kWh energy paths.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-circuits-safety",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Electric Circuits and Safety",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE Physics class about electric circuits and electrical safety. Do not include any title or written label.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: clean series and parallel circuit branches with battery, switch, lamp, resistors, fuse, relay, earth wire, potential divider and safety-insulation motifs, all rendered as glowing components and abstract circuit paths without symbols or labels.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors only. Absolutely no letters, no numbers, no title overlay, no subject name, no website address, no placeholder logo, no readable circuit labels, no logos, no watermark, no typography."
+    },
+    {
+      "id": "igcse-physics-electromagnetic-effects",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Electromagnetic Effects, Motors and Transformers",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Electromagnetic Effects, Motors and Transformers”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: magnet moving through a coil, induced current sparks, a.c. generator loop, electromagnet solenoid, motor coil and transformer core in one cinematic display.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-radioactivity-half-life",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Nuclear Model, Radioactivity and Half-Life",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Nuclear Model, Radioactivity and Half-Life”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: nuclear atom model, alpha beta gamma particle trails, detector clicks as abstract pulses, decay curve silhouette, half-life sequence and shielding layers.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "id": "igcse-physics-space-physics",
+      "categoryId": "igcse-physics",
+      "subject": "Physics",
+      "title": "Earth, Stars and the Universe",
+      "prompt": "Create a wide cinematic hero banner, 1916×821, for a Cambridge IGCSE 0625 Physics ala-carte class about “Earth, Stars and the Universe”.\n\nThe banner should match Fusion Tuition’s premium dark physics educational aesthetic: deep navy-black background, warm orange-gold glow, subtle teal accents, high contrast, soft bloom, realistic 3D scientific objects, elegant holographic diagrams, and atmospheric depth. Keep the left and lower-left area darker and calmer for website text overlay.\n\nMain visual direction: Earth-Moon orbit, solar-system arcs, star lifecycle nebula, galaxy redshift streaks and expanding-universe grid in a premium dark astronomical physics banner.\n\nMake the topic feel specific, rigorous, and exam-focused for Cambridge IGCSE Core and Extended students. Use visual metaphors that communicate the syllabus ideas clearly without relying on words. Holographic marks may suggest graphs, formulas, apparatus diagrams, particles or fields, but they must remain decorative and unreadable. No people, no readable text, no logos, no watermark."
     }
   ]
 }
