@@ -135,7 +135,7 @@ function AlaCarteCategoryPage() {
         openCart={() => order.setIsCartOpen(true)}
       />
 
-      <section className="relative mx-auto max-w-5xl px-4 pb-8 pt-10 sm:px-6 md:pb-12 md:pt-16 lg:px-8">
+      <section className="relative mx-auto max-w-5xl px-0 pb-8 pt-0 sm:px-6 sm:pt-6 md:pb-12 md:pt-14 lg:px-8">
         <motion.div
           variants={{
             hidden: { opacity: 0 },
@@ -149,94 +149,82 @@ function AlaCarteCategoryPage() {
           }}
           initial="hidden"
           animate="visible"
-          className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] items-center text-center sm:text-left"
+          className="relative min-h-[330px] overflow-hidden border-b-2 border-slate-950 bg-slate-950 sm:min-h-[430px] sm:rounded-[2rem] sm:border-2 sm:shadow-[8px_8px_0px_#020617] md:min-h-[520px]"
         >
-          {/* Left side: Metadata & Title */}
-          <div>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { type: 'spring', stiffness: 100 },
-                },
-              }}
-            >
-              <Badge className="mb-4 bg-orange-100 border border-orange-200 text-orange-700 hover:bg-orange-100 text-xs font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-sm">
-                {category.level}
-              </Badge>
-            </motion.div>
+          <img
+            src={category.image.src}
+            alt={category.image.alt}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/58 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(249,115,22,0.34),transparent_34%),radial-gradient(circle_at_18%_84%,rgba(20,184,166,0.24),transparent_34%)]" />
+          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-10 lg:p-12">
+            <div className="max-w-3xl text-left">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { type: 'spring', stiffness: 100 },
+                  },
+                }}
+              >
+                <Badge className="mb-3 rounded-full border border-white/20 bg-white/90 px-3.5 py-1.5 text-xs font-black uppercase tracking-widest text-orange-700 shadow-sm hover:bg-white sm:mb-4">
+                  {category.level}
+                </Badge>
+              </motion.div>
 
-            <motion.h1
-              variants={{
-                hidden: { opacity: 0, y: 24, filter: 'blur(4px)' },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  filter: 'blur(0px)',
-                  transition: { type: 'spring', stiffness: 80, damping: 12 },
-                },
-              }}
-              className="text-5xl font-black leading-[0.9] tracking-[-0.05em] text-slate-950 sm:text-7xl md:text-8xl"
-            >
-              {category.label}
-            </motion.h1>
+              <motion.h1
+                variants={{
+                  hidden: { opacity: 0, y: 24, filter: 'blur(4px)' },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    filter: 'blur(0px)',
+                    transition: {
+                      type: 'spring',
+                      stiffness: 80,
+                      damping: 12,
+                    },
+                  },
+                }}
+                className="max-w-2xl text-4xl font-black leading-[0.9] tracking-[-0.05em] text-white drop-shadow-[0_4px_26px_rgba(0,0,0,0.55)] sm:text-6xl md:text-7xl lg:text-8xl"
+              >
+                {category.label}
+              </motion.h1>
 
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="mt-4 text-base sm:text-lg font-semibold leading-relaxed text-slate-700 max-w-xl"
-            >
-              {category.description}
-            </motion.p>
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                className="mt-3 max-w-xl text-sm font-bold leading-6 text-orange-50 drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)] sm:mt-4 sm:text-lg sm:leading-8"
+              >
+                {category.description}
+              </motion.p>
 
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="mt-6 flex flex-wrap justify-center sm:justify-start gap-2 text-xs font-black uppercase tracking-[0.14em] text-slate-600"
-            >
-              <span className="rounded-full border border-slate-950/10 bg-white/50 px-3.5 py-1.5 shadow-sm backdrop-blur-sm">
-                June holidays
-              </span>
-              <span className="rounded-full border border-slate-950/10 bg-white/50 px-3.5 py-1.5 shadow-sm backdrop-blur-sm">
-                Small group
-              </span>
-              <span className="rounded-full border border-slate-950/10 bg-white/50 px-3.5 py-1.5 shadow-sm backdrop-blur-sm">
-                {categoryItems.length} class
-                {categoryItems.length === 1 ? '' : 'es'}
-              </span>
-            </motion.div>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                className="mt-4 flex flex-wrap gap-2 text-[10px] font-black uppercase tracking-[0.14em] text-white sm:mt-6 sm:text-xs"
+              >
+                <span className="rounded-full border border-white/20 bg-white/15 px-3 py-1.5 shadow-sm backdrop-blur-md">
+                  June holidays
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/15 px-3 py-1.5 shadow-sm backdrop-blur-md">
+                  Small group
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/15 px-3 py-1.5 shadow-sm backdrop-blur-md">
+                  {categoryItems.length} class
+                  {categoryItems.length === 1 ? '' : 'es'}
+                </span>
+              </motion.div>
+            </div>
           </div>
-
-          {/* Right side: Artwork rounded card */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, scale: 0.85, filter: 'blur(12px)' },
-              visible: {
-                opacity: 1,
-                scale: 1,
-                filter: 'blur(0px)',
-                transition: {
-                  type: 'spring',
-                  stiffness: 60,
-                  damping: 14,
-                  duration: 1.2,
-                },
-              },
-            }}
-            className="relative group mx-auto max-w-sm md:max-w-none w-full aspect-square sm:aspect-[4/3] md:aspect-square overflow-hidden rounded-[2.5rem] border-2 border-slate-950 bg-white shadow-[8px_8px_0px_#020617] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_#020617] transition-all duration-300 select-none"
-          >
-            <img
-              src={category.image.src}
-              alt={category.image.alt}
-              className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-            />
-          </motion.div>
         </motion.div>
       </section>
 
@@ -419,8 +407,7 @@ function AlaCarteCategoryPage() {
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute left-4 top-4 rounded-full bg-slate-950/90 px-3 py-1 text-xs font-black text-white border border-white/20 shadow-sm backdrop-blur-sm">
-                          {formatDuration(item.durationMinutes)} · ≤{' '}
-                          {item.maxClassSize} students
+                          {formatDuration(item.durationMinutes)} · ≤ 5 students
                         </div>
 
                         {/* High-end absolute Selection badge */}

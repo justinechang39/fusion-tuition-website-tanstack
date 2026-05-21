@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T08:03:53.790Z",
+  "generatedAt": "2026-05-21T03:00:41.141Z",
   "imageConfig": {
     "aspectRatio": "21:9",
     "imageSize": "2K",
@@ -9,100 +9,232 @@
   "promptFile": "scripts/ala-carte-image-prompts.json",
   "results": [
     {
-      "id": "o-chem-mole-concept",
-      "promptHash": "8e64468693a923d7",
-      "src": "/ala-carte/o-chem-mole-concept.webp",
-      "title": "Mole Concept and Chemical Calculations"
+      "id": "o-chem-experimental-chemistry",
+      "promptHash": "a73d74d139e31f46",
+      "src": "/ala-carte/o-chem-experimental-chemistry.webp",
+      "title": "Experimental Chemistry and Separation"
+    },
+    {
+      "id": "o-chem-particles-atomic-structure",
+      "promptHash": "d0d02a5bbcf9300b",
+      "src": "/ala-carte/o-chem-particles-atomic-structure.webp",
+      "title": "Particles, Atomic Structure and Kinetic Theory"
     },
     {
       "id": "o-chem-atomic-bonding-periodic-table",
-      "promptHash": "18bbc4d5fdc2331b",
+      "promptHash": "b84152f460532b2b",
       "src": "/ala-carte/o-chem-atomic-bonding-periodic-table.webp",
-      "title": "Atomic Structure, Bonding and Periodic Table"
+      "title": "Bonding, Structure and Properties"
     },
     {
-      "id": "o-chem-equations-reactions",
-      "promptHash": "d2936e23479e18ef",
-      "src": "/ala-carte/o-chem-equations-reactions.webp",
-      "title": "Chemical Reactions and Equation Writing"
+      "id": "o-chem-mole-concept",
+      "promptHash": "41b8aec81ce7ef01",
+      "src": "/ala-carte/o-chem-mole-concept.webp",
+      "title": "Formulae, Mole Concept and Calculations"
     },
     {
       "id": "o-chem-acids-bases-salts",
-      "promptHash": "16ecda1221b5f2e2",
+      "promptHash": "994269b4e80865c8",
       "src": "/ala-carte/o-chem-acids-bases-salts.webp",
-      "title": "Acids, Bases and Salts"
+      "title": "Acid-Base Chemistry and Salts"
     },
     {
       "id": "o-chem-qualitative-analysis",
-      "promptHash": "b30ce591ce4f0774",
+      "promptHash": "df9117a0db1a729b",
       "src": "/ala-carte/o-chem-qualitative-analysis.webp",
       "title": "Qualitative Analysis and Practical Skills"
     },
     {
-      "id": "o-chem-metals-reactivity-redox",
-      "promptHash": "647e24d371a03be5",
-      "src": "/ala-carte/o-chem-metals-reactivity-redox.webp",
-      "title": "Metals, Reactivity and Redox"
-    },
-    {
       "id": "o-chem-electrolysis",
-      "promptHash": "344b35b2d5a5cb90",
+      "promptHash": "1dba0271bfe18c25",
       "src": "/ala-carte/o-chem-electrolysis.webp",
-      "title": "Electrolysis Made Clear"
+      "title": "Redox and Electrochemistry"
     },
     {
-      "id": "o-chem-energy-rate-organic",
-      "promptHash": "d40a11bf56dfb2a8",
-      "src": "/ala-carte/o-chem-energy-rate-organic.webp",
-      "title": "Energy, Rate and Organic Chemistry Booster"
+      "id": "o-chem-metals-reactivity-redox",
+      "promptHash": "05bbbba8c5aad8b1",
+      "src": "/ala-carte/o-chem-metals-reactivity-redox.webp",
+      "title": "Periodic Table and Reactivity Series"
+    },
+    {
+      "id": "o-chem-energetics-rate-reactions",
+      "promptHash": "0f1fba3d535bb280",
+      "src": "/ala-carte/o-chem-energetics-rate-reactions.webp",
+      "title": "Energetics and Rate of Reactions"
+    },
+    {
+      "id": "o-chem-organic-chemistry",
+      "promptHash": "41790a3f3fbdd2db",
+      "src": "/ala-carte/o-chem-organic-chemistry.webp",
+      "title": "Organic Chemistry, Fuels and Polymers"
+    },
+    {
+      "id": "o-chem-air-quality",
+      "promptHash": "72e128e2fafe72b0",
+      "src": "/ala-carte/o-chem-air-quality.webp",
+      "title": "Maintaining Air Quality and Sustainability"
     },
     {
       "id": "o-physics-measurement-graph-skills",
-      "promptHash": "3c545d224d182253",
+      "promptHash": "bb8ebb3879cca245",
       "src": "/ala-carte/o-physics-measurement-graph-skills.webp",
       "title": "Measurement, Units and Graph Skills"
     },
     {
       "id": "o-physics-kinematics-motion-graphs",
-      "promptHash": "aad619ea0460dfe4",
+      "promptHash": "fd9dd8aa1901f24c",
       "src": "/ala-carte/o-physics-kinematics-motion-graphs.webp",
       "title": "Kinematics and Motion Graphs"
     },
     {
       "id": "o-physics-dynamics-forces",
-      "promptHash": "41b62d3645a13740",
+      "promptHash": "dc1b3bd0af46c017",
       "src": "/ala-carte/o-physics-dynamics-forces.webp",
-      "title": "Dynamics and Forces"
+      "title": "Dynamics and Newton’s Laws"
     },
     {
-      "id": "o-physics-moments-pressure-energy",
-      "promptHash": "2e1b39845bb3fefd",
-      "src": "/ala-carte/o-physics-moments-pressure-energy.webp",
-      "title": "Moments, Pressure and Energy"
+      "id": "o-physics-moments-pressure",
+      "promptHash": "bc276230145e09a9",
+      "src": "/ala-carte/o-physics-moments-pressure.webp",
+      "title": "Moments, Equilibrium and Pressure"
+    },
+    {
+      "id": "o-physics-energy-work-power",
+      "promptHash": "5902cde107c92585",
+      "src": "/ala-carte/o-physics-energy-work-power.webp",
+      "title": "Energy, Work, Power and Efficiency"
+    },
+    {
+      "id": "o-physics-particle-model-thermal-properties",
+      "promptHash": "da4b4bb2a3b9b2c0",
+      "src": "/ala-carte/o-physics-particle-model-thermal-properties.webp",
+      "title": "Particle Model and Thermal Properties"
     },
     {
       "id": "o-physics-thermal-physics",
-      "promptHash": "eed26efbe645c333",
+      "promptHash": "96de020cd5ebf885",
       "src": "/ala-carte/o-physics-thermal-physics.webp",
-      "title": "Thermal Physics Rescue"
+      "title": "Thermal Processes and Heat Transfer"
+    },
+    {
+      "id": "o-physics-general-wave-properties",
+      "promptHash": "d7c8544eefa961e4",
+      "src": "/ala-carte/o-physics-general-wave-properties.webp",
+      "title": "General Wave Properties"
     },
     {
       "id": "o-physics-waves-light-spectrum",
-      "promptHash": "4b2f1bdb1e00cc97",
+      "promptHash": "88deb85ee7a54485",
       "src": "/ala-carte/o-physics-waves-light-spectrum.webp",
-      "title": "Waves, Light and Electromagnetic Spectrum"
+      "title": "Light and Electromagnetic Spectrum"
+    },
+    {
+      "id": "o-physics-static-current-electricity",
+      "promptHash": "2060bb1972a22c17",
+      "src": "/ala-carte/o-physics-static-current-electricity.webp",
+      "title": "Static and Current Electricity"
     },
     {
       "id": "o-physics-electricity-circuits",
-      "promptHash": "1f227adaea918737",
+      "promptHash": "f9e89dc1a9319b00",
       "src": "/ala-carte/o-physics-electricity-circuits.webp",
-      "title": "Electricity and D.C. Circuits"
+      "title": "D.C. Circuits and Practical Electricity"
     },
     {
-      "id": "o-physics-magnetism-radioactivity",
-      "promptHash": "d029891f34a1bb86",
-      "src": "/ala-carte/o-physics-magnetism-radioactivity.webp",
-      "title": "Magnetism, Electromagnetism and Radioactivity"
+      "id": "o-physics-magnetism-electromagnetism",
+      "promptHash": "9db9f3edf3c3dff8",
+      "src": "/ala-carte/o-physics-magnetism-electromagnetism.webp",
+      "title": "Magnetism and Electromagnetism"
+    },
+    {
+      "id": "o-physics-electromagnetic-induction",
+      "promptHash": "b2879dbfbf8e027a",
+      "src": "/ala-carte/o-physics-electromagnetic-induction.webp",
+      "title": "Electromagnetic Induction and Transformers"
+    },
+    {
+      "id": "o-physics-radioactivity",
+      "promptHash": "982507347749083d",
+      "src": "/ala-carte/o-physics-radioactivity.webp",
+      "title": "Radioactivity, Half-life and Nuclear Equations"
+    },
+    {
+      "id": "o-amath-quadratics-discriminants",
+      "promptHash": "cfef60e9469894ee",
+      "src": "/ala-carte/o-amath-quadratics-discriminants.webp",
+      "title": "Quadratic Functions and Discriminants"
+    },
+    {
+      "id": "o-amath-equations-inequalities-surds",
+      "promptHash": "d1c6374c437c324d",
+      "src": "/ala-carte/o-amath-equations-inequalities-surds.webp",
+      "title": "Equations, Inequalities and Surds"
+    },
+    {
+      "id": "o-amath-polynomials-partial-fractions",
+      "promptHash": "634cb0f8a6868404",
+      "src": "/ala-carte/o-amath-polynomials-partial-fractions.webp",
+      "title": "Polynomials and Partial Fractions"
+    },
+    {
+      "id": "o-amath-binomial-expansions",
+      "promptHash": "cc2d52b415df6df3",
+      "src": "/ala-carte/o-amath-binomial-expansions.webp",
+      "title": "Binomial Expansions"
+    },
+    {
+      "id": "o-amath-exponential-logarithmic-functions",
+      "promptHash": "0bd96eba3e45dbea",
+      "src": "/ala-carte/o-amath-exponential-logarithmic-functions.webp",
+      "title": "Exponential and Logarithmic Functions"
+    },
+    {
+      "id": "o-amath-trigonometric-functions-graphs",
+      "promptHash": "2a8ad13f109415bb",
+      "src": "/ala-carte/o-amath-trigonometric-functions-graphs.webp",
+      "title": "Trigonometric Functions and Graphs"
+    },
+    {
+      "id": "o-amath-trig-identities-equations",
+      "promptHash": "5eecd0c7f3e20a82",
+      "src": "/ala-carte/o-amath-trig-identities-equations.webp",
+      "title": "Trigonometric Identities, Equations and R-Formula"
+    },
+    {
+      "id": "o-amath-coordinate-geometry-circles",
+      "promptHash": "bad3448ea20a0190",
+      "src": "/ala-carte/o-amath-coordinate-geometry-circles.webp",
+      "title": "Coordinate Geometry and Circles"
+    },
+    {
+      "id": "o-amath-linear-law-plane-geometry",
+      "promptHash": "776bfada13ae6f5d",
+      "src": "/ala-carte/o-amath-linear-law-plane-geometry.webp",
+      "title": "Linear Law and Plane Geometry Proofs"
+    },
+    {
+      "id": "o-amath-differentiation-techniques",
+      "promptHash": "af5c3c96fa092a35",
+      "src": "/ala-carte/o-amath-differentiation-techniques.webp",
+      "title": "Differentiation Techniques and Curve Behaviour"
+    },
+    {
+      "id": "o-amath-differentiation-applications",
+      "promptHash": "73353613f06b6c04",
+      "src": "/ala-carte/o-amath-differentiation-applications.webp",
+      "title": "Applications of Differentiation"
+    },
+    {
+      "id": "o-amath-integration-area",
+      "promptHash": "595e4a1ea1489418",
+      "src": "/ala-carte/o-amath-integration-area.webp",
+      "title": "Integration and Area Under Curves"
+    },
+    {
+      "id": "o-amath-calculus-kinematics",
+      "promptHash": "bea76fbed26eebc2",
+      "src": "/ala-carte/o-amath-calculus-kinematics.webp",
+      "title": "Calculus Kinematics and Exam Synthesis"
     }
   ],
   "serviceTier": "standard"

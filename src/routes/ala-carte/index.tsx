@@ -22,7 +22,6 @@ import {
   CheckCircle2,
   Clock3,
   ShoppingBag,
-  Sparkles,
   Trash2,
   UsersRound,
 } from 'lucide-react'
@@ -145,6 +144,19 @@ function getCartCount(cartItems: CartItem[]) {
   return cartItems.length
 }
 
+function scrollToCartForm(form: HTMLFormElement, fieldName?: string) {
+  form.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+  if (!fieldName) return
+
+  window.setTimeout(() => {
+    const field = form.elements.namedItem(fieldName)
+    if (field instanceof HTMLElement) {
+      field.focus({ preventScroll: true })
+    }
+  }, 450)
+}
+
 export function useAlaCarteOrder() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [isCartOpen, setIsCartOpen] = useState(false)
@@ -235,6 +247,7 @@ export function useAlaCarteOrder() {
 
   const submitOrder = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    const form = event.currentTarget
 
     if (cartItems.length === 0) {
       toast({
@@ -248,16 +261,28 @@ export function useAlaCarteOrder() {
     const trimmedEmail = orderForm.email.trim()
     const trimmedPhone = orderForm.phone.trim()
 
-    if (!orderForm.name.trim() || (!trimmedEmail && !trimmedPhone)) {
+    if (!orderForm.name.trim()) {
+      scrollToCartForm(form, 'name')
       toast({
-        title: 'Contact details required',
-        description: 'Please provide your email or phone so we can follow up.',
+        title: 'Please fill in the form',
+        description: 'Start with your name so we know who to contact.',
+        variant: 'destructive',
+      })
+      return
+    }
+
+    if (!trimmedEmail && !trimmedPhone) {
+      scrollToCartForm(form, 'email')
+      toast({
+        title: 'Please fill in the form',
+        description: 'Provide an email or phone number so we can follow up.',
         variant: 'destructive',
       })
       return
     }
 
     if (trimmedEmail && !emailPattern.test(trimmedEmail)) {
+      scrollToCartForm(form, 'email')
       toast({
         title: 'Check your email address',
         description: 'Please enter a valid email address or leave it blank.',
@@ -417,7 +442,7 @@ export function AlaCarteFooter() {
         />
 
         <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-400">
-          designed for atomic studying · fusion tuition
+          in pursuit of better · fusion tuition
         </p>
 
         <div className="flex items-center gap-6 font-black text-xs text-slate-500 uppercase tracking-widest">
@@ -508,22 +533,22 @@ function HowItWorksAndFaq() {
   const steps = [
     {
       number: '01',
-      title: 'select weak chapters.',
-      desc: 'Browse O-Level and IGCSE curriculums. Select only the specific topics or concepts where your child struggles.',
+      title: 'Pick weak chapters',
+      desc: 'Choose the topics that need focused help.',
       color: 'from-orange-400 to-orange-500',
       shadow: 'shadow-orange-500/20',
     },
     {
       number: '02',
-      title: 'submit custom booking.',
-      desc: 'Complete the contact details form and submit your selection. Zero deposit or upfront payment is collected here.',
+      title: 'Send your request',
+      desc: 'No payment here. Just share your details.',
       color: 'from-teal-400 to-teal-500',
       shadow: 'shadow-teal-500/20',
     },
     {
       number: '03',
-      title: 'coordinate & master.',
-      desc: 'Our registrar will call or WhatsApp you to align on timings that fit your schedule, then launch a master-rescue class.',
+      title: 'Justine will reach out',
+      desc: 'He will coordinate timing and next steps with you.',
       color: 'from-amber-400 to-amber-500',
       shadow: 'shadow-amber-500/20',
     },
@@ -540,7 +565,7 @@ function HowItWorksAndFaq() {
     },
     {
       q: 'What is the class size limit?',
-      a: "To ensure master-level attention and high diagnostic feedback, all June holiday rescue classes are guaranteed to have fewer than 5 students (maximum of 4). This allows our specialist tutors to target each child's individual errors.",
+      a: "Classes are kept to 5 students or fewer, so tutors can spot each student's mistakes and keep the session focused.",
     },
     {
       q: 'Can we request help with topics not listed?',
@@ -700,63 +725,12 @@ function CartStepIndicator({
   )
 }
 
-function MasteryBundleCalculator({ cartCount }: { cartCount: number }) {
-  if (cartCount === 0) return null
-
-  let badge = 'Targeted Boost'
-  let description =
-    'Great starting rescue. We will coordinate a focused session to target this weak area.'
-  let percent = 33
-
-  if (cartCount === 2) {
-    badge = 'Double Booster'
-    description =
-      'Smart study pairing! Includes a free physical Cheat-Sheet reference printout for exam revision.'
-    percent = 66
-  } else if (cartCount >= 3) {
-    badge = 'Complete Chapter Mastery Bundle'
-    description =
-      'Excellent! Comprehensive rescue plan. We will draft a custom diagnostic study timetable.'
-    percent = 100
-  }
-
-  return (
-    <div className="rounded-[1.5rem] border-2 border-slate-950 bg-white p-5 shadow-[4px_4px_0px_#020617] relative overflow-hidden">
-      <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-orange-500/5 blur-xl pointer-events-none" />
-
-      <div className="flex items-center justify-between gap-3">
-        <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">
-          mastery bundle status
-        </span>
-        <span className="rounded-full bg-orange-100 border border-orange-200 px-3 py-1 text-[9px] font-black text-orange-700 uppercase tracking-widest animate-pulse">
-          {badge}
-        </span>
-      </div>
-
-      <div className="mt-3">
-        <div className="h-2.5 w-full rounded-full border-2 border-slate-950 bg-slate-100 overflow-hidden p-0.5">
-          <motion.div
-            className="h-full rounded-full bg-gradient-to-r from-orange-500 to-amber-500"
-            initial={{ width: 0 }}
-            animate={{ width: `${percent}%` }}
-            transition={{ type: 'spring', stiffness: 80, damping: 12 }}
-          />
-        </div>
-      </div>
-
-      <p className="mt-3 text-xs font-semibold text-slate-500 leading-relaxed">
-        {description}
-      </p>
-    </div>
-  )
-}
-
 function QuickAddCard({ onAdd }: { onAdd: (item: any) => void }) {
   const moleItem = items.find((item) => item.id === 'o-chem-mole-concept')
   if (!moleItem) return null
 
   return (
-    <div className="mt-6 rounded-[2rem] border-2 border-slate-950 bg-white p-5 text-left shadow-[4px_4px_0px_#020617] hover:shadow-[5px_5px_0px_#f97316] transition-all relative overflow-hidden group">
+    <div className="relative mt-6 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-5 text-left shadow-sm transition-shadow group hover:shadow-md">
       <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-orange-500/5 blur-xl pointer-events-none" />
       <div className="absolute -left-6 -bottom-6 h-20 w-20 rounded-full bg-teal-500/5 blur-xl pointer-events-none" />
 
@@ -783,7 +757,7 @@ function QuickAddCard({ onAdd }: { onAdd: (item: any) => void }) {
         <Button
           type="button"
           onClick={() => onAdd(moleItem)}
-          className="h-8 rounded-xl bg-slate-950 hover:bg-orange-600 text-xs font-black text-white px-3 shadow-[2px_2px_0px_#020617] active:translate-y-0.5 active:shadow-none transition-all cursor-pointer"
+          className="h-8 rounded-xl bg-slate-950 px-3 text-xs font-black text-white shadow-none transition-colors hover:bg-orange-600"
         >
           Quick Add
         </Button>
@@ -821,8 +795,7 @@ function AlaCartePage() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.16,
-        delayChildren: 0.25,
+        staggerChildren: 0.18,
       },
     },
   }
@@ -844,6 +817,7 @@ function AlaCartePage() {
         stiffness: 60,
         damping: 14,
         duration: 1.2,
+        delay: 0.08,
       },
     },
   }
@@ -858,6 +832,7 @@ function AlaCartePage() {
         type: 'spring',
         stiffness: 80,
         damping: 14,
+        delay: 1.15,
       },
     },
   }
@@ -905,16 +880,15 @@ function AlaCartePage() {
         openCart={() => order.setIsCartOpen(true)}
       />
 
-      <section className="relative mx-auto max-w-5xl px-4 pb-8 pt-10 sm:px-6 md:pb-12 md:pt-16 lg:px-8">
+      <section className="relative mx-auto flex min-h-[100svh] max-w-5xl items-center px-4 pb-16 pt-10 sm:px-6 md:pb-20 md:pt-16 lg:px-8">
         <MicroSparkleDrifter />
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid gap-6 md:grid-cols-[1fr_200px] md:gap-8 items-center text-left z-10"
+          className="z-10 grid w-full items-center gap-6 text-left md:grid-cols-[1fr_200px] md:gap-8"
         >
-          {/* Mobile-first sphere. On desktop it stays on the right. */}
-          <div className="order-1 flex justify-center md:order-2 md:justify-end">
+          <div className="hidden justify-end md:order-2 md:flex">
             <motion.div
               variants={logoVariants}
               className="relative flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-amber-600 shadow-[0_0_44px_rgba(249,115,22,0.45)] sm:h-36 sm:w-36 md:h-28 md:w-28"
@@ -922,20 +896,28 @@ function AlaCartePage() {
           </div>
 
           {/* Left-aligned hero content */}
-          <div className="order-2 flex flex-col text-left md:order-1">
+          <div className="relative isolate order-1 flex flex-col pt-8 text-left md:order-1 md:pt-0">
+            <motion.div
+              variants={logoVariants}
+              className="pointer-events-none absolute right-[-0.75rem] top-[-0.2rem] z-0 flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-amber-600 opacity-95 shadow-[0_0_44px_rgba(249,115,22,0.45)] md:hidden"
+              aria-hidden="true"
+            />
+
             <motion.div
               variants={itemVariants}
-              className="text-lg font-black uppercase tracking-[0.22em] text-slate-500 sm:text-xl md:text-2xl"
+              className="relative z-10 flex max-w-[18rem] flex-wrap items-baseline gap-x-2 gap-y-1 text-2xl leading-none sm:max-w-none sm:text-3xl md:text-2xl"
             >
-              <span className="italic text-orange-600 lowercase font-bold mr-1">
-                ala carte
-              </span>{' '}
-              classes
+              <span className="font-[Georgia,serif] font-bold italic tracking-[0.04em] text-orange-600">
+                À la carte
+              </span>
+              <span className="font-extrabold uppercase tracking-[0.04em] text-slate-600">
+                classes
+              </span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="mt-6 max-w-4xl text-balance text-5xl font-black leading-[0.93] tracking-[-0.06em] text-slate-950 sm:text-7xl lg:text-8xl"
+              className="relative z-10 mt-6 max-w-4xl text-balance text-5xl font-black leading-[0.93] tracking-[-0.06em] text-slate-950 sm:text-7xl lg:text-8xl"
             >
               conquer your <br />
               <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600 bg-clip-text text-transparent drop-shadow-[0_2px_25px_rgba(249,115,22,0.15)]">
@@ -945,16 +927,14 @@ function AlaCartePage() {
 
             <motion.p
               variants={itemVariants}
-              className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-slate-700 sm:text-xl"
+              className="relative z-10 mt-6 max-w-2xl text-lg font-semibold leading-8 text-slate-700 sm:text-xl"
             >
-              Short, target-focused June holiday classes for O Level and IGCSE
-              students. Select the chapters you struggle with, and we&apos;ll
-              schedule sessions around your timetable.
+              June Holidays. One-off classes for your weaknesses.
             </motion.p>
 
             <motion.div
               variants={itemVariants}
-              className="mt-8 grid gap-3 sm:grid-cols-2 max-w-xl"
+              className="relative z-10 mt-8 grid gap-3 sm:grid-cols-2 max-w-xl"
             >
               <InfoPill
                 icon={<Clock3 className="h-5 w-5" />}
@@ -963,7 +943,7 @@ function AlaCartePage() {
               />
               <InfoPill
                 icon={<UsersRound className="h-5 w-5" />}
-                label="Less than 5"
+                label="≤ 5 students"
                 detail="small group"
               />
             </motion.div>
@@ -1222,7 +1202,7 @@ export function ItemDetailSheet({
       open={Boolean(selectedItem)}
       onOpenChange={() => setSelectedItem(null)}
     >
-      <SheetContent className="w-full overflow-y-auto sm:max-w-xl border-l-2 border-slate-950 bg-[#fffaf3]">
+      <SheetContent className="w-full overflow-y-auto border-l border-orange-100 bg-[#fffaf3] sm:max-w-xl">
         {selectedItem && (
           <motion.div
             variants={containerVariants}
@@ -1260,10 +1240,7 @@ export function ItemDetailSheet({
                 label="Duration"
                 value={formatDuration(selectedItem.durationMinutes)}
               />
-              <MiniStat
-                label="Max Group"
-                value={`≤ ${selectedItem.maxClassSize} students`}
-              />
+              <MiniStat label="Max Group" value="≤ 5 students" />
             </motion.div>
 
             <motion.div variants={childVariants}>
@@ -1391,7 +1368,7 @@ export function CartSheet({
 
   return (
     <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
-      <SheetContent className="w-full overflow-y-auto sm:max-w-xl border-l-2 border-slate-950 bg-[#fffaf3]">
+      <SheetContent className="w-full overflow-y-auto border-l border-orange-100 bg-[#fffaf3] sm:max-w-xl">
         <div className="space-y-6 pb-8 pt-6 text-slate-950">
           <CartStepIndicator
             cartCount={cartCount}
@@ -1409,7 +1386,7 @@ export function CartSheet({
           </SheetHeader>
 
           {cartItems.length === 0 ? (
-            <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-slate-950 bg-orange-50/50 p-10 text-center shadow-[6px_6px_0px_rgba(2,6,23,0.05)]">
+            <div className="relative overflow-hidden rounded-[2rem] border border-orange-100 bg-orange-50/50 p-8 text-center shadow-sm">
               {/* Planetary Orbit Inside Sheet */}
               <div className="relative mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-amber-600 shadow-[0_0_30px_rgba(249,115,22,0.25)]">
                 <div className="absolute h-[86%] w-[86%] rounded-full border border-white/20 bg-orange-600/5 backdrop-blur-sm" />
@@ -1430,7 +1407,7 @@ export function CartSheet({
               </p>
               <Button
                 type="button"
-                className="mt-6 rounded-full border-2 border-slate-950 bg-slate-950 px-6 py-2.5 text-xs font-black text-white hover:bg-orange-600 hover:text-white transition-all shadow-[4px_4px_0px_#020617] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                className="mt-6 rounded-full bg-slate-950 px-6 py-2.5 text-xs font-black text-white transition-colors hover:bg-orange-600 hover:text-white"
                 onClick={() => {
                   setIsCartOpen(false)
                   document
@@ -1462,10 +1439,10 @@ export function CartSheet({
                         transition: { duration: 0.25 },
                       }}
                       layout
-                      className="overflow-hidden rounded-[2rem] border-2 border-slate-950 bg-white p-4 shadow-[4px_4px_0px_#020617] hover:shadow-[5px_5px_0px_#f97316] transition-shadow duration-200"
+                      className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md"
                     >
                       <div className="grid grid-cols-[64px_1fr_auto] gap-3">
-                        <div className="relative h-16 overflow-hidden rounded-2xl border-2 border-slate-950 bg-orange-100">
+                        <div className="relative h-16 overflow-hidden rounded-2xl border border-orange-100 bg-orange-100">
                           <img
                             src={item.image.src}
                             alt={item.image.alt}
@@ -1485,14 +1462,14 @@ export function CartSheet({
                           type="button"
                           variant="outline"
                           size="icon"
-                          className="h-9 w-9 rounded-xl border-2 border-slate-950 bg-white hover:bg-red-50 hover:text-red-600 transition-all shadow-[2px_2px_0px_#020617] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#020617]"
+                          className="h-9 w-9 rounded-xl border border-slate-200 bg-white shadow-none transition-colors hover:bg-red-50 hover:text-red-600"
                           onClick={() => removeFromCart(item.id)}
                         >
                           <Trash2 className="h-4 w-4" />
                         </Button>
                       </div>
                       <Textarea
-                        className="mt-3 min-h-20 rounded-2xl border-2 border-slate-950 bg-white px-3 py-2 text-sm text-slate-950 shadow-[2px_2px_0px_#020617] focus-visible:ring-0 focus-visible:border-orange-500 focus-visible:shadow-[4px_4px_0px_#f97316] transition-all font-semibold"
+                        className="mt-3 min-h-20 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-950 shadow-none transition-colors focus-visible:border-orange-500 focus-visible:ring-0"
                         placeholder="Additional instruction for this class (optional)"
                         value={cartItem.instruction}
                         onChange={(event) =>
@@ -1503,26 +1480,11 @@ export function CartSheet({
                   )
                 })}
               </AnimatePresence>
-
-              <div className="relative overflow-hidden rounded-3xl border-2 border-slate-950 bg-slate-950 p-5 text-white shadow-[4px_4px_0px_#020617]">
-                <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-orange-500/10 blur-xl" />
-                <p className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-orange-400">
-                  <Sparkles className="h-4 w-4 animate-pulse text-orange-400" />
-                  What happens next
-                </p>
-                <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-200">
-                  We&apos;ll reach out, confirm the ideal slot based on your
-                  schedule, and send billing/confirmation details after we
-                  align.
-                </p>
-              </div>
             </div>
           )}
 
-          <MasteryBundleCalculator cartCount={cartCount} />
-
-          <form className="space-y-4" onSubmit={submitOrder}>
-            <p className="rounded-2xl border-2 border-slate-950 bg-orange-50/50 px-4 py-3.5 text-xs font-black text-orange-950 shadow-[2px_2px_0px_rgba(249,115,22,0.1)]">
+          <form className="space-y-4" onSubmit={submitOrder} noValidate>
+            <p className="rounded-2xl border border-orange-100 bg-orange-50/50 px-4 py-3.5 text-xs font-black text-orange-950">
               Name is required. Provide email or phone so we can follow up. If
               you provide email, we&apos;ll send a confirmation too.
             </p>
@@ -1533,8 +1495,8 @@ export function CartSheet({
                 isFocused={activeFocus === 'name'}
               >
                 <Input
-                  className="h-12 rounded-2xl border-2 border-slate-950 bg-white px-4 text-slate-950 shadow-[2px_2px_0px_#020617] focus-visible:ring-0 focus-visible:border-orange-500 focus-visible:shadow-[4px_4px_0px_#f97316] transition-all font-semibold focus:bg-[#fffdfa]"
-                  required
+                  className="h-12 rounded-2xl border border-slate-200 bg-white px-4 font-semibold text-slate-950 shadow-none transition-colors focus:bg-[#fffdfa] focus-visible:border-orange-500 focus-visible:ring-0"
+                  name="name"
                   value={orderForm.name}
                   onFocus={() => setActiveFocus('name')}
                   onBlur={() => setActiveFocus(null)}
@@ -1549,7 +1511,8 @@ export function CartSheet({
               </TactileField>
               <TactileField label="Email" isFocused={activeFocus === 'email'}>
                 <Input
-                  className="h-12 rounded-2xl border-2 border-slate-950 bg-white px-4 text-slate-950 shadow-[2px_2px_0px_#020617] focus-visible:ring-0 focus-visible:border-orange-500 focus-visible:shadow-[4px_4px_0px_#f97316] transition-all font-semibold focus:bg-[#fffdfa]"
+                  className="h-12 rounded-2xl border border-slate-200 bg-white px-4 font-semibold text-slate-950 shadow-none transition-colors focus:bg-[#fffdfa] focus-visible:border-orange-500 focus-visible:ring-0"
+                  name="email"
                   type="email"
                   value={orderForm.email}
                   onFocus={() => setActiveFocus('email')}
@@ -1569,7 +1532,8 @@ export function CartSheet({
               isFocused={activeFocus === 'phone'}
             >
               <Input
-                className="h-12 rounded-2xl border-2 border-slate-950 bg-white px-4 text-slate-950 shadow-[2px_2px_0px_#020617] focus-visible:ring-0 focus-visible:border-orange-500 focus-visible:shadow-[4px_4px_0px_#f97316] transition-all font-semibold focus:bg-[#fffdfa]"
+                className="h-12 rounded-2xl border border-slate-200 bg-white px-4 font-semibold text-slate-950 shadow-none transition-colors focus:bg-[#fffdfa] focus-visible:border-orange-500 focus-visible:ring-0"
+                name="phone"
                 type="tel"
                 value={orderForm.phone}
                 onFocus={() => setActiveFocus('phone')}
@@ -1588,7 +1552,8 @@ export function CartSheet({
               isFocused={activeFocus === 'studentLevel'}
             >
               <Input
-                className="h-12 rounded-2xl border-2 border-slate-950 bg-white px-4 text-slate-950 shadow-[2px_2px_0px_#020617] focus-visible:ring-0 focus-visible:border-orange-500 focus-visible:shadow-[4px_4px_0px_#f97316] transition-all font-semibold focus:bg-[#fffdfa]"
+                className="h-12 rounded-2xl border border-slate-200 bg-white px-4 font-semibold text-slate-950 shadow-none transition-colors focus:bg-[#fffdfa] focus-visible:border-orange-500 focus-visible:ring-0"
+                name="studentLevel"
                 value={orderForm.studentLevel}
                 onFocus={() => setActiveFocus('studentLevel')}
                 onBlur={() => setActiveFocus(null)}
@@ -1606,7 +1571,8 @@ export function CartSheet({
               isFocused={activeFocus === 'notes'}
             >
               <Textarea
-                className="min-h-24 rounded-2xl border-2 border-slate-950 bg-white p-4 text-slate-950 shadow-[2px_2px_0px_#020617] focus-visible:ring-0 focus-visible:border-orange-500 focus-visible:shadow-[4px_4px_0px_#f97316] transition-all font-semibold focus:bg-[#fffdfa]"
+                className="min-h-24 rounded-2xl border border-slate-200 bg-white p-4 font-semibold text-slate-950 shadow-none transition-colors focus:bg-[#fffdfa] focus-visible:border-orange-500 focus-visible:ring-0"
+                name="notes"
                 value={orderForm.notes}
                 onFocus={() => setActiveFocus('notes')}
                 onBlur={() => setActiveFocus(null)}
@@ -1619,16 +1585,18 @@ export function CartSheet({
                 placeholder="Tell us what your child needs help with or when you're usually reachable."
               />
             </TactileField>
-            <Button
-              className="w-full rounded-2xl py-6 text-base font-black border-2 border-slate-950 bg-slate-950 text-white shadow-[4px_4px_0px_rgba(249,115,22,0.85)] hover:bg-orange-600 hover:shadow-[4px_4px_0px_#020617] transition-all duration-200 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-              disabled={isSubmitting || cartItems.length === 0}
-              type="submit"
-            >
-              {isSubmitting
-                ? 'Submitting...'
-                : `Submit ${cartCount} class${cartCount > 1 ? 'es' : ''}`}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div className="sticky bottom-0 z-20 -mx-6 border-t border-orange-100 bg-[#fffaf3]/95 px-6 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl">
+              <Button
+                className="w-full rounded-2xl bg-slate-950 py-6 text-base font-black text-white shadow-sm transition-colors hover:bg-orange-600"
+                disabled={isSubmitting || cartItems.length === 0}
+                type="submit"
+              >
+                {isSubmitting
+                  ? 'Submitting...'
+                  : `Submit ${cartCount} class${cartCount > 1 ? 'es' : ''}`}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </form>
         </div>
       </SheetContent>

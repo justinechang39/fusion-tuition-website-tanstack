@@ -21,7 +21,7 @@ import {
 type AlaCartePrompt = {
   id: string
   categoryId: string
-  subject: 'Chemistry' | 'Physics'
+  subject: 'Chemistry' | 'Physics' | 'Additional Mathematics'
   title: string
   prompt: string
 }
@@ -74,9 +74,16 @@ const defaultPromptFiles = [
 ]
 
 const subjectReferenceImages: Record<AlaCartePrompt['subject'], string> = {
+  'Additional Mathematics': path.join(publicRoot, 'physics_ala_carte.png'),
   Chemistry: path.join(publicRoot, 'chemistry_ala_carte.png'),
   Physics: path.join(publicRoot, 'physics_ala_carte.png'),
 }
+
+const supportedSubjects: readonly AlaCartePrompt['subject'][] = [
+  'Additional Mathematics',
+  'Chemistry',
+  'Physics',
+]
 
 const defaultOptions: CliOptions = {
   aspectRatio: '21:9',
@@ -283,7 +290,7 @@ function buildPrompt(
 ): string {
   return `${prompt.prompt}
 
-Use the attached current ${prompt.subject} ala-carte banner only as a visual style reference: match its dark cinematic science-banner mood, warm amber glow, subtle teal accents, premium 3D/holographic finish, and website hero composition. Do not copy the exact image, objects, or layout; create a unique topic-specific banner for this class.
+Use the attached Fusion Tuition ala-carte banner only as a visual style reference: match its dark cinematic educational-banner mood, warm amber glow, subtle teal accents, premium 3D/holographic finish, and website hero composition. Do not copy the exact image, objects, or layout; create a unique topic-specific banner for this class.
 
 Shared negative constraints: ${sharedNegativePrompt}`
 }
@@ -322,7 +329,7 @@ function readPrompt(value: unknown): AlaCartePrompt {
   if (!isRecord(value)) throw new Error('Invalid prompt entry')
 
   const subject = readString(value, 'subject')
-  if (subject !== 'Chemistry' && subject !== 'Physics') {
+  if (!isSupportedSubject(subject)) {
     throw new Error(`Unsupported subject: ${subject}`)
   }
 
@@ -333,6 +340,14 @@ function readPrompt(value: unknown): AlaCartePrompt {
     subject,
     title: readString(value, 'title'),
   }
+}
+
+function isSupportedSubject(
+  subject: string,
+): subject is AlaCartePrompt['subject'] {
+  return supportedSubjects.some(
+    (supportedSubject) => supportedSubject === subject,
+  )
 }
 
 function readString(record: Record<string, unknown>, key: string): string {

@@ -50,10 +50,10 @@
       "shortLabel": "A Math",
       "level": "O Level",
       "subject": "Additional Mathematics",
-      "description": "À la carte A Math sessions for students who want focused practice on weak chapters.",
+      "description": "SEAB 4049 A Math chapter clinics for algebra, trigonometry, geometry and calculus.",
       "image": {
-        "src": "/fusion_tuition_logo_horizontal.png",
-        "alt": "Fusion Tuition Additional Mathematics class"
+        "src": "/ala-carte/o-amath-quadratics-discriminants.webp",
+        "alt": "O Level Additional Mathematics ala-carte class artwork"
       },
       "displayOrder": 3,
       "isActive": true
@@ -89,10 +89,10 @@
   ],
   "items": [
     {
-      "id": "o-chem-mole-concept",
+      "id": "o-chem-experimental-chemistry",
       "categoryId": "o-level-chemistry",
-      "title": "Mole Concept and Chemical Calculations",
-      "subtitle": "Moles, reacting masses, gas volume and concentration questions",
+      "title": "Experimental Chemistry and Separation",
+      "subtitle": "Apparatus, purification, chromatography and purity questions",
       "level": "O Level",
       "subject": "Chemistry",
       "durationMinutes": 180,
@@ -100,25 +100,59 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/ala-carte/o-chem-mole-concept.webp",
-        "alt": "Mole Concept and Chemical Calculations ala-carte class artwork"
+        "src": "/ala-carte/o-chem-experimental-chemistry.webp",
+        "alt": "Experimental Chemistry and Separation ala-carte class artwork"
       },
-      "chapters": ["Mole Concept", "Chemical Calculations", "Stoichiometry"],
-      "description": "For students who know some formulas but still get stuck deciding which calculation method to use.",
-      "whatStudentsWillDo": [
-        "Revise the core mole formulas and when to use each one",
-        "Work through structured calculation questions step by step",
-        "Spot common unit, ratio and careless mistakes in exam answers"
+      "chapters": [
+        "Experimental Chemistry",
+        "Separation Techniques",
+        "Chromatography"
       ],
-      "additionalInstructionLabel": "Any specific mole concept or calculation type you want us to focus on?",
+      "description": "For students who need a cleaner method for practical-style questions, separation methods and purity data.",
+      "whatStudentsWillDo": [
+        "Review common apparatus, separation and purification techniques",
+        "Practise chromatography, Rf values and purity interpretation",
+        "Improve practical answer phrasing for methods, observations and conclusions"
+      ],
+      "additionalInstructionLabel": "Any experiment, separation method or chromatography question to focus on?",
       "isActive": true,
       "displayOrder": 1
     },
     {
+      "id": "o-chem-particles-atomic-structure",
+      "categoryId": "o-level-chemistry",
+      "title": "Particles, Atomic Structure and Kinetic Theory",
+      "subtitle": "States of matter, diffusion, atoms, ions and isotopes",
+      "level": "O Level",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-chem-particles-atomic-structure.webp",
+        "alt": "Particles, Atomic Structure and Kinetic Theory ala-carte class artwork"
+      },
+      "chapters": [
+        "Particulate Nature of Matter",
+        "Kinetic Particle Theory",
+        "Atomic Structure"
+      ],
+      "description": "A foundations class for students who mix up particle explanations, electronic structure and isotope questions.",
+      "whatStudentsWillDo": [
+        "Clarify solids, liquids, gases and interconversion using particle ideas",
+        "Practise proton, neutron and electron calculations for atoms and ions",
+        "Connect diffusion and kinetic particle theory to structured explanations"
+      ],
+      "additionalInstructionLabel": "Tell us if particle model, atomic structure or isotope notation feels weakest.",
+      "isActive": true,
+      "displayOrder": 2
+    },
+    {
       "id": "o-chem-atomic-bonding-periodic-table",
       "categoryId": "o-level-chemistry",
-      "title": "Atomic Structure, Bonding and Periodic Table",
-      "subtitle": "Particles, bonding diagrams, properties and group trends",
+      "title": "Bonding, Structure and Properties",
+      "subtitle": "Ionic, covalent, metallic and giant structures explained clearly",
       "level": "O Level",
       "subject": "Chemistry",
       "durationMinutes": 180,
@@ -127,24 +161,28 @@
       "maxClassSize": 4,
       "image": {
         "src": "/ala-carte/o-chem-atomic-bonding-periodic-table.webp",
-        "alt": "Atomic Structure, Bonding and Periodic Table ala-carte class artwork"
+        "alt": "Bonding, Structure and Properties ala-carte class artwork"
       },
-      "chapters": ["Atomic Structure", "Chemical Bonding", "Periodic Table"],
-      "description": "A concept-building session for students who mix up particles, bonding and property explanations.",
-      "whatStudentsWillDo": [
-        "Clarify protons, neutrons, electrons and electronic structure",
-        "Practise ionic and covalent bonding diagrams",
-        "Link bonding and structure to common property questions"
+      "chapters": [
+        "Chemical Bonding and Structure",
+        "Dot-and-Cross Diagrams",
+        "Structure and Properties"
       ],
-      "additionalInstructionLabel": "Tell us if bonding, periodic trends or structure questions feel weakest.",
+      "description": "A concept-building session for students who struggle to link bonding and structure to physical properties.",
+      "whatStudentsWillDo": [
+        "Practise ionic and covalent dot-and-cross diagrams",
+        "Compare simple molecular, giant ionic, metallic and giant covalent structures",
+        "Build full-mark explanations linking structure, bonding and properties"
+      ],
+      "additionalInstructionLabel": "Tell us if ionic, covalent, metallic or structure-property questions are weakest.",
       "isActive": true,
-      "displayOrder": 2
+      "displayOrder": 3
     },
     {
-      "id": "o-chem-equations-reactions",
+      "id": "o-chem-mole-concept",
       "categoryId": "o-level-chemistry",
-      "title": "Chemical Reactions and Equation Writing",
-      "subtitle": "Balanced equations, observations and reaction prediction",
+      "title": "Formulae, Mole Concept and Calculations",
+      "subtitle": "Equation writing, moles, reacting masses, gas volume and concentration",
       "level": "O Level",
       "subject": "Chemistry",
       "durationMinutes": 180,
@@ -152,29 +190,25 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/ala-carte/o-chem-equations-reactions.webp",
-        "alt": "Chemical Reactions and Equation Writing ala-carte class artwork"
+        "src": "/ala-carte/o-chem-mole-concept.webp",
+        "alt": "Formulae, Mole Concept and Calculations ala-carte class artwork"
       },
-      "chapters": [
-        "Chemical Equations",
-        "Types of Reactions",
-        "Observation Questions"
-      ],
-      "description": "For students who lose marks because they cannot translate reactions into clear equations and observations.",
+      "chapters": ["Chemical Calculations", "Mole Concept", "Stoichiometry"],
+      "description": "For students who know some formulas but still get stuck deciding which calculation method to use.",
       "whatStudentsWillDo": [
-        "Practise writing and balancing chemical equations",
-        "Connect reaction types to expected observations",
-        "Use correct keywords for explanation and prediction questions"
+        "Revise formulae, equations, mole formulas and when to use each one",
+        "Work through reacting mass, gas volume, concentration, yield and purity questions",
+        "Spot common unit, ratio and careless mistakes in exam answers"
       ],
-      "additionalInstructionLabel": "Any reaction type, worksheet or equation skill to mention?",
+      "additionalInstructionLabel": "Any specific mole concept or calculation type you want us to focus on?",
       "isActive": true,
-      "displayOrder": 3
+      "displayOrder": 4
     },
     {
       "id": "o-chem-acids-bases-salts",
       "categoryId": "o-level-chemistry",
-      "title": "Acids, Bases and Salts",
-      "subtitle": "pH, neutralisation, salt preparation and solubility rules",
+      "title": "Acid-Base Chemistry and Salts",
+      "subtitle": "pH, neutralisation, salt preparation, solubility and ammonia",
       "level": "O Level",
       "subject": "Chemistry",
       "durationMinutes": 180,
@@ -183,18 +217,18 @@
       "maxClassSize": 4,
       "image": {
         "src": "/ala-carte/o-chem-acids-bases-salts.webp",
-        "alt": "Acids, Bases and Salts ala-carte class artwork"
+        "alt": "Acid-Base Chemistry and Salts ala-carte class artwork"
       },
-      "chapters": ["Acids, Bases and Salts", "Salt Preparation", "pH"],
-      "description": "A focused class for students who need a clearer method for salt preparation and reaction questions.",
+      "chapters": ["Acid-Base Chemistry", "Salts", "Ammonia"],
+      "description": "A focused class for students who need a clearer method for salt preparation and acid-base reaction questions.",
       "whatStudentsWillDo": [
-        "Review acid, alkali and salt reactions",
+        "Review acid, alkali, base and salt reactions",
         "Compare salt preparation methods and when to use them",
-        "Practise structured explanation and method questions"
+        "Practise solubility, ammonia and structured method questions"
       ],
-      "additionalInstructionLabel": "Tell us which parts of acids, bases or salts are confusing, if any.",
+      "additionalInstructionLabel": "Tell us which parts of acids, bases, salts or ammonia are confusing, if any.",
       "isActive": true,
-      "displayOrder": 4
+      "displayOrder": 5
     },
     {
       "id": "o-chem-qualitative-analysis",
@@ -224,39 +258,13 @@
       ],
       "additionalInstructionLabel": "Any QA table, practical skill or school practical topic to highlight?",
       "isActive": true,
-      "displayOrder": 5
-    },
-    {
-      "id": "o-chem-metals-reactivity-redox",
-      "categoryId": "o-level-chemistry",
-      "title": "Metals, Reactivity and Redox",
-      "subtitle": "Reactivity series, extraction, displacement and oxidation-reduction",
-      "level": "O Level",
-      "subject": "Chemistry",
-      "durationMinutes": 180,
-      "price": 100,
-      "currency": "SGD",
-      "maxClassSize": 4,
-      "image": {
-        "src": "/ala-carte/o-chem-metals-reactivity-redox.webp",
-        "alt": "Metals, Reactivity and Redox ala-carte class artwork"
-      },
-      "chapters": ["Metals", "Reactivity Series", "Redox"],
-      "description": "A booster for students who find metal reactions and redox explanations hard to connect.",
-      "whatStudentsWillDo": [
-        "Revise the reactivity series and displacement logic",
-        "Connect metal extraction methods to reactivity",
-        "Practise oxidation, reduction and explanation questions"
-      ],
-      "additionalInstructionLabel": "Tell us if metals, extraction or redox is the main weak area.",
-      "isActive": true,
       "displayOrder": 6
     },
     {
       "id": "o-chem-electrolysis",
       "categoryId": "o-level-chemistry",
-      "title": "Electrolysis Made Clear",
-      "subtitle": "Molten and aqueous electrolysis, electrode products and electroplating",
+      "title": "Redox and Electrochemistry",
+      "subtitle": "Oxidation states, electron transfer, electrolysis and simple cells",
       "level": "O Level",
       "subject": "Chemistry",
       "durationMinutes": 180,
@@ -265,24 +273,24 @@
       "maxClassSize": 4,
       "image": {
         "src": "/ala-carte/o-chem-electrolysis.webp",
-        "alt": "Electrolysis Made Clear ala-carte class artwork"
+        "alt": "Redox and Electrochemistry ala-carte class artwork"
       },
-      "chapters": ["Electrolysis", "Electrode Products", "Electroplating"],
-      "description": "For students who need a reliable way to predict products and explain what happens at each electrode.",
+      "chapters": ["Redox Chemistry", "Electrolysis", "Simple Cells"],
+      "description": "For students who need a reliable way to identify redox changes and explain what happens at electrodes.",
       "whatStudentsWillDo": [
-        "Compare molten and aqueous electrolysis questions",
-        "Practise product prediction at the anode and cathode",
-        "Work through electroplating and explanation questions"
+        "Compare redox definitions using oxygen, hydrogen, electrons and oxidation state",
+        "Practise molten and aqueous electrolysis product prediction",
+        "Connect electroplating, simple cells and fuel cells to electron transfer"
       ],
-      "additionalInstructionLabel": "Any electrolysis subtopic or question type you want us to target?",
+      "additionalInstructionLabel": "Tell us if redox, electrolysis or simple cells should take priority.",
       "isActive": true,
       "displayOrder": 7
     },
     {
-      "id": "o-chem-energy-rate-organic",
+      "id": "o-chem-metals-reactivity-redox",
       "categoryId": "o-level-chemistry",
-      "title": "Energy, Rate and Organic Chemistry Booster",
-      "subtitle": "Energy changes, rate graphs and high-yield organic reactions",
+      "title": "Periodic Table and Reactivity Series",
+      "subtitle": "Periodic trends, group properties, transition metals and metal reactivity",
       "level": "O Level",
       "subject": "Chemistry",
       "durationMinutes": 180,
@@ -290,19 +298,109 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/ala-carte/o-chem-energy-rate-organic.webp",
-        "alt": "Energy, Rate and Organic Chemistry Booster ala-carte class artwork"
+        "src": "/ala-carte/o-chem-metals-reactivity-redox.webp",
+        "alt": "Periodic Table and Reactivity Series ala-carte class artwork"
       },
-      "chapters": ["Energy Changes", "Rate of Reaction", "Organic Chemistry"],
-      "description": "A high-yield revision class for students who want guided practice across common scoring topics.",
-      "whatStudentsWillDo": [
-        "Review exothermic and endothermic energy profile questions",
-        "Practise rate of reaction graphs and collision theory explanations",
-        "Summarise key organic reactions, conditions and comparison questions"
+      "chapters": [
+        "Patterns in the Periodic Table",
+        "Group Properties",
+        "Reactivity Series"
       ],
-      "additionalInstructionLabel": "Tell us if energy changes, rate or organic chemistry should take priority.",
+      "description": "A booster for students who find periodic trends, group reactions and metal reactivity hard to connect.",
+      "whatStudentsWillDo": [
+        "Review Groups 1, 17, 18 and transition element properties",
+        "Practise reactivity series and displacement logic",
+        "Connect corrosion, sacrificial protection and reactivity explanations"
+      ],
+      "additionalInstructionLabel": "Tell us if periodic trends, group properties or reactivity series is the main weak area.",
       "isActive": true,
       "displayOrder": 8
+    },
+    {
+      "id": "o-chem-energetics-rate-reactions",
+      "categoryId": "o-level-chemistry",
+      "title": "Energetics and Rate of Reactions",
+      "subtitle": "Energy profiles, bond energy, collision theory and rate graphs",
+      "level": "O Level",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-chem-energetics-rate-reactions.webp",
+        "alt": "Energetics and Rate of Reactions ala-carte class artwork"
+      },
+      "chapters": [
+        "Chemical Energetics",
+        "Rate of Reactions",
+        "Collision Theory"
+      ],
+      "description": "A high-yield class for students who need guided practice with energy changes and rate explanations.",
+      "whatStudentsWillDo": [
+        "Review exothermic, endothermic and energy profile questions",
+        "Practise bond energy and activation energy explanations",
+        "Interpret rate graphs and explain variables using collision theory"
+      ],
+      "additionalInstructionLabel": "Tell us if energetics, bond energy or rate graphs should take priority.",
+      "isActive": true,
+      "displayOrder": 9
+    },
+    {
+      "id": "o-chem-organic-chemistry",
+      "categoryId": "o-level-chemistry",
+      "title": "Organic Chemistry, Fuels and Polymers",
+      "subtitle": "Crude oil, hydrocarbons, alcohols, carboxylic acids and plastics",
+      "level": "O Level",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-chem-organic-chemistry.webp",
+        "alt": "Organic Chemistry, Fuels and Polymers ala-carte class artwork"
+      },
+      "chapters": ["Organic Chemistry", "Fuels and Crude Oil", "Polymers"],
+      "description": "For students who need a structured map of organic reactions, conditions, products and comparison questions.",
+      "whatStudentsWillDo": [
+        "Summarise alkanes, alkenes, alcohols and carboxylic acids",
+        "Practise organic reaction conditions, observations and product prediction",
+        "Connect fuels, polymers, recycling and sustainability questions"
+      ],
+      "additionalInstructionLabel": "Any organic family, reaction or polymer question type to focus on?",
+      "isActive": true,
+      "displayOrder": 10
+    },
+    {
+      "id": "o-chem-air-quality",
+      "categoryId": "o-level-chemistry",
+      "title": "Maintaining Air Quality and Sustainability",
+      "subtitle": "Air composition, pollutants, ozone, carbon cycle and greenhouse gases",
+      "level": "O Level",
+      "subject": "Chemistry",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-chem-air-quality.webp",
+        "alt": "Maintaining Air Quality and Sustainability ala-carte class artwork"
+      },
+      "chapters": [
+        "Maintaining Air Quality",
+        "Carbon Cycle",
+        "Greenhouse Gases"
+      ],
+      "description": "A concise environmental chemistry class for students who need stronger explanation keywords and application practice.",
+      "whatStudentsWillDo": [
+        "Review air composition, pollutant sources and pollutant effects",
+        "Practise catalytic converter, acid rain, ozone and greenhouse gas questions",
+        "Build clearer answer frameworks for sustainability and application marks"
+      ],
+      "additionalInstructionLabel": "Tell us if air pollutants, ozone, carbon cycle or greenhouse gases should be prioritised.",
+      "isActive": true,
+      "displayOrder": 11
     },
     {
       "id": "o-physics-measurement-graph-skills",
@@ -363,8 +461,8 @@
     {
       "id": "o-physics-dynamics-forces",
       "categoryId": "o-level-physics",
-      "title": "Dynamics and Forces",
-      "subtitle": "Newton’s laws, resultant force and free-body diagrams",
+      "title": "Dynamics and Newton’s Laws",
+      "subtitle": "Forces, mass, weight, F = ma and free-body diagrams",
       "level": "O Level",
       "subject": "Physics",
       "durationMinutes": 180,
@@ -373,13 +471,13 @@
       "maxClassSize": 4,
       "image": {
         "src": "/ala-carte/o-physics-dynamics-forces.webp",
-        "alt": "Dynamics and Forces ala-carte class artwork"
+        "alt": "Dynamics and Newton’s Laws ala-carte class artwork"
       },
-      "chapters": ["Dynamics", "Forces", "Newton’s Laws"],
+      "chapters": ["Dynamics", "Newton’s Laws", "Free-Body Diagrams"],
       "description": "A focused session for students who need help connecting force diagrams, concepts and calculations.",
       "whatStudentsWillDo": [
         "Draw and interpret force diagrams more confidently",
-        "Practise resultant force and F = ma questions",
+        "Practise resultant force, weight and F = ma questions",
         "Improve explanations using Newton’s laws and correct keywords"
       ],
       "additionalInstructionLabel": "Any force topic, worksheet or Newton’s law question to mention?",
@@ -387,10 +485,10 @@
       "displayOrder": 3
     },
     {
-      "id": "o-physics-moments-pressure-energy",
+      "id": "o-physics-moments-pressure",
       "categoryId": "o-level-physics",
-      "title": "Moments, Pressure and Energy",
-      "subtitle": "Turning effects, pressure, work, power and efficiency",
+      "title": "Moments, Equilibrium and Pressure",
+      "subtitle": "Turning effects, stability, pressure in solids and pressure in liquids",
       "level": "O Level",
       "subject": "Physics",
       "durationMinutes": 180,
@@ -398,25 +496,80 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/ala-carte/o-physics-moments-pressure-energy.webp",
-        "alt": "Moments, Pressure and Energy ala-carte class artwork"
+        "src": "/ala-carte/o-physics-moments-pressure.webp",
+        "alt": "Moments, Equilibrium and Pressure ala-carte class artwork"
       },
-      "chapters": ["Turning Effect of Forces", "Pressure", "Energy"],
-      "description": "For students who can memorise formulas but need practice choosing the correct one in mixed questions.",
+      "chapters": ["Turning Effect of Forces", "Pressure", "Equilibrium"],
+      "description": "For students who need a clearer method for moments, stability and pressure questions.",
       "whatStudentsWillDo": [
-        "Review moments, equilibrium and stability questions",
-        "Practise pressure in solids and liquids",
-        "Connect work, energy, power and efficiency calculations"
+        "Review moments, equilibrium and centre of gravity questions",
+        "Practise pressure in solids and liquids with correct units",
+        "Learn how to choose formulas and present explanations in mixed mechanics questions"
       ],
-      "additionalInstructionLabel": "Tell us if moments, pressure or energy should be the main focus.",
+      "additionalInstructionLabel": "Tell us if moments, equilibrium or pressure should be the main focus.",
       "isActive": true,
       "displayOrder": 4
     },
     {
+      "id": "o-physics-energy-work-power",
+      "categoryId": "o-level-physics",
+      "title": "Energy, Work, Power and Efficiency",
+      "subtitle": "Energy stores, transfers, resources and calculation practice",
+      "level": "O Level",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-physics-energy-work-power.webp",
+        "alt": "Energy, Work, Power and Efficiency ala-carte class artwork"
+      },
+      "chapters": ["Energy", "Work and Power", "Efficiency"],
+      "description": "A dedicated energy class for students who can memorise formulas but need practice applying them in context.",
+      "whatStudentsWillDo": [
+        "Connect energy stores, transfers and conservation to exam scenarios",
+        "Practise kinetic energy, gravitational potential energy, work and power calculations",
+        "Handle efficiency and energy-resource explanation questions"
+      ],
+      "additionalInstructionLabel": "Tell us if energy calculations, efficiency or resources should take priority.",
+      "isActive": true,
+      "displayOrder": 5
+    },
+    {
+      "id": "o-physics-particle-model-thermal-properties",
+      "categoryId": "o-level-physics",
+      "title": "Particle Model and Thermal Properties",
+      "subtitle": "States of matter, Brownian motion, gas pressure, heat capacity and latent heat",
+      "level": "O Level",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-physics-particle-model-thermal-properties.webp",
+        "alt": "Particle Model and Thermal Properties ala-carte class artwork"
+      },
+      "chapters": [
+        "Kinetic Particle Model of Matter",
+        "Thermal Properties of Matter"
+      ],
+      "description": "A concept-and-calculation reset for particle explanations and thermal property questions.",
+      "whatStudentsWillDo": [
+        "Revise particle model explanations for solids, liquids and gases",
+        "Connect Brownian motion, temperature and gas pressure to particle motion",
+        "Practise heat capacity, latent heat and cooling-curve questions"
+      ],
+      "additionalInstructionLabel": "Any particle model, heat capacity or latent heat question to focus on?",
+      "isActive": true,
+      "displayOrder": 6
+    },
+    {
       "id": "o-physics-thermal-physics",
       "categoryId": "o-level-physics",
-      "title": "Thermal Physics Rescue",
-      "subtitle": "Kinetic particle model, heat transfer and thermal properties",
+      "title": "Thermal Processes and Heat Transfer",
+      "subtitle": "Conduction, convection, radiation and practical thermal explanations",
       "level": "O Level",
       "subject": "Physics",
       "durationMinutes": 180,
@@ -425,28 +578,54 @@
       "maxClassSize": 4,
       "image": {
         "src": "/ala-carte/o-physics-thermal-physics.webp",
-        "alt": "Thermal Physics Rescue ala-carte class artwork"
+        "alt": "Thermal Processes and Heat Transfer ala-carte class artwork"
       },
       "chapters": [
-        "Kinetic Particle Model",
         "Thermal Processes",
-        "Thermal Properties of Matter"
+        "Conduction",
+        "Convection and Radiation"
       ],
-      "description": "A concept-and-practice class for students who struggle with thermal explanations and heat questions.",
+      "description": "For students who need cleaner explanations for heat transfer and everyday thermal applications.",
       "whatStudentsWillDo": [
-        "Revise particle model explanations for solids, liquids and gases",
         "Compare conduction, convection and radiation clearly",
-        "Practise thermal property calculations and explanation questions"
+        "Practise heat-transfer explanation questions with the right keywords",
+        "Apply thermal processes to practical and everyday contexts"
       ],
-      "additionalInstructionLabel": "Any thermal physics subtopic or experiment to focus on?",
+      "additionalInstructionLabel": "Any thermal process, experiment or application question to focus on?",
       "isActive": true,
-      "displayOrder": 5
+      "displayOrder": 7
+    },
+    {
+      "id": "o-physics-general-wave-properties",
+      "categoryId": "o-level-physics",
+      "title": "General Wave Properties",
+      "subtitle": "Wave terms, wave speed, transverse and longitudinal waves",
+      "level": "O Level",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-physics-general-wave-properties.webp",
+        "alt": "General Wave Properties ala-carte class artwork"
+      },
+      "chapters": ["General Properties of Waves", "Wave Speed", "Wave Graphs"],
+      "description": "For students who need wave basics, formulas and graph interpretation separated from light-ray diagrams.",
+      "whatStudentsWillDo": [
+        "Clarify amplitude, wavelength, frequency, period and wave speed",
+        "Compare transverse and longitudinal waves with diagrams",
+        "Practise wave graphs, wavefronts and explanation questions"
+      ],
+      "additionalInstructionLabel": "Tell us which wave term, graph or formula feels weakest.",
+      "isActive": true,
+      "displayOrder": 8
     },
     {
       "id": "o-physics-waves-light-spectrum",
       "categoryId": "o-level-physics",
-      "title": "Waves, Light and Electromagnetic Spectrum",
-      "subtitle": "Wave properties, ray diagrams, lenses and EM spectrum applications",
+      "title": "Light and Electromagnetic Spectrum",
+      "subtitle": "Reflection, refraction, lenses, total internal reflection and EM applications",
       "level": "O Level",
       "subject": "Physics",
       "durationMinutes": 180,
@@ -455,28 +634,54 @@
       "maxClassSize": 4,
       "image": {
         "src": "/ala-carte/o-physics-waves-light-spectrum.webp",
-        "alt": "Waves, Light and Electromagnetic Spectrum ala-carte class artwork"
+        "alt": "Light and Electromagnetic Spectrum ala-carte class artwork"
+      },
+      "chapters": ["Light", "Electromagnetic Spectrum", "Ray Diagrams"],
+      "description": "For students who need a cleaner way to handle ray diagrams, lens questions and EM spectrum applications.",
+      "whatStudentsWillDo": [
+        "Practise reflection, refraction, total internal reflection and lens diagrams",
+        "Use ray-diagram conventions accurately for full method marks",
+        "Apply electromagnetic spectrum properties, uses and hazards to exam questions"
+      ],
+      "additionalInstructionLabel": "Tell us if light diagrams or EM spectrum is weakest.",
+      "isActive": true,
+      "displayOrder": 9
+    },
+    {
+      "id": "o-physics-static-current-electricity",
+      "categoryId": "o-level-physics",
+      "title": "Static and Current Electricity",
+      "subtitle": "Charges, electric fields, current, voltage and resistance fundamentals",
+      "level": "O Level",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-physics-static-current-electricity.webp",
+        "alt": "Static and Current Electricity ala-carte class artwork"
       },
       "chapters": [
-        "General Properties of Waves",
-        "Light",
-        "Electromagnetic Spectrum"
+        "Static Electricity",
+        "Current of Electricity",
+        "Electrical Quantities"
       ],
-      "description": "For students who need a cleaner way to handle wave terms, diagrams and application questions.",
+      "description": "A foundations class for students who need charge, current, potential difference and resistance to click before circuits.",
       "whatStudentsWillDo": [
-        "Review wave terms, formulas and common graph questions",
-        "Practise reflection, refraction and lens ray diagrams",
-        "Apply electromagnetic spectrum properties to exam questions"
+        "Review static charge, electric fields and common charging explanations",
+        "Clarify current, potential difference, resistance and I-V characteristics",
+        "Practise formula and explanation questions before moving into full circuits"
       ],
-      "additionalInstructionLabel": "Tell us if waves, light diagrams or EM spectrum is weakest.",
+      "additionalInstructionLabel": "Tell us if static electricity, current or resistance is the main weak area.",
       "isActive": true,
-      "displayOrder": 6
+      "displayOrder": 10
     },
     {
       "id": "o-physics-electricity-circuits",
       "categoryId": "o-level-physics",
-      "title": "Electricity and D.C. Circuits",
-      "subtitle": "Current, voltage, resistance, series and parallel circuits",
+      "title": "D.C. Circuits and Practical Electricity",
+      "subtitle": "Series, parallel, components, power, energy and electrical safety",
       "level": "O Level",
       "subject": "Physics",
       "durationMinutes": 180,
@@ -485,28 +690,28 @@
       "maxClassSize": 4,
       "image": {
         "src": "/ala-carte/o-physics-electricity-circuits.webp",
-        "alt": "Electricity and D.C. Circuits ala-carte class artwork"
+        "alt": "D.C. Circuits and Practical Electricity ala-carte class artwork"
       },
       "chapters": [
-        "Current Electricity",
         "D.C. Circuits",
-        "Practical Electricity"
+        "Practical Electricity",
+        "Electrical Safety"
       ],
-      "description": "For students who find circuit diagrams, formulas and explanation questions messy.",
+      "description": "For students who find circuit diagrams, component behaviour and mains electricity questions messy.",
       "whatStudentsWillDo": [
-        "Revise current, potential difference and resistance clearly",
-        "Practise series and parallel circuit calculations",
-        "Learn how to present circuit explanations for full marks"
+        "Practise series and parallel circuit rules and calculations",
+        "Interpret circuit components including LDRs, thermistors and diodes",
+        "Handle power, energy, cost, fuse, plug and safety questions"
       ],
-      "additionalInstructionLabel": "Any specific circuit topic or school worksheet to mention?",
+      "additionalInstructionLabel": "Any specific circuit, component or safety question to mention?",
       "isActive": true,
-      "displayOrder": 7
+      "displayOrder": 11
     },
     {
-      "id": "o-physics-magnetism-radioactivity",
+      "id": "o-physics-magnetism-electromagnetism",
       "categoryId": "o-level-physics",
-      "title": "Magnetism, Electromagnetism and Radioactivity",
-      "subtitle": "Fields, motor effect, induction, half-life and radiation safety",
+      "title": "Magnetism and Electromagnetism",
+      "subtitle": "Magnetic fields, solenoids, motor effect and d.c. motor questions",
       "level": "O Level",
       "subject": "Physics",
       "durationMinutes": 180,
@@ -514,30 +719,81 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/ala-carte/o-physics-magnetism-radioactivity.webp",
-        "alt": "Magnetism, Electromagnetism and Radioactivity ala-carte class artwork"
+        "src": "/ala-carte/o-physics-magnetism-electromagnetism.webp",
+        "alt": "Magnetism and Electromagnetism ala-carte class artwork"
       },
-      "chapters": [
-        "Magnetism",
-        "Electromagnetism",
-        "Electromagnetic Induction",
-        "Radioactivity"
-      ],
-      "description": "A high-yield booster for later syllabus topics that often need guided explanation and practice.",
+      "chapters": ["Magnetism", "Electromagnetism", "Motor Effect"],
+      "description": "A later-topic booster for students who need field patterns, electromagnets and motor effect explanations untangled.",
       "whatStudentsWillDo": [
-        "Review magnetic field patterns, electromagnets and motor effect questions",
-        "Practise electromagnetic induction explanation questions",
-        "Work through radioactivity, half-life and safety/application questions"
+        "Draw and interpret magnetic field patterns around magnets and solenoids",
+        "Practise force-on-current and Fleming’s left-hand rule questions",
+        "Explain d.c. motor action and split-ring commutators more confidently"
       ],
-      "additionalInstructionLabel": "Tell us if magnetism, induction or radioactivity should take priority.",
+      "additionalInstructionLabel": "Tell us if magnetism, solenoids or motor effect should take priority.",
       "isActive": true,
-      "displayOrder": 8
+      "displayOrder": 12
     },
     {
-      "id": "o-amath-differentiation",
+      "id": "o-physics-electromagnetic-induction",
+      "categoryId": "o-level-physics",
+      "title": "Electromagnetic Induction and Transformers",
+      "subtitle": "Induced e.m.f., generators, transformers and power transmission",
+      "level": "O Level",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-physics-electromagnetic-induction.webp",
+        "alt": "Electromagnetic Induction and Transformers ala-carte class artwork"
+      },
+      "chapters": [
+        "Electromagnetic Induction",
+        "A.C. Generator",
+        "Transformers"
+      ],
+      "description": "A focused induction class for students who need help with direction, magnitude, transformer equations and explanations.",
+      "whatStudentsWillDo": [
+        "Connect changing magnetic fields to induced e.m.f. and Lenz’s law",
+        "Practise a.c. generator and transformer explanation questions",
+        "Apply transformer equations and high-voltage transmission ideas"
+      ],
+      "additionalInstructionLabel": "Any induction, generator or transformer question to focus on?",
+      "isActive": true,
+      "displayOrder": 13
+    },
+    {
+      "id": "o-physics-radioactivity",
+      "categoryId": "o-level-physics",
+      "title": "Radioactivity, Half-life and Nuclear Equations",
+      "subtitle": "Alpha, beta, gamma, background radiation, decay and applications",
+      "level": "O Level",
+      "subject": "Physics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-physics-radioactivity.webp",
+        "alt": "Radioactivity, Half-life and Nuclear Equations ala-carte class artwork"
+      },
+      "chapters": ["Radioactivity", "Half-life", "Nuclear Equations"],
+      "description": "A dedicated radioactivity class for students who need nuclear notation, half-life and safety/application questions to feel manageable.",
+      "whatStudentsWillDo": [
+        "Compare alpha, beta and gamma radiation using ionising and penetrating power",
+        "Practise nuclear equations, decay curves and half-life calculations",
+        "Apply radioactivity ideas to background radiation, uses, hazards and safety"
+      ],
+      "additionalInstructionLabel": "Tell us if half-life, nuclear equations or radiation properties should take priority.",
+      "isActive": true,
+      "displayOrder": 14
+    },
+    {
+      "id": "o-amath-quadratics-discriminants",
       "categoryId": "o-level-additional-mathematics",
-      "title": "Differentiation Starter Pack",
-      "subtitle": "Rules, applications and question confidence",
+      "title": "Quadratic Functions and Discriminants",
+      "subtitle": "Completing the square, models, roots and line-curve conditions",
       "level": "O Level",
       "subject": "Additional Mathematics",
       "durationMinutes": 180,
@@ -545,19 +801,375 @@
       "currency": "SGD",
       "maxClassSize": 4,
       "image": {
-        "src": "/fusion_tuition_logo_horizontal.png",
-        "alt": "Additional Mathematics differentiation à la carte class"
+        "src": "/ala-carte/o-amath-quadratics-discriminants.webp",
+        "alt": "Quadratic Functions and Discriminants ala-carte class artwork"
       },
-      "chapters": ["Differentiation"],
-      "description": "For students who need a guided reset on differentiation before tackling exam-style applications.",
+      "chapters": ["Quadratic Functions", "Discriminants", "Quadratic Models"],
+      "description": "For students who need a cleaner method for quadratic graphs, completing the square and discriminant conditions.",
       "whatStudentsWillDo": [
-        "Revise basic differentiation rules",
-        "Practise tangent, normal and rate of change questions",
-        "Build confidence with step-by-step working"
+        "Use completing the square to find maximum and minimum values",
+        "Practise discriminant cases for roots, tangents and line-curve intersections",
+        "Apply quadratic functions as models in context questions"
       ],
-      "additionalInstructionLabel": "Any school worksheet or question type to focus on?",
+      "additionalInstructionLabel": "Tell us if completing the square, discriminants or quadratic modelling feels weakest.",
       "isActive": true,
       "displayOrder": 1
+    },
+    {
+      "id": "o-amath-equations-inequalities-surds",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Equations, Inequalities and Surds",
+      "subtitle": "Simultaneous equations, quadratic inequalities and surd manipulation",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-equations-inequalities-surds.webp",
+        "alt": "Equations, Inequalities and Surds ala-carte class artwork"
+      },
+      "chapters": [
+        "Equations and Inequalities",
+        "Simultaneous Equations",
+        "Surds"
+      ],
+      "description": "A foundations session for students who need stronger algebraic control before heavier A Math topics.",
+      "whatStudentsWillDo": [
+        "Solve simultaneous equations by substitution with one linear equation",
+        "Represent quadratic inequalities clearly on number lines",
+        "Practise surd operations, rationalising denominators and surd equations"
+      ],
+      "additionalInstructionLabel": "Any simultaneous equation, inequality or surd question type to prioritise?",
+      "isActive": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "o-amath-polynomials-partial-fractions",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Polynomials and Partial Fractions",
+      "subtitle": "Remainder theorem, factor theorem, cubic equations and decomposition",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-polynomials-partial-fractions.webp",
+        "alt": "Polynomials and Partial Fractions ala-carte class artwork"
+      },
+      "chapters": [
+        "Polynomials",
+        "Remainder and Factor Theorems",
+        "Partial Fractions"
+      ],
+      "description": "For students who can expand algebra but get stuck on theorem-based polynomial questions and partial fractions.",
+      "whatStudentsWillDo": [
+        "Practise polynomial multiplication, division and factorisation",
+        "Use remainder and factor theorems to solve cubic equations",
+        "Break rational expressions into examinable partial fraction forms"
+      ],
+      "additionalInstructionLabel": "Tell us if polynomial division, factor theorem or partial fractions should take priority.",
+      "isActive": true,
+      "displayOrder": 3
+    },
+    {
+      "id": "o-amath-binomial-expansions",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Binomial Expansions",
+      "subtitle": "Binomial theorem, coefficients and general term questions",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-binomial-expansions.webp",
+        "alt": "Binomial Expansions ala-carte class artwork"
+      },
+      "chapters": ["Binomial Theorem", "General Term", "Coefficients"],
+      "description": "A concise algebra class for students who need binomial expansions to feel systematic instead of memorised.",
+      "whatStudentsWillDo": [
+        "Use binomial notation and factorial notation correctly",
+        "Expand expressions for positive integer powers with cleaner working",
+        "Find selected terms and coefficients using the general term"
+      ],
+      "additionalInstructionLabel": "Any binomial expansion or coefficient question to focus on?",
+      "isActive": true,
+      "displayOrder": 4
+    },
+    {
+      "id": "o-amath-exponential-logarithmic-functions",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Exponential and Logarithmic Functions",
+      "subtitle": "Laws of logarithms, graphs, equations and modelling",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-exponential-logarithmic-functions.webp",
+        "alt": "Exponential and Logarithmic Functions ala-carte class artwork"
+      },
+      "chapters": [
+        "Exponential Functions",
+        "Logarithmic Functions",
+        "Logarithmic Laws"
+      ],
+      "description": "For students who need help connecting exponentials, logarithms, inverse graphs and equation solving.",
+      "whatStudentsWillDo": [
+        "Review exponential and logarithmic graphs, including inverse relationships",
+        "Apply laws of logarithms and change of base confidently",
+        "Solve simple exponential and logarithmic equations in model contexts"
+      ],
+      "additionalInstructionLabel": "Tell us if log laws, graph shapes or equation solving is the main weak area.",
+      "isActive": true,
+      "displayOrder": 5
+    },
+    {
+      "id": "o-amath-trigonometric-functions-graphs",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Trigonometric Functions and Graphs",
+      "subtitle": "Radians, exact values, principal values, amplitude and periodicity",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-trigonometric-functions-graphs.webp",
+        "alt": "Trigonometric Functions and Graphs ala-carte class artwork"
+      },
+      "chapters": [
+        "Trigonometric Functions",
+        "Trigonometric Graphs",
+        "Radians and Exact Values"
+      ],
+      "description": "A graph-first trigonometry class for students who need sine, cosine and tangent behaviour to become visual and predictable.",
+      "whatStudentsWillDo": [
+        "Review six trigonometric functions for angles in degrees and radians",
+        "Practise exact values, inverse trig principal values and graph transformations",
+        "Connect amplitude, period and symmetry to exam graph questions"
+      ],
+      "additionalInstructionLabel": "Tell us if radians, exact values or trig graphs should take priority.",
+      "isActive": true,
+      "displayOrder": 6
+    },
+    {
+      "id": "o-amath-trig-identities-equations",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Trigonometric Identities, Equations and R-Formula",
+      "subtitle": "Identity proofs, double-angle formulae, R-formula and interval solutions",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-trig-identities-equations.webp",
+        "alt": "Trigonometric Identities, Equations and R-Formula ala-carte class artwork"
+      },
+      "chapters": [
+        "Trigonometric Identities",
+        "Trigonometric Equations",
+        "R-Formula"
+      ],
+      "description": "For students who find trig identities and interval-based equation solving hard to organise under exam pressure.",
+      "whatStudentsWillDo": [
+        "Simplify trigonometric expressions using the core identities and expansions",
+        "Solve trigonometric equations in a given interval without over-counting solutions",
+        "Use R-formula transformations and build cleaner identity proofs"
+      ],
+      "additionalInstructionLabel": "Any identity, R-formula or trig equation question to focus on?",
+      "isActive": true,
+      "displayOrder": 7
+    },
+    {
+      "id": "o-amath-coordinate-geometry-circles",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Coordinate Geometry and Circles",
+      "subtitle": "Lines, gradients, midpoints, circle equations and tangents",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-coordinate-geometry-circles.webp",
+        "alt": "Coordinate Geometry and Circles ala-carte class artwork"
+      },
+      "chapters": [
+        "Coordinate Geometry",
+        "Circle Equations",
+        "Tangents and Chords"
+      ],
+      "description": "A targeted geometry class for students who need stronger coordinate methods for lines, circles and tangents.",
+      "whatStudentsWillDo": [
+        "Use parallel and perpendicular gradient conditions confidently",
+        "Practise midpoint, area of rectilinear figures and circle equation forms",
+        "Solve line-circle intersection, tangent and chord questions"
+      ],
+      "additionalInstructionLabel": "Tell us if line geometry, circle equations or tangents should be prioritised.",
+      "isActive": true,
+      "displayOrder": 8
+    },
+    {
+      "id": "o-amath-linear-law-plane-geometry",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Linear Law and Plane Geometry Proofs",
+      "subtitle": "Linearisation, unknown constants and structured proof writing",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-linear-law-plane-geometry.webp",
+        "alt": "Linear Law and Plane Geometry Proofs ala-carte class artwork"
+      },
+      "chapters": [
+        "Linear Law",
+        "Plane Geometry Proofs",
+        "Tangent-Chord Theorem"
+      ],
+      "description": "For students who need a clearer framework for transforming relationships and writing geometry proofs step by step.",
+      "whatStudentsWillDo": [
+        "Transform relationships into linear form to determine constants from straight-line graphs",
+        "Use parallel lines, triangles, quadrilaterals and circle properties in proofs",
+        "Practise midpoint theorem and tangent-chord theorem proof questions"
+      ],
+      "additionalInstructionLabel": "Tell us if linear law or plane geometry proofs should take more time.",
+      "isActive": true,
+      "displayOrder": 9
+    },
+    {
+      "id": "o-amath-differentiation-techniques",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Differentiation Techniques and Curve Behaviour",
+      "subtitle": "Derivative rules, chain/product/quotient rule and stationary points",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-differentiation-techniques.webp",
+        "alt": "Differentiation Techniques and Curve Behaviour ala-carte class artwork"
+      },
+      "chapters": [
+        "Differentiation Techniques",
+        "Curve Behaviour",
+        "Stationary Points"
+      ],
+      "description": "A calculus reset for students who need differentiation rules and curve behaviour to feel systematic.",
+      "whatStudentsWillDo": [
+        "Revise derivatives of powers, trigonometric, exponential and logarithmic functions",
+        "Practise product, quotient and chain rule questions",
+        "Analyse increasing/decreasing functions, stationary points and second derivative tests"
+      ],
+      "additionalInstructionLabel": "Tell us if derivative rules, chain rule or stationary points feels weakest.",
+      "isActive": true,
+      "displayOrder": 10
+    },
+    {
+      "id": "o-amath-differentiation-applications",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Applications of Differentiation",
+      "subtitle": "Tangents, normals, connected rates and optimisation",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-differentiation-applications.webp",
+        "alt": "Applications of Differentiation ala-carte class artwork"
+      },
+      "chapters": [
+        "Tangents and Normals",
+        "Connected Rates of Change",
+        "Maxima and Minima"
+      ],
+      "description": "For students who know the rules but need help applying differentiation to full exam-style problems.",
+      "whatStudentsWillDo": [
+        "Practise gradient, tangent and normal questions with complete working",
+        "Set up connected rates and optimisation problems from context",
+        "Interpret maximum and minimum answers in the context of a question"
+      ],
+      "additionalInstructionLabel": "Any tangent, normal, rates or optimisation question to focus on?",
+      "isActive": true,
+      "displayOrder": 11
+    },
+    {
+      "id": "o-amath-integration-area",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Integration and Area Under Curves",
+      "subtitle": "Reverse differentiation, definite integrals and bounded regions",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-integration-area.webp",
+        "alt": "Integration and Area Under Curves ala-carte class artwork"
+      },
+      "chapters": [
+        "Integration Techniques",
+        "Definite Integrals",
+        "Area Under Curves"
+      ],
+      "description": "A focused integration class for students who need more confidence with antiderivatives and area questions.",
+      "whatStudentsWillDo": [
+        "Revise integration as the reverse of differentiation",
+        "Practise standard, composite and definite integral questions",
+        "Find areas bounded by curves and lines, including regions below the x-axis"
+      ],
+      "additionalInstructionLabel": "Tell us if integration rules, definite integrals or area questions are hardest.",
+      "isActive": true,
+      "displayOrder": 12
+    },
+    {
+      "id": "o-amath-calculus-kinematics",
+      "categoryId": "o-level-additional-mathematics",
+      "title": "Calculus Kinematics and Exam Synthesis",
+      "subtitle": "Displacement, velocity, acceleration and mixed calculus questions",
+      "level": "O Level",
+      "subject": "Additional Mathematics",
+      "durationMinutes": 180,
+      "price": 100,
+      "currency": "SGD",
+      "maxClassSize": 4,
+      "image": {
+        "src": "/ala-carte/o-amath-calculus-kinematics.webp",
+        "alt": "Calculus Kinematics and Exam Synthesis ala-carte class artwork"
+      },
+      "chapters": [
+        "Calculus Kinematics",
+        "Displacement, Velocity and Acceleration",
+        "Mixed Calculus Practice"
+      ],
+      "description": "A final calculus application class for students who need motion questions and mixed differentiation-integration practice.",
+      "whatStudentsWillDo": [
+        "Connect displacement, velocity and acceleration using differentiation and integration",
+        "Interpret motion graphs and constants of integration in context",
+        "Work through mixed calculus questions that combine techniques across the syllabus"
+      ],
+      "additionalInstructionLabel": "Tell us if motion questions or mixed calculus practice should be prioritised.",
+      "isActive": true,
+      "displayOrder": 13
     },
     {
       "id": "igcse-chem-stoichiometry",
