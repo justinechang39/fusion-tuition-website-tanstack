@@ -1,6 +1,16 @@
 // ala-carte.tsx
 // Mobile-first à la carte class menu landing page for Fusion Tuition.
 
+import {
+  AlertDialog,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -13,7 +23,13 @@ import {
 import { Textarea } from '@/components/ui/textarea'
 import alaCarteData from '@/data/ala-carte-classes.json'
 import { toast } from '@/hooks/use-toast'
-import { buildBreadcrumbJsonLd, buildPageJsonLd, buildSeoHead } from '@/lib/seo'
+import {
+  buildAbsoluteUrl,
+  buildBreadcrumbJsonLd,
+  buildPageJsonLd,
+  buildSeoHead,
+  siteOrigin,
+} from '@/lib/seo'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
@@ -21,6 +37,9 @@ import {
   ArrowRight,
   CheckCircle2,
   Clock3,
+  Mail,
+  MessageCircle,
+  Phone,
   ShoppingBag,
   Trash2,
   UsersRound,
@@ -80,6 +99,12 @@ export interface OrderFormState {
 }
 
 export const CART_STORAGE_KEY = 'fusion-ala-carte-cart'
+const contactPhoneDisplay = '91796637'
+const contactPhoneHref = 'tel:+6591796637'
+const contactWhatsappHref =
+  'https://wa.me/6591796637?text=Hi%20Justine%2C%20I%20would%20like%20to%20ask%20about%20Fusion%20Tuition%20June%20holiday%20ala-carte%20classes.'
+const contactEmailHref =
+  'mailto:justinechang94@gmail.com,justine@fusiontuition.com?subject=Fusion%20Tuition%20ala-carte%20class%20enquiry'
 
 export const categories = [...alaCarteData.categories]
   .filter((category) => category.isActive)
@@ -114,12 +139,26 @@ export const Route = createFileRoute('/ala-carte/')({
         'One-off, targeted June holiday classes for O Level and IGCSE students. Pick a subject, choose a class, and Fusion Tuition will call to arrange timing.',
       path: '/ala-carte',
       imagePath: '/fusion_tuition_logo_horizontal.png',
+      extraMeta: [
+        {
+          name: 'keywords',
+          content:
+            'June holiday tuition Singapore, ala-carte tuition, O Level tuition, IGCSE tuition, Physics tuition, Chemistry tuition, A Math tuition',
+        },
+      ],
       jsonLd: [
         buildPageJsonLd({
           path: '/ala-carte',
           title: 'Ala-carte Classes',
           description:
             'One-off targeted June holiday classes for O Level and IGCSE students who want help with selected chapters.',
+          pageType: 'CollectionPage',
+        }),
+        buildAlaCarteOfferCatalogJsonLd({
+          path: '/ala-carte',
+          title: 'Fusion Tuition Ala-carte Classes',
+          description:
+            'Targeted small-group Physics, Chemistry and Additional Mathematics classes for O Level and IGCSE students during the June holidays.',
         }),
         buildBreadcrumbJsonLd([
           { name: 'Home', path: '/' },
@@ -142,6 +181,48 @@ export function getCategoryItems(categoryId: string) {
 
 function getCartCount(cartItems: CartItem[]) {
   return cartItems.length
+}
+
+export function buildAlaCarteOfferCatalogJsonLd({
+  path,
+  title,
+  description,
+  categoryId,
+}: {
+  path: string
+  title: string
+  description: string
+  categoryId?: string
+}) {
+  const catalogItems = categoryId ? getCategoryItems(categoryId) : items
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    name: title,
+    description,
+    url: buildAbsoluteUrl(path),
+    itemListElement: catalogItems.map((item, index) => ({
+      '@type': 'Offer',
+      position: index + 1,
+      name: `${item.level} ${item.subject}: ${item.title}`,
+      category: `${item.level} ${item.subject} tuition`,
+      price: item.price,
+      priceCurrency: item.currency,
+      availability: 'https://schema.org/InStock',
+      itemOffered: {
+        '@type': 'Course',
+        name: item.title,
+        description: item.description,
+        provider: {
+          '@id': `${siteOrigin}/#organization`,
+        },
+        educationalLevel: item.level,
+        teaches: item.chapters.join(', '),
+        timeRequired: `PT${item.durationMinutes}M`,
+      },
+    })),
+  }
 }
 
 function scrollToCartForm(form: HTMLFormElement, fieldName?: string) {
@@ -768,9 +849,6 @@ function QuickAddCard({ onAdd }: { onAdd: (item: any) => void }) {
 
 function AlaCartePage() {
   const order = useAlaCarteOrder()
-  const [activeFilter, setActiveFilter] = useState<'all' | 'O Level' | 'IGCSE'>(
-    'all',
-  )
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -784,11 +862,6 @@ function AlaCartePage() {
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const filteredCategories = categories.filter((category) => {
-    if (activeFilter === 'all') return true
-    return category.level === activeFilter
-  })
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -921,7 +994,7 @@ function AlaCartePage() {
             >
               conquer your <br />
               <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600 bg-clip-text text-transparent drop-shadow-[0_2px_25px_rgba(249,115,22,0.15)]">
-                weaknesses.
+                weakness.
               </span>
             </motion.h1>
 
@@ -968,39 +1041,6 @@ function AlaCartePage() {
           </p>
         </div>
 
-        {/* Dynamic Level Filter Pills */}
-        <div className="mb-10 flex flex-wrap justify-center sm:justify-start gap-2.5 rounded-[2rem] border-2 border-slate-950 bg-white p-1.5 w-fit shadow-[4px_4px_0px_#020617] mx-auto sm:mx-0">
-          {(
-            [
-              { id: 'all', label: 'All Subjects' },
-              { id: 'O Level', label: 'O Level' },
-              { id: 'IGCSE', label: 'IGCSE' },
-            ] as const
-          ).map((opt) => {
-            const isActive = activeFilter === opt.id
-            return (
-              <button
-                key={opt.id}
-                type="button"
-                onClick={() => setActiveFilter(opt.id)}
-                className="relative px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-colors duration-200 select-none cursor-pointer"
-                style={{
-                  color: isActive ? '#fff' : '#0f172a',
-                }}
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="activeFilterBg"
-                    className="absolute inset-0 rounded-full bg-slate-950"
-                    transition={{ type: 'spring', stiffness: 220, damping: 20 }}
-                  />
-                )}
-                <span className="relative z-10">{opt.label}</span>
-              </button>
-            )
-          })}
-        </div>
-
         <motion.div
           variants={{
             hidden: {},
@@ -1015,7 +1055,7 @@ function AlaCartePage() {
           viewport={{ once: true, margin: '-40px' }}
           className="grid gap-6 sm:grid-cols-2 lg:gap-8"
         >
-          {filteredCategories.map((category) => (
+          {categories.map((category) => (
             <CategoryCard key={category.id} category={category} />
           ))}
         </motion.div>
@@ -1115,48 +1155,159 @@ export function FloatingCartButton({
   cartCount: number
   openCart: () => void
 }) {
+  const cartLabel =
+    cartCount === 0
+      ? 'Cart'
+      : `Cart · ${cartCount} class${cartCount > 1 ? 'es' : ''}`
+
   return (
-    <>
+    <AlertDialog>
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-orange-200/80 bg-white/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 shadow-[0_-18px_40px_rgba(251,146,60,0.18)] backdrop-blur-xl md:hidden">
-        <motion.div
-          key={cartCount}
-          initial={{ scale: 1 }}
-          animate={cartCount > 0 ? { scale: [1, 1.08, 0.96, 1] } : {}}
-          transition={{ duration: 0.4 }}
-        >
-          <Button
-            className={
-              cartCount === 0
-                ? 'h-14 w-full rounded-2xl border-orange-200 bg-white text-base font-black text-slate-950 shadow-sm hover:bg-orange-50 hover:text-slate-950'
-                : 'h-14 w-full rounded-2xl text-base font-black shadow-xl shadow-orange-500/20'
-            }
-            onClick={openCart}
-            variant={cartCount === 0 ? 'outline' : 'default'}
+        <div className="grid grid-cols-2 gap-2">
+          <motion.div
+            key={cartCount}
+            initial={{ scale: 1 }}
+            animate={cartCount > 0 ? { scale: [1, 1.05, 0.98, 1] } : {}}
+            transition={{ duration: 0.4 }}
           >
-            <ShoppingBag className="mr-2 h-5 w-5" />
-            {cartCount === 0
-              ? 'View cart'
-              : `Cart · ${cartCount} class${cartCount > 1 ? 'es' : ''}`}
-          </Button>
-        </motion.div>
+            <Button
+              className="h-14 w-full rounded-2xl border-2 border-slate-950 bg-slate-950 text-sm font-black uppercase tracking-[0.12em] text-white shadow-[3px_3px_0px_#020617] hover:bg-orange-600 active:translate-y-0.5 active:shadow-none"
+              onClick={openCart}
+            >
+              <ShoppingBag className="mr-2 h-4 w-4" />
+              Cart
+              {cartCount > 0 && (
+                <span className="ml-2 rounded-full bg-white px-2 py-0.5 text-[10px] text-slate-950">
+                  {cartCount}
+                </span>
+              )}
+            </Button>
+          </motion.div>
+          <AlertDialogTrigger asChild>
+            <Button className="h-14 w-full rounded-2xl border-2 border-slate-950 bg-white text-sm font-black uppercase tracking-[0.12em] text-slate-950 shadow-[3px_3px_0px_#020617] hover:bg-orange-50 hover:text-orange-700 active:translate-y-0.5 active:shadow-none">
+              <MessageCircle className="mr-2 h-4 w-4" />
+              Contact
+            </Button>
+          </AlertDialogTrigger>
+        </div>
       </div>
-      {cartCount > 0 && (
-        <motion.button
-          key={cartCount}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: [0.8, 1.1, 0.95, 1], opacity: 1 }}
-          transition={{ duration: 0.4 }}
+
+      <motion.div
+        key={cartCount}
+        initial={{ scale: 0.92, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.22 }}
+        className="fixed bottom-6 right-6 z-40 hidden overflow-hidden rounded-full border-2 border-slate-950 bg-white p-1 shadow-[5px_5px_0px_#020617] md:flex"
+      >
+        <button
           type="button"
-          className="fixed bottom-6 right-6 z-40 hidden rounded-full bg-slate-950 px-5 py-4 font-black text-white shadow-2xl shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600 md:block"
+          className="flex h-12 items-center gap-2 rounded-full bg-slate-950 px-5 text-xs font-black uppercase tracking-[0.14em] text-white transition hover:bg-orange-600"
           onClick={openCart}
+          aria-label={cartLabel}
         >
-          <span className="flex items-center gap-3">
-            <ShoppingBag className="h-5 w-5" />
-            Cart · {cartCount}
+          <ShoppingBag className="h-4 w-4" />
+          Cart
+          {cartCount > 0 && (
+            <span className="rounded-full bg-white px-2 py-0.5 text-[10px] text-slate-950">
+              {cartCount}
+            </span>
+          )}
+        </button>
+        <AlertDialogTrigger asChild>
+          <button
+            type="button"
+            className="flex h-12 items-center gap-2 rounded-full px-5 text-xs font-black uppercase tracking-[0.14em] text-slate-950 transition hover:bg-orange-50 hover:text-orange-700"
+          >
+            <MessageCircle className="h-4 w-4" />
+            Contact
+          </button>
+        </AlertDialogTrigger>
+      </motion.div>
+
+      <ContactDialogContent />
+    </AlertDialog>
+  )
+}
+
+function ContactDialogContent() {
+  return (
+    <AlertDialogContent className="max-w-md rounded-[1.75rem] border-2 border-slate-950 bg-[#fffaf3] p-0 text-slate-950 shadow-[8px_8px_0px_#020617]">
+      <div className="p-6 sm:p-7">
+        <AlertDialogHeader>
+          <p className="w-fit rounded-full bg-orange-100 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-orange-700">
+            Direct enquiry
+          </p>
+          <AlertDialogTitle className="text-left text-3xl font-black tracking-[-0.04em] text-slate-950">
+            Contact Fusion Tuition
+          </AlertDialogTitle>
+          <AlertDialogDescription className="text-left text-sm font-semibold leading-6 text-slate-600">
+            Ask about June holiday ala-carte classes, timing, or which topic
+            your child should prioritise.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+
+        <div className="mt-6 grid gap-3">
+          <ContactAction
+            href={contactPhoneHref}
+            icon={<Phone className="h-5 w-5" />}
+            label="Call"
+            value={contactPhoneDisplay}
+          />
+          <ContactAction
+            href={contactWhatsappHref}
+            icon={<MessageCircle className="h-5 w-5" />}
+            label="WhatsApp"
+            value={contactPhoneDisplay}
+          />
+          <ContactAction
+            href={contactEmailHref}
+            icon={<Mail className="h-5 w-5" />}
+            label="Email"
+          />
+        </div>
+
+        <AlertDialogFooter className="mt-6">
+          <AlertDialogCancel className="h-11 rounded-full border-2 border-slate-950 bg-white px-5 font-black text-slate-950 shadow-[2px_2px_0px_#020617] hover:bg-orange-50 hover:text-orange-700">
+            Close
+          </AlertDialogCancel>
+        </AlertDialogFooter>
+      </div>
+    </AlertDialogContent>
+  )
+}
+
+function ContactAction({
+  href,
+  icon,
+  label,
+  value,
+}: {
+  href: string
+  icon: ReactNode
+  label: string
+  value?: string
+}) {
+  return (
+    <a
+      className="flex items-center gap-4 rounded-2xl border-2 border-slate-950 bg-white p-4 text-left shadow-[3px_3px_0px_#020617] transition hover:-translate-y-0.5 hover:bg-orange-50 hover:shadow-[4px_4px_0px_#f97316]"
+      href={href}
+      rel="noreferrer"
+      target={href.startsWith('http') ? '_blank' : undefined}
+    >
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-950 text-white">
+        {icon}
+      </span>
+      <span className="min-w-0">
+        <span className="block text-sm font-black uppercase tracking-[0.18em] text-slate-950">
+          {label}
+        </span>
+        {value && (
+          <span className="mt-1 block break-words text-sm font-black leading-5 text-slate-950">
+            {value}
           </span>
-        </motion.button>
-      )}
-    </>
+        )}
+      </span>
+    </a>
   )
 }
 

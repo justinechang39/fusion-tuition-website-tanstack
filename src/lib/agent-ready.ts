@@ -6,10 +6,31 @@ import {
 
 export const siteName = 'Fusion Tuition'
 export const siteDescription =
-  'Fusion Tuition is a Singapore tuition centre focused on small-group science and mathematics teaching for IGCSE, GCE O Level, A Level, and IB students.'
+  'Fusion Tuition is a Singapore small-group tuition centre for Physics, Chemistry, and Mathematics, supporting IGCSE, GCE O Level, A Level, and IB students.'
 
 export const publicRoutes = [
   { path: '/', title: 'Home' },
+  { path: '/ala-carte', title: 'Ala-carte Classes' },
+  {
+    path: '/ala-carte/o-level-chemistry',
+    title: 'O Level Chemistry June Holiday Tuition',
+  },
+  {
+    path: '/ala-carte/o-level-physics',
+    title: 'O Level Physics June Holiday Tuition',
+  },
+  {
+    path: '/ala-carte/o-level-additional-mathematics',
+    title: 'O Level Additional Mathematics June Holiday Tuition',
+  },
+  {
+    path: '/ala-carte/igcse-chemistry',
+    title: 'IGCSE Chemistry June Holiday Tuition',
+  },
+  {
+    path: '/ala-carte/igcse-physics',
+    title: 'IGCSE Physics June Holiday Tuition',
+  },
   { path: '/about', title: 'About Us' },
   { path: '/classes', title: 'Classes' },
   { path: '/contact', title: 'Contact' },
@@ -23,6 +44,7 @@ export const contactDetails = {
   phoneDisplay: '+65 9179 6637',
   phoneE164: '+6591796637',
   email: 'justine@fusiontuition.com',
+  alternateEmail: 'justinechang94@gmail.com',
   whatsappUrl:
     'https://wa.me/6591796637?text=Hi%20Fusion%20Tuition%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20classes.',
 }
@@ -216,6 +238,7 @@ ${siteDescription}
 - Small-group tuition with personalised attention.
 - Focus on Physics, Chemistry, and Mathematics.
 - Supports IGCSE, GCE O Level, A Level, and IB students.
+- High-intent support for O Level and IGCSE Physics, Chemistry, Mathematics, Additional Mathematics, and June holiday revision.
 
 ## Teachers
 
@@ -234,6 +257,7 @@ ${publicRoutes.map((route) => `- ${route.title}: ${route.path}`).join('\n')}
 
 - Phone: ${contactDetails.phoneDisplay}
 - Email: ${contactDetails.email}
+- Alternative email: ${contactDetails.alternateEmail}
 - WhatsApp: ${contactDetails.whatsappUrl}
 `,
   '/about': `# About Fusion Tuition
@@ -258,6 +282,17 @@ ${teachers
   '/classes': `# Fusion Tuition Classes
 
 Fusion Tuition teaches students across multiple curricula.
+
+## Search-relevant programmes
+
+- O Level Physics tuition
+- O Level Chemistry tuition
+- O Level Additional Mathematics tuition
+- IGCSE Physics tuition
+- IGCSE Chemistry tuition
+- IGCSE Mathematics and Additional Mathematics tuition
+- A Level Physics and Chemistry tuition
+- IB Mathematics and Chemistry tuition
 
 ## IGCSE
 
@@ -287,6 +322,7 @@ ${curriculumCatalog.ib.map((item) => `- ${item.name} (${item.code})`).join('\n')
 
 - Phone: ${contactDetails.phoneDisplay}
 - Email: ${contactDetails.email}
+- Alternative email: ${contactDetails.alternateEmail}
 - WhatsApp: ${contactDetails.whatsappUrl}
 
 ## Helpful related pages
@@ -312,6 +348,8 @@ ${curriculumCatalog.ib.map((item) => `- ${item.name} (${item.code})`).join('\n')
 
 Fusion Tuition publishes evergreen articles about study strategy, revision habits, and how families can think about science and mathematics support.
 
+Topics include O Level and IGCSE study tips, Physics revision, Chemistry revision, Mathematics revision, and June holiday planning.
+
 ## Recent articles
 
 ${getCollectionEntries('blog')
@@ -331,6 +369,20 @@ ${getCollectionEntries('announcements')
   .join('\n')}
 `,
   '/docs/api': apiDocsMarkdown,
+  '/ala-carte': `# Fusion Tuition Ala-carte Classes
+
+One-off targeted June holiday classes in Singapore for O Level and IGCSE students who want help with selected chapters.
+
+## Best For
+
+- O Level and IGCSE students who need a focused June holiday revision plan.
+- Students who want chapter-specific help in Physics, Chemistry, or Additional Mathematics.
+
+## Contact
+
+- Call or WhatsApp: ${contactDetails.phoneDisplay}
+- Email: justinechang94@gmail.com and ${contactDetails.email}
+`,
 } as const
 
 export function getPageMarkdown(pathname: string, origin: string) {

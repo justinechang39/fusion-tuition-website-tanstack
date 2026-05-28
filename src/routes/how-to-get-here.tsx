@@ -1,21 +1,30 @@
 import HowToGetHerePage from '@/legacy-pages/how-to-get-here'
-import { buildBreadcrumbJsonLd, buildPageJsonLd, buildSeoHead } from '@/lib/seo'
+import {
+  buildBreadcrumbJsonLd,
+  buildDirectionsPageJsonLd,
+  buildSeoHead,
+} from '@/lib/seo'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/how-to-get-here')({
   head: () =>
     buildSeoHead({
-      title: 'How To Get To Fusion Tuition',
+      title: 'Fusion Tuition Jalan Pemimpin Directions',
       description:
-        'Find the Fusion Tuition address in Singapore and get step-by-step guidance for reaching the tuition centre by car or public transport.',
+        'Find Fusion Tuition at #02-13, 37 Jalan Pemimpin, Singapore 577177, with directions for parents and students travelling by car or public transport.',
       path: '/how-to-get-here',
+      extraMeta: [
+        {
+          name: 'keywords',
+          content:
+            'Fusion Tuition address, 37 Jalan Pemimpin tuition centre, tuition centre near Marymount, tuition centre directions Singapore',
+        },
+      ],
       jsonLd: [
-        buildPageJsonLd({
-          path: '/how-to-get-here',
-          title: 'How To Get To Fusion Tuition',
-          description:
-            'Find the Fusion Tuition address in Singapore and get step-by-step guidance for reaching the tuition centre by car or public transport.',
-        }),
+        buildDirectionsPageJsonLd(
+          'Fusion Tuition Jalan Pemimpin Directions',
+          'Find Fusion Tuition at #02-13, 37 Jalan Pemimpin, Singapore 577177, with directions by car or public transport.',
+        ),
         buildBreadcrumbJsonLd([
           { name: 'Home', path: '/' },
           { name: 'How To Get Here', path: '/how-to-get-here' },

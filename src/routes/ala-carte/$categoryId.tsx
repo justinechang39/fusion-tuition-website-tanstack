@@ -5,6 +5,7 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { buildBreadcrumbJsonLd, buildPageJsonLd, buildSeoHead } from '@/lib/seo'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle2, Plus, Search, X } from 'lucide-react'
@@ -16,6 +17,7 @@ import {
   FloatingAlaCarteNav,
   FloatingCartButton,
   ItemDetailSheet,
+  buildAlaCarteOfferCatalogJsonLd,
   categories,
   formatDuration,
   getCategoryItems,
@@ -23,6 +25,55 @@ import {
 } from './index'
 
 export const Route = createFileRoute('/ala-carte/$categoryId')({
+  loader: ({ params }) =>
+    categories.find((category) => category.id === params.categoryId) ?? null,
+  head: ({ loaderData }) => {
+    if (!loaderData) {
+      return buildSeoHead({
+        title: 'Ala-carte Classes',
+        description:
+          'Fusion Tuition June holiday ala-carte classes for O Level and IGCSE students.',
+        path: '/ala-carte',
+        noIndex: true,
+      })
+    }
+
+    const path = `/ala-carte/${loaderData.id}`
+    const title = `${loaderData.shortLabel} Ala-carte Classes`
+    const description = `${loaderData.label} one-off June holiday classes in Singapore. Choose targeted small-group classes by chapter for O Level and IGCSE exam preparation.`
+
+    return buildSeoHead({
+      title,
+      description,
+      path,
+      imagePath: loaderData.image.src,
+      extraMeta: [
+        {
+          name: 'keywords',
+          content: `${loaderData.label} tuition Singapore, ${loaderData.shortLabel} June holiday class, ala-carte tuition, O Level tuition, IGCSE tuition`,
+        },
+      ],
+      jsonLd: [
+        buildPageJsonLd({
+          path,
+          title,
+          description,
+          pageType: 'CollectionPage',
+        }),
+        buildAlaCarteOfferCatalogJsonLd({
+          path,
+          title: `${loaderData.label} Ala-carte Classes`,
+          description,
+          categoryId: loaderData.id,
+        }),
+        buildBreadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Ala-carte Classes', path: '/ala-carte' },
+          { name: loaderData.label, path },
+        ]),
+      ],
+    })
+  },
   component: AlaCarteCategoryPage,
 })
 
@@ -391,13 +442,13 @@ function AlaCarteCategoryPage() {
                     }}
                     className={
                       isSelected
-                        ? 'group overflow-hidden rounded-[2rem] border-2 border-orange-500 bg-gradient-to-b from-[#fffdfa] to-orange-50/20 shadow-[6px_6px_0px_#f97316] hover:shadow-[6px_6px_0px_#f97316] transition-all duration-200'
-                        : 'group overflow-hidden rounded-[2rem] border-2 border-slate-950 bg-white shadow-[6px_6px_0px_#020617] hover:shadow-[6px_6px_0px_#f97316] transition-all duration-200'
+                        ? 'group flex h-full flex-col overflow-hidden rounded-[2rem] border-2 border-orange-500 bg-gradient-to-b from-[#fffdfa] to-orange-50/20 shadow-[6px_6px_0px_#f97316] hover:shadow-[6px_6px_0px_#f97316] transition-all duration-200'
+                        : 'group flex h-full flex-col overflow-hidden rounded-[2rem] border-2 border-slate-950 bg-white shadow-[6px_6px_0px_#020617] hover:shadow-[6px_6px_0px_#f97316] transition-all duration-200'
                     }
                   >
                     <button
                       type="button"
-                      className="block w-full text-left cursor-pointer relative"
+                      className="flex flex-1 flex-col w-full text-left cursor-pointer relative"
                       onClick={() => openItem(item)}
                     >
                       <div className="relative h-48 overflow-hidden bg-orange-100 border-b-2 border-slate-950">
@@ -429,7 +480,7 @@ function AlaCarteCategoryPage() {
                           )}
                         </AnimatePresence>
                       </div>
-                      <div className="p-5">
+                      <div className="flex-1 p-5">
                         <h3 className="text-2xl font-black leading-tight tracking-[-0.03em] text-slate-950">
                           {item.title}
                         </h3>
@@ -448,7 +499,7 @@ function AlaCarteCategoryPage() {
                         </div>
                       </div>
                     </button>
-                    <div className="flex items-center justify-between border-t border-slate-100 px-5 py-4 bg-white/40">
+                    <div className="mt-auto flex items-center justify-between border-t border-slate-100 px-5 py-4 bg-white/40">
                       <button
                         type="button"
                         className="text-sm font-black text-slate-600 hover:text-orange-600 transition-colors cursor-pointer"
@@ -463,17 +514,14 @@ function AlaCarteCategoryPage() {
                             : 'rounded-full bg-slate-950 text-white font-black hover:bg-orange-600 cursor-pointer shadow-[2px_2px_0px_#020617] active:translate-y-0.5 active:shadow-none transition-all'
                         }
                         size="sm"
-                        onClick={() => order.addToCart(item)}
+                        onClick={() =>
+                          isSelected
+                            ? order.removeFromCart(item.id)
+                            : order.addToCart(item)
+                        }
                       >
                         {isSelected ? (
-                          <div className="flex items-center gap-1.5 mr-0.5">
-                            <CheckCircle2 className="h-4 w-4 text-white" />
-                            <motion.div
-                              className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_6px_#fff]"
-                              animate={{ scale: [1, 1.4, 1] }}
-                              transition={{ duration: 1.5, repeat: Infinity }}
-                            />
-                          </div>
+                          <CheckCircle2 className="mr-1.5 h-4 w-4 text-white" />
                         ) : (
                           <Plus className="mr-1.5 h-4 w-4" />
                         )}

@@ -46,6 +46,7 @@ type PageSchemaInput = {
   title: string
   description: string
   pageType?: string
+  keywords?: string[]
 }
 
 function serializeJsonLd(value: JsonLdValue) {
@@ -219,6 +220,7 @@ export function buildPageJsonLd({
   title,
   description,
   pageType = 'WebPage',
+  keywords,
 }: PageSchemaInput): JsonLdValue {
   const url = buildCanonicalUrl(path)
 
@@ -229,6 +231,12 @@ export function buildPageJsonLd({
     name: title,
     description,
     url,
+    inLanguage: 'en-SG',
+    ...(keywords ? { keywords: keywords.join(', ') } : {}),
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Singapore parents and secondary school students',
+    },
     isPartOf: {
       '@id': `${siteOrigin}/#website`,
     },
@@ -279,6 +287,14 @@ export function buildClassesPageJsonLd(title: string, description: string) {
       title,
       description,
       pageType: 'CollectionPage',
+      keywords: [
+        'tuition Singapore',
+        'O Level tuition',
+        'IGCSE tuition',
+        'Physics tuition',
+        'Chemistry tuition',
+        'Mathematics tuition',
+      ],
     }),
     mainEntity: {
       '@type': 'OfferCatalog',
@@ -288,6 +304,8 @@ export function buildClassesPageJsonLd(title: string, description: string) {
           '@type': 'Course',
           name: `IGCSE ${item.name}`,
           courseCode: item.code,
+          educationalLevel: 'IGCSE',
+          courseMode: 'In-person small-group tuition',
           provider: {
             '@id': `${siteOrigin}/#organization`,
           },
@@ -296,6 +314,8 @@ export function buildClassesPageJsonLd(title: string, description: string) {
           '@type': 'Course',
           name: `GCE O Level ${item.name}`,
           courseCode: item.code,
+          educationalLevel: 'GCE O Level',
+          courseMode: 'In-person small-group tuition',
           provider: {
             '@id': `${siteOrigin}/#organization`,
           },
@@ -304,6 +324,8 @@ export function buildClassesPageJsonLd(title: string, description: string) {
           '@type': 'Course',
           name: `GCE A Level ${item.name}`,
           courseCode: item.code,
+          educationalLevel: 'GCE A Level',
+          courseMode: 'In-person small-group tuition',
           provider: {
             '@id': `${siteOrigin}/#organization`,
           },
@@ -312,6 +334,8 @@ export function buildClassesPageJsonLd(title: string, description: string) {
           '@type': 'Course',
           name: `IB ${item.name}`,
           courseCode: item.code,
+          educationalLevel: 'IB',
+          courseMode: 'In-person small-group tuition',
           provider: {
             '@id': `${siteOrigin}/#organization`,
           },
@@ -331,6 +355,32 @@ export function buildContactPageJsonLd(title: string, description: string) {
     }),
     mainEntity: {
       '@id': `${siteOrigin}/#organization`,
+    },
+  }
+}
+
+export function buildDirectionsPageJsonLd(title: string, description: string) {
+  const page = buildPageJsonLd({
+    path: '/how-to-get-here',
+    title,
+    description,
+  })
+
+  return {
+    ...page,
+    mainEntity: {
+      '@type': 'Place',
+      '@id': `${siteOrigin}/#place`,
+      name: locationDetails.name,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: locationDetails.addressLine1,
+        addressLocality: 'Singapore',
+        postalCode: locationDetails.postalCode,
+        addressCountry: 'SG',
+      },
+      telephone: contactDetails.phoneDisplay,
+      url: buildCanonicalUrl('/how-to-get-here'),
     },
   }
 }
@@ -402,8 +452,13 @@ function buildOrganizationJsonLd(): JsonLdValue {
     description: siteDescription,
     logo: buildAbsoluteUrl('/logo512.png'),
     image: buildAbsoluteUrl(defaultSocialImagePath),
-    email: contactDetails.email,
+    email: [contactDetails.email, contactDetails.alternateEmail],
     telephone: contactDetails.phoneDisplay,
+    priceRange: '$$',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Singapore',
+    },
     address: {
       '@type': 'PostalAddress',
       streetAddress: locationDetails.addressLine1,
@@ -420,6 +475,14 @@ function buildOrganizationJsonLd(): JsonLdValue {
         areaServed: 'SG',
         availableLanguage: ['en'],
       },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'enrolment enquiries',
+        telephone: contactDetails.phoneDisplay,
+        email: contactDetails.alternateEmail,
+        areaServed: 'SG',
+        availableLanguage: ['en'],
+      },
     ],
     knowsAbout: Array.from(
       new Set<string>([
@@ -428,6 +491,8 @@ function buildOrganizationJsonLd(): JsonLdValue {
         'GCE O Level',
         'GCE A Level',
         'IB',
+        'small-group tuition',
+        'June holiday revision',
       ]),
     ),
   }

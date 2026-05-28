@@ -15,16 +15,16 @@ const announcementEntries = getCollectionEntries('announcements')
 export const Route = createFileRoute('/announcements/')({
   head: () =>
     buildSeoHead({
-      title: 'Fusion Tuition Announcements',
+      title: 'Fusion Tuition Class Announcements',
       description:
-        'Registration updates, timing reminders, and operational notices from Fusion Tuition.',
+        'Fusion Tuition announcements for class registration, June holiday revision, timing reminders, and operational updates in Singapore.',
       path: '/announcements',
       jsonLd: [
         buildCollectionPageJsonLd({
           path: '/announcements',
-          title: 'Fusion Tuition Announcements',
+          title: 'Fusion Tuition Class Announcements',
           description:
-            'Registration updates, timing reminders, and operational notices from Fusion Tuition.',
+            'Fusion Tuition announcements for class registration, June holiday revision, timing reminders, and operational updates in Singapore.',
           entries: announcementEntries,
         }),
         buildBreadcrumbJsonLd([

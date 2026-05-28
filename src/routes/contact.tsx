@@ -9,14 +9,21 @@ import { createFileRoute } from '@tanstack/react-router'
 export const Route = createFileRoute('/contact')({
   head: () =>
     buildSeoHead({
-      title: 'Contact Fusion Tuition',
+      title: 'Contact Fusion Tuition Singapore',
       description:
-        'Call, WhatsApp, or email Fusion Tuition to ask about class timings, enrolment, and science or mathematics tuition in Singapore.',
+        'Call, WhatsApp, or email Fusion Tuition in Singapore to ask about O Level, IGCSE, A Level, IB, Physics, Chemistry, and Math tuition classes.',
       path: '/contact',
+      extraMeta: [
+        {
+          name: 'keywords',
+          content:
+            'contact Fusion Tuition, tuition centre Singapore phone, O Level tuition enquiry, IGCSE tuition enquiry',
+        },
+      ],
       jsonLd: [
         buildContactPageJsonLd(
-          'Contact Fusion Tuition',
-          'Call, WhatsApp, or email Fusion Tuition to ask about class timings, enrolment, and science or mathematics tuition in Singapore.',
+          'Contact Fusion Tuition Singapore',
+          'Call, WhatsApp, or email Fusion Tuition in Singapore to ask about class timings, enrolment, and science or mathematics tuition.',
         ),
         buildBreadcrumbJsonLd([
           { name: 'Home', path: '/' },

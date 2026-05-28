@@ -1,8 +1,5 @@
 import { ArticleCard } from '@/components/content/ArticleCard'
-import {
-  HeroHighlight,
-  Highlight,
-} from '@/components/ui/hero-highlight'
+import { HeroHighlight, Highlight } from '@/components/ui/hero-highlight'
 import {
   type ContentEntrySummary,
   getCollectionEntries,
@@ -49,16 +46,23 @@ function AnnouncementLinkCard({ entry }: { entry: ContentEntrySummary }) {
 export const Route = createFileRoute('/blog/')({
   head: () =>
     buildSeoHead({
-      title: 'Fusion Tuition Blog',
+      title: 'O Level & IGCSE Study Tips Singapore',
       description:
-        'Articles from Fusion Tuition about Physics, Chemistry, and Mathematics learning, revision habits, and academic planning in Singapore.',
+        'Study tips from Fusion Tuition for O Level, IGCSE, Physics, Chemistry, Mathematics, revision planning, and exam preparation in Singapore.',
       path: '/blog',
+      extraMeta: [
+        {
+          name: 'keywords',
+          content:
+            'O Level study tips Singapore, IGCSE study tips, Physics revision, Chemistry revision, Math revision, exam preparation Singapore',
+        },
+      ],
       jsonLd: [
         buildCollectionPageJsonLd({
           path: '/blog',
-          title: 'Fusion Tuition Blog',
+          title: 'O Level and IGCSE Study Tips Singapore',
           description:
-            'Articles from Fusion Tuition about Physics, Chemistry, and Mathematics learning, revision habits, and academic planning in Singapore.',
+            'Articles from Fusion Tuition about Physics, Chemistry, Mathematics learning, revision habits, and academic planning in Singapore.',
           entries: blogEntries,
         }),
         buildBreadcrumbJsonLd([

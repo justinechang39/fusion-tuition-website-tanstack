@@ -9,14 +9,21 @@ import { createFileRoute } from '@tanstack/react-router'
 export const Route = createFileRoute('/classes/')({
   head: () =>
     buildSeoHead({
-      title: 'Physics, Chemistry and Mathematics Classes',
+      title: 'O Level, IGCSE, A Level & IB Tuition Classes',
       description:
-        'Explore Fusion Tuition classes for IGCSE, GCE O Level, A Level, and IB students in Singapore, with flexible scheduling and personalised small-group support.',
+        'Explore Fusion Tuition small-group classes in Singapore for O Level, IGCSE, A Level, and IB Physics, Chemistry, Mathematics, and Additional Mathematics.',
       path: '/classes',
+      extraMeta: [
+        {
+          name: 'keywords',
+          content:
+            'O Level Physics tuition, O Level Chemistry tuition, O Level A Math tuition, IGCSE Physics tuition, IGCSE Chemistry tuition, A Level tuition Singapore, IB tuition Singapore',
+        },
+      ],
       jsonLd: [
         buildClassesPageJsonLd(
-          'Fusion Tuition Classes',
-          'Explore Fusion Tuition classes for IGCSE, GCE O Level, A Level, and IB students in Singapore.',
+          'O Level, IGCSE, A Level and IB Tuition Classes',
+          'Small-group Physics, Chemistry, Mathematics, and Additional Mathematics classes for IGCSE, GCE O Level, A Level, and IB students in Singapore.',
         ),
         buildBreadcrumbJsonLd([
           { name: 'Home', path: '/' },
