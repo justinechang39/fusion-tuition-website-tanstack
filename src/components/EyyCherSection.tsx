@@ -53,8 +53,8 @@ export function EyyCherSection() {
               </span>
             </div>
 
-            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:mb-6 md:text-6xl">
-              Your Personal AI <br className="hidden sm:block" />
+            <h2 className="mb-4 text-balance text-3xl font-extrabold tracking-tight text-gray-900 md:mb-6 md:text-6xl">
+              Your Personal AI <br />
               Tutor: <span className="text-orange-600">EyyCher</span>
             </h2>
 
@@ -203,17 +203,17 @@ export function EyyCherSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative mx-auto flex w-full max-w-[280px] items-center justify-center lg:hidden"
+            className="relative mx-auto flex w-full max-w-[340px] items-center justify-center lg:hidden"
           >
             <div className="absolute inset-0 z-0 flex items-center justify-center">
-              <div className="h-[200px] w-[200px] animate-pulse rounded-full bg-orange-200/50 blur-[60px]"></div>
+              <div className="h-[300px] w-[300px] animate-pulse rounded-full bg-orange-200/50 blur-[60px]"></div>
             </div>
             <img
               src="/eyycher_phone.png"
               alt="EyyCher Telegram Bot on Phone"
-              width={400}
-              height={800}
-              className="relative z-10 h-auto w-full drop-shadow-2xl"
+              width={340}
+              height={544}
+              className="relative z-10 aspect-[5/8] w-full object-cover object-center drop-shadow-2xl"
             />
           </motion.div>
         </div>
