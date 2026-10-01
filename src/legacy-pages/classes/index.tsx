@@ -1,192 +1,242 @@
-import ContactSection from '@/components/ContactSection'
-import { HeroHighlight, Highlight } from '@/components/ui/hero-highlight'
-import { motion } from 'framer-motion'
-import { BookOpen, Clock, Users } from 'lucide-react'
+import { contactDetails, curriculumCatalog } from '@/lib/agent-ready'
+import {
+  ArrowDown,
+  ArrowUpRight,
+  BookOpen,
+  Clock3,
+  MessageCircle,
+  Users,
+} from 'lucide-react'
+import './classes.css'
 
 const curricula = [
   {
+    id: 'igcse',
     name: 'IGCSE',
     label: 'Cambridge IGCSE',
-    color: 'blue',
-    subjects: [
-      { name: 'International Math', code: '0607' },
-      { name: 'Additional Mathematics', code: '0606' },
-      { name: 'Chemistry', code: '0620' },
-      { name: 'Physics', code: '0625' },
-    ],
+    description: 'Build your understanding, one subject at a time.',
+    subjects: curriculumCatalog.igcse,
   },
   {
+    id: 'o-level',
     name: 'GCE O Level',
     label: 'Singapore-Cambridge GCE O Level',
-    color: 'orange',
-    subjects: [
-      { name: 'Physics', code: '6091' },
-      { name: 'Chemistry', code: '6092' },
-      { name: 'Additional Mathematics', code: '4049' },
-    ],
+    description: 'Make sense of the concepts behind the questions.',
+    subjects: curriculumCatalog.oLevel,
   },
   {
+    id: 'a-level',
     name: 'A Level',
     label: 'Cambridge International A Level',
-    color: 'purple',
-    subjects: [
-      { name: 'Chemistry', code: '9729' },
-      { name: 'Physics', code: '9749' },
-    ],
+    description: 'Take your understanding further in the sciences.',
+    subjects: curriculumCatalog.aLevel,
   },
   {
+    id: 'ib',
     name: 'IB',
     label: 'International Baccalaureate',
-    color: 'green',
-    subjects: [
-      { name: 'Mathematics', code: 'HL/SL' },
-      { name: 'Chemistry', code: 'HL/SL' },
-    ],
+    description: 'Explore the ideas. Understand the reasoning.',
+    subjects: curriculumCatalog.ib,
   },
 ] as const
 
-const colorMap = {
-  blue: {
-    badge: 'bg-blue-50 text-blue-700 border-blue-200',
-    accent: 'bg-blue-500',
-  },
-  orange: {
-    badge: 'bg-orange-50 text-orange-700 border-orange-200',
-    accent: 'bg-orange-500',
-  },
-  purple: {
-    badge: 'bg-purple-50 text-purple-700 border-purple-200',
-    accent: 'bg-purple-500',
-  },
-  green: {
-    badge: 'bg-green-50 text-green-700 border-green-200',
-    accent: 'bg-green-500',
-  },
-} as const
+const trialUrl = `https://wa.me/${contactDetails.phoneE164.slice(1)}?text=${encodeURIComponent(
+  "Hi! I'm interested in booking a free trial class at Fusion Tuition.",
+)}`
 
-const highlights = [
-  {
-    icon: <Users className="h-5 w-5" />,
-    title: 'Max 3 students',
-    description: 'Personalised attention in every session',
-  },
-  {
-    icon: <Clock className="h-5 w-5" />,
-    title: 'Flexible timing',
-    description: 'We match your schedule, not the other way around',
-  },
-  {
-    icon: <BookOpen className="h-5 w-5" />,
-    title: 'Free consultations',
-    description: 'Extra help outside lesson hours at no charge',
-  },
-]
+function EnquiryChevron() {
+  return (
+    <span className="t-learn-chevron" aria-hidden="true">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        <path className="t-learn-arm t-learn-arm-top" d="M6 4L10 8" />
+        <path className="t-learn-arm t-learn-arm-bot" d="M10 8L6 12" />
+      </svg>
+    </span>
+  )
+}
 
 export default function ClassesPage() {
   return (
-    <div className="-mx-4 -mt-8">
-      {/* Hero */}
-      <HeroHighlight containerClassName="rounded-none bg-gradient-to-t from-slate-50 to-gray-100">
-        <div className="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }}
+    <div className="classes-page">
+      <section className="classes-opening" aria-labelledby="classes-title">
+        <div className="classes-opening-copy">
+          <h1 id="classes-title">
+            Small classes.
+            <br />
+            <span>Big understanding.</span>
+          </h1>
+          <p className="classes-intro">
+            Physics, Chemistry, and Mathematics tuition for IGCSE, O Level, A
+            Level, and IB. Space to ask questions. Time to make it click.
+          </p>
+          <a
+            className="classes-button classes-button-primary"
+            href={trialUrl}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-orange-600">
-              What We Teach
-            </p>
-            <h1 className="mb-5 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-6xl md:leading-[1.15]">
-              You pick the subject.
-              <br />
-              <Highlight className="bg-gradient-to-r from-orange-300 to-amber-300 text-slate-900">
-                You pick the time.
-              </Highlight>
-            </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg md:leading-8">
-              Physics, Chemistry, and Mathematics tuition for IGCSE, O Level, A
-              Level, and IB — in groups of 3 or fewer, scheduled around your
-              availability.
-            </p>
-          </motion.div>
+            <MessageCircle size={20} aria-hidden="true" />
+            Book a free trial
+            <ArrowUpRight size={19} aria-hidden="true" />
+          </a>
+          <p className="classes-trial-note">
+            Tell us your subject. We’ll find a time that works.
+          </p>
         </div>
-      </HeroHighlight>
 
-      <div className="h-1 bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500" />
-
-      {/* Content */}
-      <div className="bg-[linear-gradient(180deg,#fffbf5_0%,#ffffff_12%,#fffdf9_100%)] px-4 pb-8 pt-10 md:px-8 md:pt-14">
-        <div className="mx-auto max-w-6xl">
-          {/* Highlights row */}
-          <div className="mb-14 grid gap-4 sm:grid-cols-3">
-            {highlights.map((item) => (
-              <div
-                key={item.title}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 pl-8 shadow-sm transition-[border-color] duration-200 hover:border-orange-300"
-              >
-                <span className="absolute inset-y-0 left-0 w-[3px] bg-orange-200 transition-colors duration-300 group-hover:bg-orange-500" />
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-orange-100 bg-orange-50 text-orange-600">
-                  {item.icon}
-                </div>
-                <h3 className="mb-1 text-base font-semibold text-slate-900">
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-slate-500">
-                  {item.description}
-                </p>
-              </div>
+        <nav className="classes-finder" aria-label="Choose your curriculum">
+          <h2>Find your starting point.</h2>
+          <p>Choose your curriculum to explore the subjects we teach.</p>
+          <div className="classes-finder-links">
+            {curricula.map((curriculum) => (
+              <a key={curriculum.id} href={`#${curriculum.id}`}>
+                <span>{curriculum.name}</span>
+                <span className="classes-finder-count">
+                  {curriculum.subjects.length} subjects
+                </span>
+                <ArrowDown size={19} aria-hidden="true" />
+              </a>
             ))}
           </div>
+          <span className="classes-finder-footnote">
+            Your syllabus. Your pace.
+          </span>
+        </nav>
+      </section>
 
-          {/* Curricula */}
-          <div className="mb-14 space-y-10">
-            {curricula.map((curriculum, idx) => {
-              const colors = colorMap[curriculum.color]
-              return (
-                <motion.section
-                  key={curriculum.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.08, duration: 0.4 }}
-                >
-                  <h2 className="mb-4 text-xl font-bold text-slate-900 md:text-2xl">
-                    {curriculum.name}
-                  </h2>
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                    {curriculum.subjects.map((subject) => (
-                      <div
-                        key={subject.code}
-                        className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 pl-7 transition-[border-color] duration-200 hover:border-slate-300"
-                      >
-                        <span
-                          className={`absolute inset-y-0 left-0 w-[3px] ${colors.accent} opacity-40 transition-opacity duration-300 group-hover:opacity-100`}
-                        />
-                        <div className="flex items-start justify-between gap-2">
-                          <h3 className="text-[0.938rem] font-semibold text-slate-900">
-                            {subject.name}
-                          </h3>
-                          <span
-                            className={`shrink-0 rounded-full border px-2.5 py-0.5 text-xs font-medium ${colors.badge}`}
-                          >
-                            {subject.code}
-                          </span>
-                        </div>
-                        <p className="mt-1.5 text-xs text-slate-400">
-                          {curriculum.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </motion.section>
-              )
-            })}
-          </div>
-
-          {/* Contact section */}
-          <ContactSection />
+      <section className="classes-benefits" aria-label="How our classes work">
+        <div>
+          <Users size={22} aria-hidden="true" />
+          <p>
+            <strong>3 students, maximum.</strong>
+            <span>More room for your questions.</span>
+          </p>
         </div>
-      </div>
+        <div>
+          <Clock3 size={22} aria-hidden="true" />
+          <p>
+            <strong>A time that fits.</strong>
+            <span>Lessons around your availability.</span>
+          </p>
+        </div>
+        <div>
+          <BookOpen size={22} aria-hidden="true" />
+          <p>
+            <strong>Help beyond the lesson.</strong>
+            <span>Free consultations outside class.</span>
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="classes-catalogue"
+        aria-labelledby="classes-catalogue-title"
+      >
+        <div className="classes-catalogue-heading">
+          <h2 id="classes-catalogue-title">
+            Find your subject.
+            <br />
+            <span>Let’s work on it together.</span>
+          </h2>
+          <p>
+            Pick a subject below to ask us about a class. Not sure where to
+            start? We’re happy to help you choose.
+          </p>
+        </div>
+        <div className="classes-programmes">
+          {curricula.map((curriculum) => (
+            <section
+              className="classes-programme"
+              id={curriculum.id}
+              key={curriculum.id}
+              aria-labelledby={`${curriculum.id}-title`}
+            >
+              <div className="classes-programme-heading">
+                <h3 id={`${curriculum.id}-title`}>{curriculum.name}</h3>
+                <p>{curriculum.label}</p>
+              </div>
+              <p className="classes-programme-description">
+                {curriculum.description}
+              </p>
+              <ul className="classes-subjects">
+                {curriculum.subjects.map((subject) => (
+                  <li key={subject.name}>
+                    <a
+                      className="t-learn"
+                      href={`https://wa.me/${contactDetails.phoneE164.slice(1)}?text=${encodeURIComponent(
+                        `Hi Fusion Tuition! I'm interested in a free trial for ${curriculum.name} ${subject.name} (${subject.code}). Could you share more about the classes and timings?`,
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Enquire about ${curriculum.name} ${subject.name}, syllabus ${subject.code}, on WhatsApp`}
+                    >
+                      <span className="classes-subject-name">
+                        {subject.name}
+                      </span>
+                      <span className="classes-subject-code">
+                        {subject.code}
+                      </span>
+                      <EnquiryChevron />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <p className="classes-programme-note">
+                Ask about a subject on WhatsApp{' '}
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </p>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="classes-contact"
+        aria-labelledby="classes-contact-title"
+      >
+        <div>
+          <h2 id="classes-contact-title">
+            You don’t have to
+            <br />
+            figure it out alone.
+          </h2>
+          <p>
+            Whether you have a subject in mind or a few questions first, talk to
+            us. Your first trial class is free.
+          </p>
+          <a
+            className="classes-button classes-button-light"
+            href={trialUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={20} aria-hidden="true" />
+            Let’s chat on WhatsApp
+            <ArrowUpRight size={19} aria-hidden="true" />
+          </a>
+        </div>
+        <div className="classes-contact-details">
+          <p>Prefer to call or email?</p>
+          <a href={`tel:${contactDetails.phoneE164}`}>
+            {contactDetails.phoneDisplay}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+          <a href={`mailto:${contactDetails.email}`}>
+            {contactDetails.email}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+          <p className="classes-contact-location">
+            Singapore · Small-group tuition
+          </p>
+        </div>
+      </section>
     </div>
   )
 }
