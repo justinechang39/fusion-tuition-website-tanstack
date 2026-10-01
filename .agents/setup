@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+# Node is provided by the orb template; Vite 8 requires 20.19+ or 22.12+.
+node -e 'const [major, minor] = process.versions.node.split(".").map(Number); if (!((major === 20 && minor >= 19) || (major === 22 && minor >= 12) || major > 22)) { throw new Error("Use Node 22.12+ for this project") }'
+
+bun_version="$(node -p 'require("./package.json").packageManager.split("@")[1]')"
+if ! command -v bun >/dev/null || [[ "$(bun --version)" != "$bun_version" ]]; then
+  echo "Installing Bun $bun_version"
+  curl -fsSL https://bun.sh/install | bash -s -- "bun-v$bun_version"
+  export PATH="$HOME/.bun/bin:$PATH"
+  # Subsequent Amp commands and supervised services use login shells.
+  profile_marker='# Fusion Tuition Bun toolchain'
+  if ! grep -Fqx "$profile_marker" "$HOME/.bash_profile" 2>/dev/null; then
+    printf '\n%s\nexport PATH="$HOME/.bun/bin:$PATH"\n' "$profile_marker" >> "$HOME/.bash_profile"
+  fi
+fi
+
+echo "Installing locked dependencies"
+bun install --frozen-lockfile
+
+echo "Generating the Cloudflare Prisma client"
+bun run prisma:generate
+
+if [[ ! -f .env.local ]]; then
+  cp .env.example .env.local
+fi
+
+echo "Preparing the disposable local D1 database (no remote writes)"
+CI=1 bunx --no-install wrangler d1 migrations apply fusion-tuition --local
+
+echo "Orb setup complete; open the Fusion Tuition preview in the Portal tab."

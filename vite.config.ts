@@ -14,7 +14,7 @@ const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
     devtools(),
-    neon,
+    process.env.NEON_AUTO_PROVISION !== 'false' && neon,
     cloudflare({ viteEnvironment: { name: 'ssr' } }),
     tailwindcss(),
     {

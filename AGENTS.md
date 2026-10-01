@@ -111,6 +111,20 @@
 - `/rss.xml` is now published for the MDX-backed content system.
 - Developer instructions for publishing content live in `docs/content-authoring.md`.
 
+## Amp Orbs And Releases
+
+- Amp project: [justinechang/fusion-tuition-website](https://ampcode.com/@justinechang/fusion-tuition-website).
+- New orbs and Ship target `main`, which contains the live site. GitHub's repository default branch is currently an older `codex/fusion-tuition-website-tanstack` branch; do not use it for releases.
+- In an orb, use the checkout root rather than the Mac-specific paths above. `legacy-source` is untracked reference material and is not available in fresh clones.
+- Executable `.agents/setup` installs the Bun version in `package.json`, locked dependencies, and the Prisma client, then applies D1 migrations **locally only**. It is safe to rerun.
+- `.amp/services.yaml` declares the Vite preview. Open the Portal tab or run `amp orb services ensure` to start it. The preview uses local D1 and `NEON_AUTO_PROVISION=false` to avoid creating an unused external Neon database.
+- Amp supplies GitHub authentication and Git identity. No copied SSH keys or GitHub login scripts are required.
+- Project configuration supplies `CLOUDFLARE_API_TOKEN` as a secret and `CLOUDFLARE_ACCOUNT_ID` as a non-secret environment variable. Never print them or write the token into the repository, setup script, or build assets.
+- Check deployment access with `bunx wrangler whoami` and `bunx wrangler deployments list`. After building, validate packaging without releasing with `bunx wrangler deploy --config dist/server/wrangler.json --dry-run`.
+- Production is the existing `fusion-tuition-website` Worker serving `https://fusiontuition.com`. `bun run deploy` rebuilds and deploys while retaining dashboard-set variables; existing Worker secrets, D1, and email bindings stay on Cloudflare.
+- The project's custom **Ship** action explicitly requests verification, commit/push to `main`, deployment, and live-site checks. Ordinary editing or preview requests do not authorize a deployment. Never run remote D1 migrations or production data writes as part of setup or Ship without separate approval.
+- Optional Google Maps, Sentry, or Gemini image-generation credentials are not required for the basic preview/build/deploy workflow. Add them as project secrets or non-secret environment variables as appropriate if those integrations are needed.
+
 ## Known Issues / Deferred Work
 
 - `legacy-source` is reference material only and should not replace the new app scaffold.

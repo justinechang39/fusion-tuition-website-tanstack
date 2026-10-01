@@ -2,7 +2,7 @@
   "name": "fusion-tuition-website",
   "private": true,
   "type": "module",
-  "packageManager": "bun@1.2.13",
+  "packageManager": "bun@1.4.0",
   "imports": {
     "#/*": "./src/*"
   },
@@ -20,7 +20,7 @@
     "db:pull": "drizzle-kit pull",
     "db:studio": "drizzle-kit studio",
     "start": "wrangler dev --config dist/server/wrangler.json",
-    "deploy": "bun run build && wrangler deploy --config dist/server/wrangler.json",
+    "deploy": "bun run build && wrangler deploy --config dist/server/wrangler.json --keep-vars",
     "generate:ala-carte-images": "bun run scripts/generate-ala-carte-images.ts"
   },
   "dependencies": {

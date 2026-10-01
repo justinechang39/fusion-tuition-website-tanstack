@@ -1,0 +1,11 @@
+services:
+  web:
+    command: bunx --no-install vite dev --host 0.0.0.0 --port "$PORT" --strictPort
+    health: /
+    env:
+      NEON_AUTO_PROVISION: "false"
+      NODE_OPTIONS: "--import ./instrument.server.mjs"
+    portal:
+      title: Fusion Tuition preview
+      description: Local preview with a disposable D1 database; production is unchanged.
+    agent: control
