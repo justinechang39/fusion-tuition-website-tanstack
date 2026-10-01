@@ -6,6 +6,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Classes Source Serif";
+  src: url("/fonts/source-serif-4-italic-latin.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+}
+
 :root {
   --learn-shift: 2px;
   --learn-spread: 8deg;
@@ -15,23 +23,23 @@
 }
 
 .classes-page {
-  --classes-ink: #202622;
-  --classes-muted: #5b625d;
+  --classes-ink: #202020;
+  --classes-muted: #606060;
   --classes-orange: #ff7819;
-  --classes-action: #a63f00;
-  --classes-paper: #fff8f0;
-  --classes-line: #dedfd8;
+  --classes-paper: #f6f6f6;
+  --classes-line: #dedede;
   margin: -2rem -1rem -6rem;
   color: var(--classes-ink);
+  background: white;
   font-family: "Classes Manrope", ui-sans-serif, system-ui, sans-serif;
 }
 
 .classes-page ::selection {
-  background: #ffd6ad;
-  color: #202622;
+  background: #ffdcc2;
+  color: var(--classes-ink);
 }
 .classes-page a:focus-visible {
-  outline: 3px solid var(--classes-action);
+  outline: 3px solid var(--classes-ink);
   outline-offset: 5px;
 }
 .classes-page h1,
@@ -52,17 +60,29 @@
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
   padding-block: 5rem;
-  background: var(--classes-paper);
+  background: white;
 }
 .classes-opening h1 {
   margin: 0 0 1.5rem;
-  font-size: clamp(2.75rem, 5.7vw, 5.25rem);
+  font-size: clamp(2.5rem, 4.4vw, 4.25rem);
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
 }
-.classes-opening h1 span {
-  color: var(--classes-action);
+.classes-opening h1 em,
+.classes-catalogue-heading h2 em {
+  display: block;
+  font-family: "Classes Source Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  letter-spacing: -0.025em;
+}
+.classes-opening h1 em {
+  margin-top: 0.15em;
+  font-size: 1.03em;
+  line-height: 1.15;
 }
 .classes-intro {
   max-width: 42ch;
@@ -84,11 +104,11 @@
   transition: background-color 150ms ease-out, color 150ms ease-out;
 }
 .classes-button-primary {
-  background: var(--classes-action);
-  color: white;
+  background: var(--classes-orange);
+  color: var(--classes-ink);
 }
 .classes-button-primary:hover {
-  background: #823000;
+  background: #ff963d;
 }
 .classes-trial-note {
   margin: 0.875rem 0 0;
@@ -109,7 +129,7 @@
   line-height: 1.25;
 }
 .classes-finder > p {
-  color: #c9d0c9;
+  color: #cccccc;
   margin: 0.75rem 0 1.5rem;
   font-size: 0.9375rem;
   line-height: 1.7;
@@ -121,7 +141,7 @@
   gap: 0.75rem;
   padding-block: 1rem;
   min-height: 64px;
-  border-top: 1px solid #495049;
+  border-top: 1px solid #4a4a4a;
   font-size: 1.0625rem;
   font-weight: 700;
   transition: color 150ms ease-out;
@@ -135,7 +155,7 @@
 }
 .classes-finder-count {
   margin-left: auto;
-  color: #c9d0c9;
+  color: #cccccc;
   font-size: 0.75rem;
   font-weight: 500;
 }
@@ -144,9 +164,9 @@
 }
 .classes-finder-footnote {
   display: block;
-  border-top: 1px solid #495049;
+  border-top: 1px solid #4a4a4a;
   padding-top: 1.5rem;
-  color: #c9d0c9;
+  color: #cccccc;
   font-size: 0.8125rem;
 }
 .classes-benefits {
@@ -163,7 +183,7 @@
 }
 .classes-benefits svg {
   flex: 0 0 auto;
-  color: var(--classes-action);
+  color: var(--classes-orange);
   margin-top: 0.2rem;
 }
 .classes-benefits strong {
@@ -194,8 +214,9 @@
   letter-spacing: -0.035em;
   line-height: 1.2;
 }
-.classes-catalogue-heading h2 span {
+.classes-catalogue-heading h2 em {
   color: var(--classes-muted);
+  margin-top: 0.15em;
 }
 .classes-catalogue-heading > p {
   max-width: 35ch;
@@ -216,7 +237,7 @@
   scroll-margin-top: 110px;
 }
 .classes-programme:target {
-  outline: 2px solid var(--classes-action);
+  outline: 2px solid var(--classes-ink);
   outline-offset: 4px;
 }
 .classes-programme-heading h3 {
@@ -252,7 +273,9 @@
   padding-block: 0.875rem;
 }
 .classes-subjects a:hover {
-  color: var(--classes-action);
+  text-decoration: underline;
+  text-decoration-color: var(--classes-orange);
+  text-underline-offset: 0.25em;
 }
 .classes-subject-name {
   flex: 1;
@@ -268,7 +291,7 @@
 }
 .classes-subjects .t-learn-chevron {
   flex-shrink: 0;
-  color: var(--classes-action);
+  color: var(--classes-ink);
 }
 .classes-programme-note {
   border-top: 1px solid var(--classes-line);
@@ -298,7 +321,7 @@
 .classes-contact > div > p:not(.classes-contact-location) {
   font-size: 0.9375rem;
   line-height: 1.8;
-  color: #c9d0c9;
+  color: #cccccc;
   max-width: 43ch;
   margin-block: 1.25rem 1.75rem;
 }
@@ -315,7 +338,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding-block: 1.125rem;
-  border-bottom: 1px solid #495049;
+  border-bottom: 1px solid #4a4a4a;
   font-size: 1rem;
   font-weight: 650;
   overflow-wrap: anywhere;
@@ -328,7 +351,7 @@
   color: #ffae73;
 }
 .classes-contact-location {
-  color: #c9d0c9;
+  color: #cccccc;
   margin-top: 1.5rem;
   font-size: 0.8125rem;
 }
@@ -364,7 +387,7 @@
     padding-block: 3.5rem;
   }
   .classes-opening h1 {
-    font-size: clamp(2.75rem, 5.5vw, 3.5rem);
+    font-size: clamp(2rem, 4.4vw, 3.5rem);
   }
   .classes-programme {
     padding: 1.5rem;
@@ -382,7 +405,10 @@
     padding-block: 2.75rem;
   }
   .classes-opening h1 {
-    font-size: clamp(2.25rem, 10.5vw, 4rem);
+    font-size: clamp(2rem, 10.5vw, 4rem);
+  }
+  .classes-opening h1 em {
+    font-size: 1em;
   }
   .classes-intro {
     font-size: 1rem;

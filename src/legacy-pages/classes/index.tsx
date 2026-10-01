@@ -68,9 +68,12 @@ export default function ClassesPage() {
       <section className="classes-opening" aria-labelledby="classes-title">
         <div className="classes-opening-copy">
           <h1 id="classes-title">
-            Small classes.
+            Small class.
             <br />
-            <span>Big understanding.</span>
+            Same school.
+            <br />
+            Same stream.
+            <em> Big understanding.</em>
           </h1>
           <p className="classes-intro">
             Physics, Chemistry, and Mathematics tuition for IGCSE, O Level, A
@@ -142,8 +145,7 @@ export default function ClassesPage() {
         <div className="classes-catalogue-heading">
           <h2 id="classes-catalogue-title">
             Find your subject.
-            <br />
-            <span>Let’s work on it together.</span>
+            <em> Let’s work on it together.</em>
           </h2>
           <p>
             Pick a subject below to ask us about a class. Not sure where to
