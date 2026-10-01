@@ -2,7 +2,20 @@
 
 Audit date: 1 October 2026 (Singapore time).
 Source baseline: `5ad9315` on `main`.
-Status: developer handoff; recommendations have not been implemented.
+Status: original audit retained below; technical follow-up implemented as described here. Programme-content recommendations still need confirmation.
+
+## Technical follow-up, 1 October 2026
+
+Rechecked the deployed site before changing it. Confirmed the stale robots sitemap reference, HTTP 200 for unknown ala-carte categories, client-only legacy class redirects, missing demo noindex controls, incomplete API-doc metadata, and Markdown negotiation accepting `q=0` and preferring Markdown over higher-priority HTML.
+
+- Removed the static robots file that Cloudflare Assets served ahead of request middleware. The generated response now owns the policy and canonical sitemap reference.
+- Added server-side legacy-class redirects, genuine unknown-category 404s, and noindex headers for demo, API, and error responses.
+- Aligned regular-class facts and syllabus information across the visible page, JSON-LD, Markdown and agent skills. Moved `courseMode` to `CourseInstance`, as required by Schema.org. Corrected the A Level curriculum label without changing the supported codes.
+- Added Markdown bodies for published articles and catalogue pages, quality-aware content negotiation, consistent HEAD/discovery headers, complete API-doc metadata, and documented OpenAPI response shapes.
+- Added article cover images to sharing metadata, sitemap article modification dates, RSS discovery links and chronological feeds. Kept the existing search/AI-input permission and AI-training content signal unchanged.
+- Added `bun scripts/check-discovery.ts <base-url>` for repeatable, read-only checks of every sitemap page's HTML/Markdown, metadata, schemas, API contracts, agent-skill hashes, content negotiation, redirects, 404s and indexing headers.
+
+Not implemented: the Combined Science landing page (cohorts, cadence and programme details still need confirmation), verified arrival instructions/media, seasonal availability changes, or new content/measurement integrations. SEAB's 2026 listing marks 9729 and 9749 as last-year syllabuses; confirm the centre's next intake before replacing codes. Search Console, Business Profile and genuine provider-crawler logs were not available to this audit. Technical checks do not establish rankings, indexing or AI recommendations.
 
 Fusion Tuition has a useful SEO foundation, but its website does not describe a programme the owner considers especially important: dedicated Combined Science (Physics, Chemistry) tuition with alternating Chemistry and Physics lessons. The first opportunity is to publish that programme clearly and make the website's visible content and automated discovery descriptions agree.
 

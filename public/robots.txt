@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://tanstack-start-app.justinechang94.workers.dev/sitemap.xml
-Content-Signal: ai-train=no, search=yes, ai-input=yes

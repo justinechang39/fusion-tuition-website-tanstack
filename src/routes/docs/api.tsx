@@ -3,12 +3,23 @@ import {
   contactDetails,
   locationDetails,
 } from '@/lib/agent-ready'
+import { buildPageJsonLd, buildSeoHead } from '@/lib/seo'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/docs/api')({
-  head: () => ({
-    meta: [{ title: 'fusion tuition | api docs' }],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: 'Public API Documentation',
+      description:
+        'Read-only Fusion Tuition API documentation for contact details, programmes, teachers, and site discovery. No authentication required.',
+      path: '/docs/api',
+      jsonLd: buildPageJsonLd({
+        path: '/docs/api',
+        title: 'Public API Documentation',
+        description:
+          'Public, read-only metadata API documentation for Fusion Tuition.',
+      }),
+    }),
   component: ApiDocsPage,
 })
 

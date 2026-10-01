@@ -14,28 +14,31 @@ const curricula = [
     id: 'igcse',
     name: 'IGCSE',
     label: 'Cambridge IGCSE',
-    description: 'Build your understanding, one subject at a time.',
+    description:
+      'Mathematics and science tuition for the Cambridge IGCSE syllabus.',
     subjects: curriculumCatalog.igcse,
   },
   {
     id: 'o-level',
     name: 'GCE O Level',
     label: 'Singapore-Cambridge GCE O Level',
-    description: 'Make sense of the concepts behind the questions.',
+    description: 'Physics, Chemistry, and Additional Mathematics tuition.',
     subjects: curriculumCatalog.oLevel,
   },
   {
     id: 'a-level',
     name: 'A Level',
-    label: 'Cambridge International A Level',
-    description: 'Take your understanding further in the sciences.',
+    label: 'Singapore-Cambridge GCE A Level',
+    description:
+      'Physics and Chemistry tuition for the listed A Level syllabuses.',
     subjects: curriculumCatalog.aLevel,
   },
   {
     id: 'ib',
     name: 'IB',
     label: 'International Baccalaureate',
-    description: 'Explore the ideas. Understand the reasoning.',
+    description:
+      'Mathematics and Chemistry tuition at Higher and Standard Level.',
     subjects: curriculumCatalog.ib,
   },
 ] as const
@@ -73,11 +76,10 @@ export default function ClassesPage() {
             Same school.
             <br />
             Same stream.
-            <em> Big understanding.</em>
           </h1>
           <p className="classes-intro">
             Physics, Chemistry, and Mathematics tuition for IGCSE, O Level, A
-            Level, and IB. Space to ask questions. Time to make it click.
+            Level, and IB, with a maximum of three students per class.
           </p>
           <a
             className="classes-button classes-button-primary"
@@ -90,12 +92,12 @@ export default function ClassesPage() {
             <ArrowUpRight size={19} aria-hidden="true" />
           </a>
           <p className="classes-trial-note">
-            Tell us your subject. We’ll find a time that works.
+            Ask about your subject and available lesson timings.
           </p>
         </div>
 
         <nav className="classes-finder" aria-label="Choose your curriculum">
-          <h2>Find your starting point.</h2>
+          <h2>Choose your curriculum.</h2>
           <p>Choose your curriculum to explore the subjects we teach.</p>
           <div className="classes-finder-links">
             {curricula.map((curriculum) => (
@@ -109,7 +111,7 @@ export default function ClassesPage() {
             ))}
           </div>
           <span className="classes-finder-footnote">
-            Your syllabus. Your pace.
+            Subject details and syllabus codes below.
           </span>
         </nav>
       </section>
@@ -119,20 +121,20 @@ export default function ClassesPage() {
           <Users size={22} aria-hidden="true" />
           <p>
             <strong>3 students, maximum.</strong>
-            <span>More room for your questions.</span>
+            <span>Small-group lessons.</span>
           </p>
         </div>
         <div>
           <Clock3 size={22} aria-hidden="true" />
           <p>
-            <strong>A time that fits.</strong>
+            <strong>Flexible lesson timings.</strong>
             <span>Lessons around your availability.</span>
           </p>
         </div>
         <div>
           <BookOpen size={22} aria-hidden="true" />
           <p>
-            <strong>Help beyond the lesson.</strong>
+            <strong>Support outside class.</strong>
             <span>Free consultations outside class.</span>
           </p>
         </div>
@@ -143,13 +145,10 @@ export default function ClassesPage() {
         aria-labelledby="classes-catalogue-title"
       >
         <div className="classes-catalogue-heading">
-          <h2 id="classes-catalogue-title">
-            Find your subject.
-            <em> Let’s work on it together.</em>
-          </h2>
+          <h2 id="classes-catalogue-title">Find your subject.</h2>
           <p>
-            Pick a subject below to ask us about a class. Not sure where to
-            start? We’re happy to help you choose.
+            Select a subject to enquire on WhatsApp about classes and lesson
+            timings.
           </p>
         </div>
         <div className="classes-programmes">
@@ -204,14 +203,10 @@ export default function ClassesPage() {
         aria-labelledby="classes-contact-title"
       >
         <div>
-          <h2 id="classes-contact-title">
-            You don’t have to
-            <br />
-            figure it out alone.
-          </h2>
+          <h2 id="classes-contact-title">Ask about a class.</h2>
           <p>
-            Whether you have a subject in mind or a few questions first, talk to
-            us. Your first trial class is free.
+            Contact us with your curriculum and subject to ask about lesson
+            timings or book a free trial.
           </p>
           <a
             className="classes-button classes-button-light"
@@ -220,7 +215,7 @@ export default function ClassesPage() {
             rel="noopener noreferrer"
           >
             <MessageCircle size={20} aria-hidden="true" />
-            Let’s chat on WhatsApp
+            Enquire on WhatsApp
             <ArrowUpRight size={19} aria-hidden="true" />
           </a>
         </div>

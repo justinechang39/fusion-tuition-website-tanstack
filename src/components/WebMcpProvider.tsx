@@ -4,6 +4,7 @@ import {
   locationDetails,
   webMcpTools,
 } from '@/lib/agent-ready'
+import { siteOrigin } from '@/lib/seo'
 import { useNavigate } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
@@ -23,7 +24,7 @@ export function WebMcpProvider() {
     const toolDefinitions = [
       {
         ...webMcpTools[0],
-        execute: async () => buildSiteInfo(window.location.origin),
+        execute: async () => buildSiteInfo(siteOrigin),
       },
       {
         ...webMcpTools[1],

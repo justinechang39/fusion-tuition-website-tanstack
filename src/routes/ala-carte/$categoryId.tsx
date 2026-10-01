@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { buildBreadcrumbJsonLd, buildPageJsonLd, buildSeoHead } from '@/lib/seo'
-import { Link, createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute, notFound } from '@tanstack/react-router'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle2, Plus, Search, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -25,8 +25,13 @@ import {
 } from './index'
 
 export const Route = createFileRoute('/ala-carte/$categoryId')({
-  loader: ({ params }) =>
-    categories.find((category) => category.id === params.categoryId) ?? null,
+  loader: ({ params }) => {
+    const category = categories.find(
+      (category) => category.id === params.categoryId,
+    )
+    if (!category) throw notFound()
+    return category
+  },
   head: ({ loaderData }) => {
     if (!loaderData) {
       return buildSeoHead({

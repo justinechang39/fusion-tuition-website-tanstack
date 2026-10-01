@@ -11,7 +11,7 @@ export const Route = createFileRoute('/classes/')({
     buildSeoHead({
       title: 'O Level, IGCSE, A Level & IB Tuition Classes',
       description:
-        'Explore Fusion Tuition small-group classes in Singapore for O Level, IGCSE, A Level, and IB Physics, Chemistry, Mathematics, and Additional Mathematics.',
+        'Physics, Chemistry, and Mathematics tuition in Singapore for IGCSE, O Level, A Level, and IB. Maximum three students per class. Enquire about a free trial.',
       path: '/classes',
       extraMeta: [
         {
@@ -23,7 +23,7 @@ export const Route = createFileRoute('/classes/')({
       jsonLd: [
         buildClassesPageJsonLd(
           'O Level, IGCSE, A Level and IB Tuition Classes',
-          'Small-group Physics, Chemistry, Mathematics, and Additional Mathematics classes for IGCSE, GCE O Level, A Level, and IB students in Singapore.',
+          'Small-group science and mathematics tuition in Singapore for IGCSE, GCE O Level, A Level, and IB, with a maximum of three students per class.',
         ),
         buildBreadcrumbJsonLd([
           { name: 'Home', path: '/' },

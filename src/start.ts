@@ -7,6 +7,7 @@ import {
   buildSitemapXml,
   getAgentSkill,
   getPageMarkdown,
+  hasPageMarkdown,
 } from '@/lib/agent-ready'
 import { buildRssXml } from '@/lib/content'
 import { siteOrigin } from '@/lib/seo'
@@ -25,28 +26,55 @@ function withResponseHeaders(
   })
 }
 
-function getDiscoveryOrigin(request: Request) {
-  const configuredOrigin = import.meta.env.VITE_PUBLIC_SITE_URL
-  return configuredOrigin || siteOrigin || new URL(request.url).origin
-}
+function preferredPageFormat(request: Request) {
+  if (!request.headers.get('accept')) return 'html'
+  const ranges = (request.headers.get('accept') ?? '')
+    .split(',')
+    .map((range) => {
+      const [type, ...parameters] = range.trim().toLowerCase().split(';')
+      const q = parameters.find((parameter) =>
+        parameter.trim().startsWith('q='),
+      )
+      const quality = q ? Number(q.trim().slice(2)) : 1
+      return {
+        type: type.trim(),
+        quality:
+          Number.isFinite(quality) && quality >= 0 && quality <= 1
+            ? quality
+            : 0,
+      }
+    })
 
-function wantsMarkdown(request: Request) {
-  return request.headers.get('accept')?.includes('text/markdown') ?? false
-}
+  function qualityFor(type: string) {
+    for (const match of [type, 'text/*', '*/*']) {
+      const matches = ranges.filter((range) => range.type === match)
+      if (matches.length)
+        return Math.max(...matches.map((range) => range.quality))
+    }
+    return 0
+  }
 
-function isMarkdownPage(pathname: string) {
-  return getPageMarkdown(pathname, 'https://example.com') !== null
+  const htmlQuality = qualityFor('text/html')
+  const markdownQuality = qualityFor('text/markdown')
+  // Browsers and wildcard-only clients keep HTML. Markdown must be explicit.
+  if (
+    ranges.some((range) => range.type === 'text/markdown') &&
+    markdownQuality > 0 &&
+    markdownQuality >= htmlQuality
+  )
+    return 'markdown'
+  return htmlQuality > 0 ? 'html' : null
 }
 
 const agentReadinessMiddleware = createMiddleware().server(
   async ({ next, pathname, request }) => {
-    const origin = getDiscoveryOrigin(request)
+    const origin = siteOrigin
     const isHeadRequest = request.method === 'HEAD'
     const isGetLikeRequest = request.method === 'GET' || isHeadRequest
 
     if (isGetLikeRequest) {
       if (pathname === '/robots.txt') {
-        return new Response(buildRobotsTxt(origin), {
+        return new Response(isHeadRequest ? null : buildRobotsTxt(origin), {
           status: 200,
           headers: {
             'content-type': 'text/plain; charset=utf-8',
@@ -127,13 +155,25 @@ const agentReadinessMiddleware = createMiddleware().server(
         })
       }
 
-      if (wantsMarkdown(request)) {
-        const markdown = getPageMarkdown(pathname, origin)
+      const format = preferredPageFormat(request)
+      if (!format && hasPageMarkdown(pathname)) {
+        return new Response(
+          isHeadRequest ? null : 'No acceptable page format',
+          {
+            status: 406,
+            headers: { vary: 'Accept', 'X-Robots-Tag': 'noindex' },
+          },
+        )
+      }
+
+      if (format === 'markdown') {
+        const markdown = await getPageMarkdown(pathname, origin)
         if (markdown) {
-          return new Response(markdown, {
+          return new Response(isHeadRequest ? null : markdown, {
             headers: {
               'content-type': 'text/markdown; charset=utf-8',
               vary: 'Accept',
+              ...(pathname === '/' ? { Link: buildLinkHeader() } : {}),
             },
           })
         }
@@ -145,11 +185,19 @@ const agentReadinessMiddleware = createMiddleware().server(
     return {
       ...result,
       response: withResponseHeaders(result.response, (headers) => {
+        if (
+          pathname === '/demo' ||
+          pathname.startsWith('/demo/') ||
+          pathname.startsWith('/api/') ||
+          result.response.status >= 400
+        ) {
+          headers.set('X-Robots-Tag', 'noindex')
+        }
         if (pathname === '/') {
           headers.append('Link', buildLinkHeader())
         }
 
-        if (isMarkdownPage(pathname)) {
+        if (hasPageMarkdown(pathname)) {
           headers.append('Vary', 'Accept')
         }
       }),

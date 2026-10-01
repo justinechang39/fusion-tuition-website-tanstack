@@ -10,6 +10,8 @@ import tailwindcss from '@tailwindcss/vite'
 import viteReact from '@vitejs/plugin-react'
 import neon from './neon-vite-plugin.ts'
 
+const mdxPlugin = mdx({ remarkPlugins: [remarkGfm] })
+
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
@@ -19,9 +21,12 @@ const config = defineConfig({
     tailwindcss(),
     {
       enforce: 'pre',
-      ...mdx({
-        remarkPlugins: [remarkGfm],
-      }),
+      ...mdxPlugin,
+      transform(code, id) {
+        // MDX's exclude filter strips query strings; leave raw imports to Vite.
+        if (/[?&]raw(?:&|$)/.test(id)) return
+        return mdxPlugin.transform.call(this, code, id)
+      },
     },
     tanstackStart(),
     viteReact({

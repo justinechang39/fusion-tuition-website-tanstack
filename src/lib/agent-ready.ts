@@ -1,6 +1,8 @@
 import {
+  escapeXml,
   getAllContentEntries,
   getCollectionEntries,
+  getContentMarkdown,
   getRecentContentEntries,
 } from '@/lib/content'
 
@@ -176,10 +178,12 @@ Use this skill when the user asks whether Fusion Tuition supports a curriculum o
 
 ## Curricula covered
 
-- IGCSE: International Math (0607), Additional Mathematics (0606), Chemistry (0620), Physics (0625)
-- GCE O Level: Physics (6091), Chemistry (6092), Additional Mathematics (4049)
-- A Level: Chemistry (9729), Physics (9749)
-- IB: Mathematics (HL/SL), Chemistry (HL/SL)
+${Object.entries(curriculumCatalog)
+  .map(
+    ([key, subjects]) =>
+      `- ${{ igcse: 'IGCSE', oLevel: 'GCE O Level', aLevel: 'A Level', ib: 'IB' }[key as keyof typeof curriculumCatalog]}: ${subjects.map((subject) => `${subject.name} (${subject.code})`).join(', ')}`,
+  )
+  .join('\n')}
 
 ## Guidance
 
@@ -281,9 +285,16 @@ ${teachers
 `,
   '/classes': `# Fusion Tuition Classes
 
-Fusion Tuition teaches students across multiple curricula.
+Physics, Chemistry, and Mathematics tuition for IGCSE, GCE O Level, A Level, and IB students in Singapore.
 
-## Search-relevant programmes
+## Class format
+
+- Maximum of three students per regular class.
+- Flexible lesson timings arranged around availability.
+- Free consultations outside class.
+- Ask about a free trial, your subject, and lesson timings on [WhatsApp](${contactDetails.whatsappUrl}).
+
+## Subjects
 
 - O Level Physics tuition
 - O Level Chemistry tuition
@@ -385,9 +396,66 @@ One-off targeted June holiday classes in Singapore for O Level and IGCSE student
 `,
 } as const
 
-export function getPageMarkdown(pathname: string, origin: string) {
-  const markdown =
-    pageMarkdownByPath[pathname as keyof typeof pageMarkdownByPath]
+export function hasPageMarkdown(pathname: string) {
+  const path = pathname.replace(/\/+$/, '') || '/'
+  return (
+    publicRoutes.some((route) => route.path === path) ||
+    getAllContentEntries().some((entry) => entry.path === path)
+  )
+}
+
+export async function getPageMarkdown(pathname: string, origin: string) {
+  const path = pathname.replace(/\/+$/, '') || '/'
+  let markdown = pageMarkdownByPath[path as keyof typeof pageMarkdownByPath] as
+    | string
+    | undefined
+    | null
+
+  if (path === '/ala-carte' || path.startsWith('/ala-carte/')) {
+    // Keep the complete catalogue out of the site's initial browser bundle.
+    const { default: catalogue } = await import('@/data/ala-carte-classes.json')
+    const categories = catalogue.categories.filter(
+      (category) => category.isActive,
+    )
+    const category = categories.find(
+      (category) => path === `/ala-carte/${category.id}`,
+    )
+    if (path !== '/ala-carte' && !category) return null
+    const items = catalogue.items.filter(
+      (item) =>
+        item.isActive &&
+        (category
+          ? item.categoryId === category.id
+          : categories.some((category) => category.id === item.categoryId)),
+    )
+    markdown = `# ${category?.label ?? catalogue.campaign.name}
+
+${category?.description ?? catalogue.campaign.summary}
+
+${catalogue.campaign.notes.map((note) => `- ${note}`).join('\n')}
+
+## Classes
+
+${items
+  .map(
+    (item) => `### ${item.title}
+
+${item.description}
+
+- Curriculum: ${item.level}
+- Subject: ${item.subject}
+- Chapters: ${item.chapters.join(', ')}
+- Duration: ${item.durationMinutes} minutes
+- Price: ${item.currency} ${item.price}`,
+  )
+  .join('\n\n')}
+
+## Enquiries
+
+Confirm lesson timings with Fusion Tuition on [WhatsApp](${contactDetails.whatsappUrl}).`
+  }
+
+  markdown ??= getContentMarkdown(path)
   if (!markdown) {
     return null
   }
@@ -396,7 +464,7 @@ export function getPageMarkdown(pathname: string, origin: string) {
 
 ## Canonical URL
 
-${origin}${pathname === '/' ? '/' : pathname}
+${origin}${path}
 `
 }
 
@@ -415,13 +483,14 @@ export function buildSitemapXml(origin: string) {
     ...getAllContentEntries().map((entry) => ({
       path: entry.path,
       title: entry.title,
+      lastmod: entry.updatedAt ?? entry.publishedAt,
     })),
   ]
     .map((route) => {
       const path = route.path === '/' ? '/' : route.path
 
       return `  <url>
-    <loc>${origin}${path}</loc>
+    <loc>${escapeXml(`${origin}${path}`)}</loc>${'lastmod' in route ? `\n    <lastmod>${escapeXml(route.lastmod)}</lastmod>` : ''}
   </url>`
     })
     .join('\n')
@@ -471,6 +540,7 @@ export function buildOpenApiDocument(origin: string) {
         'Read-only public metadata API for agent and service discovery on Fusion Tuition.',
     },
     servers: [{ url: origin }],
+    security: [],
     paths: {
       '/api/health': {
         get: {
@@ -479,6 +549,21 @@ export function buildOpenApiDocument(origin: string) {
           responses: {
             '200': {
               description: 'Site API health payload',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    required: ['status', 'service'],
+                    properties: {
+                      status: { type: 'string', const: 'ok' },
+                      service: {
+                        type: 'string',
+                        const: 'fusion-tuition-public-api',
+                      },
+                    },
+                  },
+                },
+              },
             },
           },
         },
@@ -490,6 +575,105 @@ export function buildOpenApiDocument(origin: string) {
           responses: {
             '200': {
               description: 'Site, contact, route, and curriculum metadata',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    required: [
+                      'site',
+                      'contact',
+                      'location',
+                      'routes',
+                      'content',
+                      'teachers',
+                      'curricula',
+                    ],
+                    properties: {
+                      site: {
+                        type: 'object',
+                        required: ['name', 'description', 'canonicalOrigin'],
+                        properties: {
+                          name: { type: 'string' },
+                          description: { type: 'string' },
+                          canonicalOrigin: { type: 'string', format: 'uri' },
+                        },
+                      },
+                      contact: {
+                        type: 'object',
+                        additionalProperties: { type: 'string' },
+                      },
+                      location: {
+                        type: 'object',
+                        additionalProperties: { type: 'string' },
+                      },
+                      routes: {
+                        type: 'array',
+                        items: {
+                          type: 'object',
+                          required: ['path', 'title', 'url'],
+                          additionalProperties: { type: 'string' },
+                        },
+                      },
+                      content: {
+                        type: 'object',
+                        additionalProperties: {
+                          type: 'array',
+                          items: {
+                            type: 'object',
+                            required: ['title', 'description', 'url'],
+                            additionalProperties: { type: 'string' },
+                          },
+                        },
+                      },
+                      teachers: {
+                        type: 'array',
+                        items: {
+                          type: 'object',
+                          required: ['name', 'experience', 'subjects'],
+                          properties: {
+                            name: { type: 'string' },
+                            experience: { type: 'string' },
+                            subjects: {
+                              type: 'array',
+                              items: { type: 'string' },
+                            },
+                          },
+                        },
+                      },
+                      curricula: {
+                        type: 'object',
+                        additionalProperties: {
+                          type: 'array',
+                          items: {
+                            type: 'object',
+                            required: ['code', 'name'],
+                            additionalProperties: { type: 'string' },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      '/api/openapi': {
+        get: {
+          summary: 'Public API description',
+          operationId: 'getOpenApi',
+          responses: {
+            '200': {
+              description: 'OpenAPI 3.1 document',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    required: ['openapi', 'info', 'servers', 'paths'],
+                  },
+                },
+              },
             },
           },
         },

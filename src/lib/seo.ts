@@ -13,8 +13,9 @@ const defaultSocialImagePath = '/fusion_tuition_logo_horizontal.png'
 const defaultRobotsContent =
   'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 
-export const siteOrigin =
-  import.meta.env.VITE_PUBLIC_SITE_URL || fallbackSiteOrigin
+export const siteOrigin = new URL(
+  import.meta.env.VITE_PUBLIC_SITE_URL || fallbackSiteOrigin,
+).origin
 
 type JsonLdValue = Record<string, unknown>
 type MetaDescriptor = {
@@ -124,6 +125,12 @@ export function buildRootSeoHead() {
       {
         rel: 'manifest',
         href: '/manifest.json',
+      },
+      {
+        rel: 'alternate',
+        type: 'application/rss+xml',
+        title: 'Fusion Tuition updates',
+        href: '/rss.xml',
       },
     ],
     scripts: [
@@ -303,9 +310,14 @@ export function buildClassesPageJsonLd(title: string, description: string) {
         ...curriculumCatalog.igcse.map((item) => ({
           '@type': 'Course',
           name: `IGCSE ${item.name}`,
+          description: `Small-group IGCSE ${item.name} tuition in Singapore, covering syllabus ${item.code}.`,
+          url: buildCanonicalUrl('/classes#igcse'),
           courseCode: item.code,
           educationalLevel: 'IGCSE',
-          courseMode: 'In-person small-group tuition',
+          hasCourseInstance: {
+            '@type': 'CourseInstance',
+            courseMode: 'In-person small-group tuition',
+          },
           provider: {
             '@id': `${siteOrigin}/#organization`,
           },
@@ -313,9 +325,14 @@ export function buildClassesPageJsonLd(title: string, description: string) {
         ...curriculumCatalog.oLevel.map((item) => ({
           '@type': 'Course',
           name: `GCE O Level ${item.name}`,
+          description: `Small-group GCE O Level ${item.name} tuition in Singapore, covering syllabus ${item.code}.`,
+          url: buildCanonicalUrl('/classes#o-level'),
           courseCode: item.code,
           educationalLevel: 'GCE O Level',
-          courseMode: 'In-person small-group tuition',
+          hasCourseInstance: {
+            '@type': 'CourseInstance',
+            courseMode: 'In-person small-group tuition',
+          },
           provider: {
             '@id': `${siteOrigin}/#organization`,
           },
@@ -323,9 +340,14 @@ export function buildClassesPageJsonLd(title: string, description: string) {
         ...curriculumCatalog.aLevel.map((item) => ({
           '@type': 'Course',
           name: `GCE A Level ${item.name}`,
+          description: `Small-group GCE A Level ${item.name} tuition in Singapore, covering syllabus ${item.code}.`,
+          url: buildCanonicalUrl('/classes#a-level'),
           courseCode: item.code,
           educationalLevel: 'GCE A Level',
-          courseMode: 'In-person small-group tuition',
+          hasCourseInstance: {
+            '@type': 'CourseInstance',
+            courseMode: 'In-person small-group tuition',
+          },
           provider: {
             '@id': `${siteOrigin}/#organization`,
           },
@@ -333,9 +355,14 @@ export function buildClassesPageJsonLd(title: string, description: string) {
         ...curriculumCatalog.ib.map((item) => ({
           '@type': 'Course',
           name: `IB ${item.name}`,
+          description: `Small-group IB ${item.name} tuition in Singapore at Higher and Standard Level.`,
+          url: buildCanonicalUrl('/classes#ib'),
           courseCode: item.code,
           educationalLevel: 'IB',
-          courseMode: 'In-person small-group tuition',
+          hasCourseInstance: {
+            '@type': 'CourseInstance',
+            courseMode: 'In-person small-group tuition',
+          },
           provider: {
             '@id': `${siteOrigin}/#organization`,
           },
@@ -435,9 +462,12 @@ export function buildArticleJsonLd(entry: ContentEntrySummary) {
     publisher: {
       '@id': `${siteOrigin}/#organization`,
     },
-    image: buildAbsoluteUrl(entry.ogImage ?? defaultSocialImagePath),
+    image: buildAbsoluteUrl(
+      entry.ogImage ?? entry.coverImage ?? defaultSocialImagePath,
+    ),
     mainEntityOfPage: {
-      '@id': `${canonicalUrl}#webpage`,
+      '@type': 'WebPage',
+      '@id': canonicalUrl,
     },
   }
 }
@@ -454,7 +484,6 @@ function buildOrganizationJsonLd(): JsonLdValue {
     image: buildAbsoluteUrl(defaultSocialImagePath),
     email: [contactDetails.email, contactDetails.alternateEmail],
     telephone: contactDetails.phoneDisplay,
-    priceRange: '$$',
     areaServed: {
       '@type': 'Country',
       name: 'Singapore',

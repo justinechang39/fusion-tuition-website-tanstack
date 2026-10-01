@@ -56,6 +56,15 @@ const announcementMetadataModules = import.meta.glob(
   },
 ) as Record<string, ContentMetadata>
 
+const markdownSources = import.meta.glob(
+  '/src/content/{blog,announcements}/*.mdx',
+  {
+    eager: true,
+    query: '?raw',
+    import: 'default',
+  },
+) as Record<string, string>
+
 function sortEntriesDesc(
   left: Pick<ContentEntrySummary, 'publishedAt' | 'featured'>,
   right: Pick<ContentEntrySummary, 'publishedAt' | 'featured'>,
@@ -143,8 +152,21 @@ export function getRecentContentEntries(
 ) {
   return collections
     .flatMap((collection) => contentEntriesByCollection[collection])
-    .sort(sortEntriesDesc)
+    .sort(
+      (left, right) =>
+        Date.parse(right.publishedAt) - Date.parse(left.publishedAt),
+    )
     .slice(0, limit)
+}
+
+export function getContentMarkdown(path: string) {
+  const entry = getAllContentEntries().find((entry) => entry.path === path)
+  if (!entry) return null
+  const body = markdownSources[entry.modulePath].replace(
+    /^export const metadata = \{[\s\S]*?\n\}\s*/,
+    '',
+  )
+  return `# ${entry.title}\n\n${entry.description}\n\nPublished: ${entry.publishedAt}\nAuthor: ${entry.author}\n\n${body}`
 }
 
 export function formatContentDate(dateString: string) {
@@ -155,7 +177,7 @@ export function formatContentDate(dateString: string) {
   }).format(new Date(dateString))
 }
 
-function escapeXml(value: string) {
+export function escapeXml(value: string) {
   return value
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
@@ -165,8 +187,7 @@ function escapeXml(value: string) {
 }
 
 export function buildRssXml(origin: string) {
-  const items = getAllContentEntries()
-    .slice(0, 20)
+  const items = getRecentContentEntries(20)
     .map(
       (entry) => `    <item>
       <title>${escapeXml(entry.title)}</title>

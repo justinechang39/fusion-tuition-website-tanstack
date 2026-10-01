@@ -33,7 +33,7 @@ export const Route = createFileRoute('/announcements/$slug')({
       title: loaderData.title,
       description: loaderData.description,
       path: loaderData.path,
-      imagePath: loaderData.ogImage,
+      imagePath: loaderData.ogImage ?? loaderData.coverImage,
       ogType: 'article',
       extraMeta: [
         {
