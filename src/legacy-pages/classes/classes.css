@@ -381,6 +381,24 @@
   transform: rotate(calc(var(--learn-spread) * -1));
 }
 
+@media (min-width: 761px) {
+  .classes-benefits,
+  .classes-catalogue,
+  .classes-contact {
+    width: calc(100% - clamp(3rem, 10vw, 11rem));
+    max-width: 1152px;
+    margin-inline: auto;
+  }
+  .classes-benefits,
+  .classes-catalogue {
+    padding-inline: 0;
+  }
+  .classes-contact {
+    border-radius: 16px;
+    margin-bottom: 3rem;
+  }
+}
+
 @media (max-width: 1000px) {
   .classes-opening {
     gap: 2rem;
