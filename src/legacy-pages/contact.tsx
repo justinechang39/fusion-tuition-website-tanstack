@@ -1,91 +1,133 @@
-import DirectionsSection from '@/components/DirectionsSection'
-import { NextHeadComponent } from '@/components/components/NextHeadComponent'
-import { Mail, MessageCircle, Phone } from 'lucide-react'
+import { TuitionHero } from '@/components/ui/TuitionHero'
+import { contactDetails } from '@/lib/agent-ready'
+import { FUSION_TUITION_LOCATION, HOW_TO_GET_HERE_PATH } from '@/lib/location'
+import { Link } from '@tanstack/react-router'
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Mail,
+  MessageCircle,
+  Phone,
+} from 'lucide-react'
+import './contact/contact.css'
 
 export default function Contact() {
-  const phoneNumber = '+6591796637'
-  const whatsappPhoneNumber = '6591796637'
-  const displayPhoneNumber = '+65 91796637'
-  const email = 'justine@fusiontuition.com'
-  const whatsappMessage = encodeURIComponent(
-    'Hello there! I would like to learn more about fusion!',
-  )
-
   return (
-    <div className="container mx-auto space-y-16">
-      <NextHeadComponent title="fusion tuition | contact" />
-      <section>
-        <h1 className="mb-4 text-4xl font-bold">Contact Us</h1>
-      </section>
-
-      <DirectionsSection />
-
-      <section>
-        <h2 className="mb-8 text-3xl font-semibold">Direct Contact</h2>
-        <div className="gradient-section space-y-6 px-4 md:px-6">
-          <p className="max-w-2xl text-base text-gray-600 md:text-lg">
-            Reach us directly by phone, WhatsApp, or email. The details are
-            listed below so they are easy to copy from any device.
-          </p>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <button
-              onClick={() => (window.location.href = `tel:${phoneNumber}`)}
-              className="flex items-center gap-4 rounded-2xl border border-blue-100 bg-white/90 p-5 text-left transition-all duration-300 hover:border-blue-200 hover:shadow-lg"
+    <div className="contact-page">
+      <TuitionHero className="contact-hero">
+        <div className="contact-hero-shell contact-intro">
+          <h1>
+            Contact <em>us.</em>
+          </h1>
+          <div className="contact-intro-copy">
+            <p>
+              <span className="contact-intro-text">
+                Ask about classes, lesson timings, or a free trial. Tell us your
+                subject and curriculum, and we can help you find a class.
+              </span>
+            </p>
+            <a
+              className="contact-button"
+              href={contactDetails.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className="rounded-xl bg-blue-50 p-3">
-                <Phone className="h-6 w-6 text-blue-600" />
-              </div>
-              <div>
-                <p className="text-base font-semibold text-gray-900">Call Us</p>
-                <p className="text-sm text-gray-600">{displayPhoneNumber}</p>
-              </div>
-            </button>
-
-            <button
-              onClick={() =>
-                window.open(
-                  `https://wa.me/${whatsappPhoneNumber}?text=${whatsappMessage}`,
-                  '_blank',
-                )
-              }
-              className="flex items-center gap-4 rounded-2xl border border-green-100 bg-white/90 p-5 text-left transition-all duration-300 hover:border-green-200 hover:shadow-lg"
-            >
-              <div className="rounded-xl bg-green-50 p-3">
-                <MessageCircle className="h-6 w-6 text-green-600" />
-              </div>
-              <div>
-                <p className="text-base font-semibold text-gray-900">
-                  WhatsApp
-                </p>
-                <p className="text-sm text-gray-600">{displayPhoneNumber}</p>
-              </div>
-            </button>
-
-            <button
-              onClick={() => (window.location.href = `mailto:${email}`)}
-              className="flex items-center gap-4 rounded-2xl border border-purple-100 bg-white/90 p-5 text-left transition-all duration-300 hover:border-purple-200 hover:shadow-lg"
-            >
-              <div className="rounded-xl bg-purple-50 p-3">
-                <Mail className="h-6 w-6 text-purple-600" />
-              </div>
-              <div>
-                <p className="text-base font-semibold text-gray-900">Email</p>
-                <p className="text-sm text-gray-600">{email}</p>
-              </div>
-            </button>
-          </div>
-
-          <div className="flex flex-wrap gap-3 text-sm text-gray-500">
-            <span className="rounded-full bg-white/80 px-3 py-1.5">
-              Phone: {displayPhoneNumber}
-            </span>
-            <span className="rounded-full bg-white/80 px-3 py-1.5">
-              Email: {email}
-            </span>
+              <MessageCircle size={20} aria-hidden="true" />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
-      </section>
+      </TuitionHero>
+
+      <div className="contact-body">
+        <section className="contact-methods" aria-labelledby="contact-direct">
+          <div className="contact-section-heading">
+            <h2 id="contact-direct">Reach us directly.</h2>
+            <p>
+              WhatsApp, call, or email. Choose whichever works best for you.
+            </p>
+          </div>
+          <div className="contact-rows">
+            <a
+              className="contact-row"
+              href={contactDetails.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle size={24} aria-hidden="true" />
+              <span>
+                <strong>WhatsApp</strong>
+                <span className="contact-destination">
+                  {contactDetails.phoneDisplay}
+                </span>
+              </span>
+              <ArrowUpRight size={20} aria-hidden="true" />
+            </a>
+            <a className="contact-row" href={`tel:${contactDetails.phoneE164}`}>
+              <Phone size={24} aria-hidden="true" />
+              <span>
+                <strong>Call us</strong>
+                <span className="contact-destination">
+                  {contactDetails.phoneDisplay}
+                </span>
+              </span>
+              <ArrowUpRight size={20} aria-hidden="true" />
+            </a>
+            <a className="contact-row" href={`mailto:${contactDetails.email}`}>
+              <Mail size={24} aria-hidden="true" />
+              <span>
+                <strong>Email</strong>
+                <span className="contact-destination">
+                  {contactDetails.email}
+                </span>
+              </span>
+              <ArrowUpRight size={20} aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+
+        <section className="contact-location" aria-labelledby="contact-visit">
+          <div className="contact-address-panel">
+            <h2 id="contact-visit">Visit us.</h2>
+            <address>
+              <span>{FUSION_TUITION_LOCATION.street}</span>
+              <span>{FUSION_TUITION_LOCATION.unit}</span>
+              <span>
+                {FUSION_TUITION_LOCATION.country}{' '}
+                {FUSION_TUITION_LOCATION.postalCode}
+              </span>
+            </address>
+            <Link className="contact-directions" to={HOW_TO_GET_HERE_PATH}>
+              How to get here
+              <ArrowRight size={20} aria-hidden="true" />
+            </Link>
+            <div className="contact-map-links">
+              <a
+                href={FUSION_TUITION_LOCATION.googleMapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Maps <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+              <a
+                href={FUSION_TUITION_LOCATION.appleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apple Maps <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+          <iframe
+            className="contact-map"
+            src={FUSION_TUITION_LOCATION.embedUrl}
+            title="Map showing Fusion Tuition at 37 Jalan Pemimpin, Singapore"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </section>
+      </div>
     </div>
   )
 }

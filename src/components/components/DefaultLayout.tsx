@@ -11,7 +11,9 @@ interface DefaultLayoutProps {
 
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
   const location = useLocation()
-  const isFullWidthPage = ['/classes', '/about'].includes(location.pathname)
+  const isFullWidthPage = ['/classes', '/about', '/contact'].includes(
+    location.pathname,
+  )
 
   return (
     <>
