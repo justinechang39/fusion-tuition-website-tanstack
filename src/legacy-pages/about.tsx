@@ -1,3 +1,4 @@
+import { TuitionHero } from '@/components/ui/TuitionHero'
 import { contactDetails } from '@/lib/agent-ready'
 import { Link } from '@tanstack/react-router'
 import { ArrowUpRight } from 'lucide-react'
@@ -50,23 +51,27 @@ const teachers = [
 export default function About() {
   return (
     <div className="about-page">
-      <header className="about-hero">
-        <div className="about-shell about-intro">
-          <h1>
-            Engineers
-            <br />
-            who <em>teach.</em>
-          </h1>
-          <div className="about-intro-copy">
-            <p>
-              Fusion Tuition is run by Justine and Qi Hui, two engineers who
-              left industry to teach Physics, Chemistry, and Mathematics.
-            </p>
-            <Link to="/classes" className="about-button">
-              See our classes <ArrowUpRight size={20} aria-hidden="true" />
-            </Link>
+      <header>
+        <TuitionHero className="about-hero">
+          <div className="about-shell about-intro">
+            <h1>
+              Engineers
+              <br />
+              who <em>teach.</em>
+            </h1>
+            <div className="about-intro-copy">
+              <p>
+                <span className="about-intro-text">
+                  Fusion Tuition is run by Justine and Qi Hui, two engineers who
+                  left industry to teach Physics, Chemistry, and Mathematics.
+                </span>
+              </p>
+              <Link to="/classes" className="about-button">
+                See our classes <ArrowUpRight size={20} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
-        </div>
+        </TuitionHero>
       </header>
 
       <div className="about-shell">

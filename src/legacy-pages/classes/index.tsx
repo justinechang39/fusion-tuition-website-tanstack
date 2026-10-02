@@ -1,4 +1,4 @@
-import { HeroHighlight } from '@/components/ui/hero-highlight'
+import { TuitionHero } from '@/components/ui/TuitionHero'
 import { contactDetails, curriculumCatalog } from '@/lib/agent-ready'
 import {
   ArrowDown,
@@ -69,14 +69,7 @@ function EnquiryChevron() {
 export default function ClassesPage() {
   return (
     <div className="classes-page">
-      <HeroHighlight
-        containerClassName="classes-hero rounded-none px-0 pb-0"
-        className="w-full"
-      >
-        <div className="classes-mobile-light" aria-hidden="true">
-          <div className="classes-mobile-rays" />
-          <div className="classes-mobile-sphere" />
-        </div>
+      <TuitionHero className="classes-hero">
         <section className="classes-opening" aria-labelledby="classes-title">
           <div className="classes-opening-copy">
             <h1 id="classes-title">
@@ -131,7 +124,7 @@ export default function ClassesPage() {
             </span>
           </nav>
         </section>
-      </HeroHighlight>
+      </TuitionHero>
 
       <section className="classes-benefits" aria-label="How our classes work">
         <div>

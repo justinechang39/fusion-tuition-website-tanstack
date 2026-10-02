@@ -17,7 +17,7 @@ OWN-WORLD: Inherit Classes' white, charcoal, light gray and Fusion orange. Self-
 
 STORY: Understand the engineer backgrounds, meet Justine and Qi Hui, see how small groups work, and view classes or ask about a free trial.
 
-FIRST VIEWPORT: A full-width pale-gray opening pairs a large, two-line heading with a concise introduction and Classes link. The teacher section follows immediately. Portraits use 4:5 frames and individual horizontal focal points; mobile centers each portrait above its biography.
+FIRST VIEWPORT: A full-width opening pairs a large, two-line heading with a concise introduction and Classes link. Desktop uses Classes' dense dot matrix with an orange circular pointer reveal; mobile replaces dots with the same top-right glowing quarter-sun and subtly shimmering, swaying rays. The teacher section follows immediately. Portraits use 4:5 frames and individual horizontal focal points; mobile centers each portrait above its biography.
 
 FORM: Owner-pinned extension of the Classes world, not a new concept roll. Preserve the prior owner's two-teacher message and desktop alternating ordering. The original local JPEGs are unchanged; cropping belongs to CSS.
 
