@@ -11,7 +11,7 @@ interface DefaultLayoutProps {
 
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
   const location = useLocation()
-  const isClassesPage = location.pathname === '/classes'
+  const isFullWidthPage = ['/classes', '/about'].includes(location.pathname)
 
   return (
     <>
@@ -20,7 +20,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
         <Navbar />
         {/* Main Content */}
         <main
-          className={`${isClassesPage ? 'w-full' : 'container'} mx-auto mt-[80px] flex-grow px-4 py-8 pb-32`}
+          className={`${isFullWidthPage ? 'w-full' : 'container'} mx-auto mt-[80px] flex-grow px-4 py-8 pb-32`}
         >
           {children}
         </main>

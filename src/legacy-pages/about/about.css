@@ -1,0 +1,265 @@
+.about-page {
+  --about-ink: #202020;
+  --about-muted: #606060;
+  --about-orange: #ff7819;
+  --about-line: #dedede;
+  margin: -2rem -1rem -6rem;
+  background: #fff;
+  color: var(--about-ink);
+  font-family: "Fusion Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+.about-page ::selection {
+  background: #ffdcc2;
+  color: var(--about-ink);
+}
+.about-page a:focus-visible {
+  outline: 3px solid var(--about-ink);
+  outline-offset: 5px;
+}
+.about-page h1,
+.about-page h2,
+.about-page h3 {
+  text-wrap: balance;
+}
+.about-shell {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 5vw, 5.5rem);
+}
+.about-hero {
+  background: #f6f6f6;
+  border-bottom: 1px solid var(--about-line);
+}
+.about-intro {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: end;
+  gap: 4rem;
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+.about-intro h1 {
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+.about-intro em {
+  font-family: "Fusion Source Serif", Georgia, serif;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-decoration: underline;
+  text-decoration-color: var(--about-orange);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.14em;
+}
+.about-intro-copy p,
+.about-section-heading p {
+  color: var(--about-muted);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.about-intro-copy .about-button {
+  margin-top: 1.5rem;
+}
+.about-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 52px;
+  padding: 0.875rem 1.25rem;
+  border-radius: 8px;
+  background: var(--about-orange);
+  color: var(--about-ink);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 150ms ease-out;
+}
+.about-button:hover {
+  background: #ff963d;
+}
+.about-teachers {
+  padding-block: 4.5rem;
+}
+.about-section-heading {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: start;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.about-page h2 {
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.about-profiles {
+  display: grid;
+  gap: 2.5rem;
+}
+.about-teacher {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding: 2rem;
+  border-radius: 16px;
+  background: #f6f6f6;
+}
+.about-teacher-reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+}
+.about-teacher-reverse .about-portrait {
+  grid-column: 2;
+  grid-row: 1;
+}
+.about-teacher-reverse .about-teacher-info {
+  grid-column: 1;
+  grid-row: 1;
+}
+.about-portrait {
+  display: block;
+  width: 100%;
+  max-width: 336px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  margin-inline: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.about-teacher-info h3 {
+  font-size: clamp(1.65rem, 3vw, 2.125rem);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+.about-teacher-subjects {
+  margin-top: 0.625rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+.about-teacher-background {
+  margin-top: 1.5rem;
+  color: var(--about-muted);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+.about-approach {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 3rem;
+  padding-block: 1rem 4.5rem;
+}
+.about-values > div {
+  padding-block: 1.375rem;
+  border-top: 1px solid var(--about-line);
+}
+.about-values dt {
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+.about-values dd {
+  color: var(--about-muted);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+.about-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 4rem;
+  border-radius: 16px;
+  background: var(--about-ink);
+  color: #fff;
+}
+.about-contact h2 {
+  margin-bottom: 1rem;
+}
+.about-contact p {
+  max-width: 42ch;
+  color: #ccc;
+  line-height: 1.8;
+}
+.about-contact-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.about-contact-actions a:not(.about-button) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: #777;
+  text-underline-offset: 5px;
+}
+.about-contact-actions a:not(.about-button):hover {
+  text-decoration-color: var(--about-orange);
+}
+.about-contact a:focus-visible {
+  outline-color: #fff;
+}
+
+@media (max-width: 760px) {
+  .about-intro,
+  .about-section-heading,
+  .about-teacher,
+  .about-approach,
+  .about-contact {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .about-intro {
+    gap: 1.5rem;
+    padding-block: 3rem;
+  }
+  .about-intro h1 {
+    font-size: clamp(2.5rem, 10.5vw, 4rem);
+  }
+  .about-section-heading {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .about-teachers {
+    padding-block: 3rem;
+  }
+  .about-teacher {
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+  .about-teacher-info {
+    width: 100%;
+    max-width: 336px;
+    margin-inline: auto;
+  }
+  .about-teacher-reverse .about-portrait,
+  .about-teacher-reverse .about-teacher-info {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .about-approach {
+    gap: 1.5rem;
+    padding-block: 0 3rem;
+  }
+  .about-contact {
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-button {
+    transition: none;
+  }
+}

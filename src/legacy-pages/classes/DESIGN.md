@@ -15,13 +15,13 @@ colors:
   darkLine: "#4a4a4a"
 typography:
   display:
-    fontFamily: "Classes Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Fusion Manrope, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(2.5rem, 4.4vw, 4.25rem)"
     fontWeight: 800
     lineHeight: 1.12
     letterSpacing: "-0.035em"
   emphasis:
-    fontFamily: "Classes Source Serif, Georgia, serif"
+    fontFamily: "Fusion Source Serif, Georgia, serif"
     fontStyle: italic
     fontWeight: 500
     letterSpacing: "-0.025em"
@@ -33,7 +33,7 @@ rounded:
 
 # Classes page design
 
-Scope: `/classes` only. The shared navigation, footer, and other pages retain their existing designs.
+Scope: `/classes`. About now inherits this palette and font pairing, documented in `src/legacy-pages/about/DESIGN.md`. The shared navigation, footer, and remaining pages retain their existing designs.
 
 ## Direction contract
 
@@ -57,8 +57,9 @@ FINISH: Verify desktop and narrow layouts, curriculum anchors, all eleven subjec
 - Pairing research: [Google Fonts Knowledge, Pairing typefaces](https://fonts.google.com/knowledge/choosing_type/pairing_typefaces) recommends contrast with harmony and a genuine secondary italic rather than a synthesized one. [Manrope pairing examples](https://bonfx.com/what-fonts-go-with-manrope/) include Source Serif. This page assigns the two faces distinct expressive and practical roles.
 - Ink: `#202020`; muted: `#606060`; orange action: `#ff7819`; background: white; panel ground: `#f6f6f6`; lines: `#dedede`. Orange buttons use charcoal text. Small text stays charcoal or gray for contrast; dark panels use `#cccccc` secondary text.
 - Desktop hero: reuse the original `HeroHighlight` component with matched gray/orange dot grids at 10px spacing and 1.4px radius. The orange pointer reveal stays within a 73px circle. The background fills the viewport; the hero content stays within 1440px.
-- Policy highlight: charcoal text sits on an opaque white backing from the first frame; orange wipes across each wrapped line in 500ms after a 200ms delay. Reduced motion shows the final orange backing immediately. Keep the sentence readable throughout the animation.
-- Mobile hero (760px and below): hide both dot layers. A decorative, non-interactive quarter-sphere is cropped at the top-right, with three softly fading orange rays directed down-left. The light enters once from that corner in 500ms, using the transitions.dev emphasis duration and smooth-out easing. Clip the hero so the entrance cannot introduce horizontal scrolling. Reduced motion retains the finished lighting without animation.
+- Policy highlight: white text sits on opaque charcoal from the first frame, with an orange 3px underline that wipes across each wrapped line in 500ms after a 200ms delay. Reduced motion shows the finished underline immediately. Keep the sentence readable throughout the animation.
+- Mobile hero (760px and below): hide both dot layers. A decorative, non-interactive quarter-sphere is cropped at the top-right, with three softly fading orange rays directed down-left. The light enters once in 500ms, using the transitions.dev emphasis duration and smooth-out easing. Rays pivot at that corner, starting at 0°, moving to +10°, back through 20° to −10°, and repeating with an 8s eased half-cycle. A separate 5s opacity loop adds a subtle shimmer between 0.82 and 0.94. Clip the hero so motion cannot introduce horizontal scrolling. Reduced motion retains the finished lighting without animation.
+- Shared font-face registrations live in `src/styles.css`; only Classes and About opt into these families. Other pages keep their current typography.
 - One-pixel divisions structure course rows. Curriculum panels use 16px corners; the dark finder uses 20px corners.
 - Curriculum links jump to headings with sticky-header clearance. Every subject opens a WhatsApp enquiry naming its curriculum, subject, and syllabus code.
 - The trailing enquiry chevron uses the transitions.dev learn-more recipe, with reduced-motion support. Content is visible before JavaScript; no entrance animation hides headings.
