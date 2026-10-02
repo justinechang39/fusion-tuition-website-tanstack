@@ -11,25 +11,21 @@ interface DefaultLayoutProps {
 
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
   const location = useLocation()
-  const isAlaCartePage = location.pathname.startsWith('/ala-carte')
+  const isClassesPage = location.pathname === '/classes'
 
   return (
     <>
       <NextHeadComponent title="fusion tuition | home" />
       <div className="flex min-h-screen flex-col">
-        {!isAlaCartePage && <Navbar />}
+        <Navbar />
         {/* Main Content */}
         <main
-          className={
-            isAlaCartePage
-              ? 'flex-grow'
-              : 'container mx-auto mt-[80px] flex-grow px-4 py-8 pb-32'
-          }
+          className={`${isClassesPage ? 'w-full' : 'container'} mx-auto mt-[80px] flex-grow px-4 py-8 pb-32`}
         >
           {children}
         </main>
-        {!isAlaCartePage && <Footer />}
-        {!isAlaCartePage && <ScrollProgress />}
+        <Footer />
+        <ScrollProgress />
       </div>
     </>
   )

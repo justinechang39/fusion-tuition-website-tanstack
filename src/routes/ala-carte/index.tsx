@@ -30,7 +30,7 @@ import {
   buildSeoHead,
   siteOrigin,
 } from '@/lib/seo'
-import { Link, createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute, redirect } from '@tanstack/react-router'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowLeft,
@@ -131,7 +131,13 @@ const heroSparkles = [
   { id: 11, size: 4, x: 94, y: 22, duration: 7.1, delay: 0.2 },
 ]
 
+const goHome = () => redirect({ href: '/', statusCode: 301 })
+
 export const Route = createFileRoute('/ala-carte/')({
+  server: { handlers: { GET: goHome, HEAD: goHome } },
+  beforeLoad: () => {
+    throw goHome()
+  },
   head: () =>
     buildSeoHead({
       title: 'Ala-carte Classes',

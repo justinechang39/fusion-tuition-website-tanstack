@@ -54,13 +54,25 @@
   padding-inline: clamp(1.5rem, 5vw, 5.5rem);
 }
 
+.classes-hero {
+  background: var(--classes-paper);
+}
+.classes-hero > .bg-dot-thick-white\/40 {
+  background-image: radial-gradient(
+    circle at 5px 5px,
+    var(--classes-line) 2.5px,
+    transparent 2.5px
+  );
+  background-size: 16px 16px;
+}
 .classes-opening {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
+  max-width: 1440px;
+  margin-inline: auto;
   padding-block: 5rem;
-  background: white;
 }
 .classes-opening h1 {
   margin: 0 0 1.5rem;
@@ -424,6 +436,10 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .classes-hero > .bg-dot-thick-orange-500 {
+    opacity: 0 !important;
+    transition: none;
+  }
   .t-learn-chevron,
   .t-learn-arm {
     transition: none !important;

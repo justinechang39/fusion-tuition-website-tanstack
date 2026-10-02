@@ -1,3 +1,4 @@
+import { HeroHighlight } from '@/components/ui/hero-highlight'
 import { contactDetails, curriculumCatalog } from '@/lib/agent-ready'
 import {
   ArrowDown,
@@ -68,53 +69,63 @@ function EnquiryChevron() {
 export default function ClassesPage() {
   return (
     <div className="classes-page">
-      <section className="classes-opening" aria-labelledby="classes-title">
-        <div className="classes-opening-copy">
-          <h1 id="classes-title">
-            Small class.
-            <br />
-            Same school.
-            <br />
-            Same stream.
-          </h1>
-          <p className="classes-intro">
-            Physics, Chemistry, and Mathematics tuition for IGCSE, O Level, A
-            Level, and IB, with a maximum of three students per class.
-          </p>
-          <a
-            className="classes-button classes-button-primary"
-            href={trialUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MessageCircle size={20} aria-hidden="true" />
-            Book a free trial
-            <ArrowUpRight size={19} aria-hidden="true" />
-          </a>
-          <p className="classes-trial-note">
-            Ask about your subject and available lesson timings.
-          </p>
-        </div>
-
-        <nav className="classes-finder" aria-label="Choose your curriculum">
-          <h2>Choose your curriculum.</h2>
-          <p>Choose your curriculum to explore the subjects we teach.</p>
-          <div className="classes-finder-links">
-            {curricula.map((curriculum) => (
-              <a key={curriculum.id} href={`#${curriculum.id}`}>
-                <span>{curriculum.name}</span>
-                <span className="classes-finder-count">
-                  {curriculum.subjects.length} subjects
-                </span>
-                <ArrowDown size={19} aria-hidden="true" />
-              </a>
-            ))}
+      <HeroHighlight
+        containerClassName="classes-hero rounded-none px-0 pb-0"
+        className="w-full"
+      >
+        <section className="classes-opening" aria-labelledby="classes-title">
+          <div className="classes-opening-copy">
+            <h1 id="classes-title">
+              Small class.
+              <br />
+              Same school.
+              <br />
+              Same stream.
+            </h1>
+            <p className="classes-intro">
+              We do not mix students from different schools or streams.
+            </p>
+            <p className="classes-intro">
+              Students learn alongside their friends, so they feel more
+              comfortable asking questions. Friendly competition can also
+              encourage them to learn from one another and make progress
+              together.
+            </p>
+            <a
+              className="classes-button classes-button-primary"
+              href={trialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle size={20} aria-hidden="true" />
+              Book a free trial
+              <ArrowUpRight size={19} aria-hidden="true" />
+            </a>
+            <p className="classes-trial-note">
+              Ask about your subject and available lesson timings.
+            </p>
           </div>
-          <span className="classes-finder-footnote">
-            Subject details and syllabus codes below.
-          </span>
-        </nav>
-      </section>
+
+          <nav className="classes-finder" aria-label="Choose your curriculum">
+            <h2>Choose your curriculum.</h2>
+            <p>Choose your curriculum to explore the subjects we teach.</p>
+            <div className="classes-finder-links">
+              {curricula.map((curriculum) => (
+                <a key={curriculum.id} href={`#${curriculum.id}`}>
+                  <span>{curriculum.name}</span>
+                  <span className="classes-finder-count">
+                    {curriculum.subjects.length} subjects
+                  </span>
+                  <ArrowDown size={19} aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+            <span className="classes-finder-footnote">
+              Subject details and syllabus codes below.
+            </span>
+          </nav>
+        </section>
+      </HeroHighlight>
 
       <section className="classes-benefits" aria-label="How our classes work">
         <div>

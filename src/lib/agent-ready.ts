@@ -12,27 +12,6 @@ export const siteDescription =
 
 export const publicRoutes = [
   { path: '/', title: 'Home' },
-  { path: '/ala-carte', title: 'Ala-carte Classes' },
-  {
-    path: '/ala-carte/o-level-chemistry',
-    title: 'O Level Chemistry June Holiday Tuition',
-  },
-  {
-    path: '/ala-carte/o-level-physics',
-    title: 'O Level Physics June Holiday Tuition',
-  },
-  {
-    path: '/ala-carte/o-level-additional-mathematics',
-    title: 'O Level Additional Mathematics June Holiday Tuition',
-  },
-  {
-    path: '/ala-carte/igcse-chemistry',
-    title: 'IGCSE Chemistry June Holiday Tuition',
-  },
-  {
-    path: '/ala-carte/igcse-physics',
-    title: 'IGCSE Physics June Holiday Tuition',
-  },
   { path: '/about', title: 'About Us' },
   { path: '/classes', title: 'Classes' },
   { path: '/contact', title: 'Contact' },
@@ -290,6 +269,7 @@ Physics, Chemistry, and Mathematics tuition for IGCSE, GCE O Level, A Level, and
 ## Class format
 
 - Maximum of three students per regular class.
+- Students in each class are from the same school and stream.
 - Flexible lesson timings arranged around availability.
 - Free consultations outside class.
 - Ask about a free trial, your subject, and lesson timings on [WhatsApp](${contactDetails.whatsappUrl}).
@@ -380,20 +360,6 @@ ${getCollectionEntries('announcements')
   .join('\n')}
 `,
   '/docs/api': apiDocsMarkdown,
-  '/ala-carte': `# Fusion Tuition Ala-carte Classes
-
-One-off targeted June holiday classes in Singapore for O Level and IGCSE students who want help with selected chapters.
-
-## Best For
-
-- O Level and IGCSE students who need a focused June holiday revision plan.
-- Students who want chapter-specific help in Physics, Chemistry, or Additional Mathematics.
-
-## Contact
-
-- Call or WhatsApp: ${contactDetails.phoneDisplay}
-- Email: justinechang94@gmail.com and ${contactDetails.email}
-`,
 } as const
 
 export function hasPageMarkdown(pathname: string) {
@@ -406,56 +372,9 @@ export function hasPageMarkdown(pathname: string) {
 
 export async function getPageMarkdown(pathname: string, origin: string) {
   const path = pathname.replace(/\/+$/, '') || '/'
-  let markdown = pageMarkdownByPath[path as keyof typeof pageMarkdownByPath] as
-    | string
-    | undefined
-    | null
-
-  if (path === '/ala-carte' || path.startsWith('/ala-carte/')) {
-    // Keep the complete catalogue out of the site's initial browser bundle.
-    const { default: catalogue } = await import('@/data/ala-carte-classes.json')
-    const categories = catalogue.categories.filter(
-      (category) => category.isActive,
-    )
-    const category = categories.find(
-      (category) => path === `/ala-carte/${category.id}`,
-    )
-    if (path !== '/ala-carte' && !category) return null
-    const items = catalogue.items.filter(
-      (item) =>
-        item.isActive &&
-        (category
-          ? item.categoryId === category.id
-          : categories.some((category) => category.id === item.categoryId)),
-    )
-    markdown = `# ${category?.label ?? catalogue.campaign.name}
-
-${category?.description ?? catalogue.campaign.summary}
-
-${catalogue.campaign.notes.map((note) => `- ${note}`).join('\n')}
-
-## Classes
-
-${items
-  .map(
-    (item) => `### ${item.title}
-
-${item.description}
-
-- Curriculum: ${item.level}
-- Subject: ${item.subject}
-- Chapters: ${item.chapters.join(', ')}
-- Duration: ${item.durationMinutes} minutes
-- Price: ${item.currency} ${item.price}`,
-  )
-  .join('\n\n')}
-
-## Enquiries
-
-Confirm lesson timings with Fusion Tuition on [WhatsApp](${contactDetails.whatsappUrl}).`
-  }
-
-  markdown ??= getContentMarkdown(path)
+  const markdown =
+    pageMarkdownByPath[path as keyof typeof pageMarkdownByPath] ??
+    getContentMarkdown(path)
   if (!markdown) {
     return null
   }

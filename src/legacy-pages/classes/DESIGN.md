@@ -43,7 +43,7 @@ OWN-WORLD: White, neutral charcoal, light-gray course panels, and Fusion orange 
 
 STORY: Understand the small-group offer, find a curriculum, see its real subjects and syllabus codes, and ask about a free trial through WhatsApp.
 
-FIRST VIEWPORT: Oversized left-aligned heading and free-trial action share the opening with a dark, four-row curriculum navigator. A compact benefit strip separates the opening from the catalogue.
+FIRST VIEWPORT: A viewport-wide dotted hero pairs the left-aligned heading, school/stream policy, friends-based learning explanation and free-trial action with a dark, four-row curriculum navigator. A compact benefit strip separates the opening from the catalogue.
 
 FORM: Typography-led course directory chosen for clarity within the established Fusion brand; Impeccable surface seed `1caea9bf`. The owner requests direct code-led UI design and rendered browser review, without Painter or generated UI mockups.
 
@@ -56,6 +56,7 @@ FINISH: Verify desktop and narrow layouts, curriculum anchors, all eleven subjec
 - Font assets are self-hosted with `font-display: swap` and their SIL Open Font Licenses. The serif file is the Google Fonts Latin WOFF2 subset with weight and optical-size axes; only the used italic style is loaded. No runtime Google Fonts request is needed.
 - Pairing research: [Google Fonts Knowledge, Pairing typefaces](https://fonts.google.com/knowledge/choosing_type/pairing_typefaces) recommends contrast with harmony and a genuine secondary italic rather than a synthesized one. [Manrope pairing examples](https://bonfx.com/what-fonts-go-with-manrope/) include Source Serif. This page assigns the two faces distinct expressive and practical roles.
 - Ink: `#202020`; muted: `#606060`; orange action: `#ff7819`; background: white; panel ground: `#f6f6f6`; lines: `#dedede`. Orange buttons use charcoal text. Small text stays charcoal or gray for contrast; dark panels use `#cccccc` secondary text.
+- Hero: reuse the original `HeroHighlight` component from the “You pick the subject / You pick the time” design, with its 16px dot grid and orange pointer reveal. Gray base dots on a neutral ground keep the pattern visible without changing the palette. The background fills the viewport; the hero content stays within 1440px. Disable the pointer reveal for reduced motion. Copy explains that classes do not mix schools or streams and that learning with friends can encourage questions and friendly competition.
 - One-pixel divisions structure course rows. Curriculum panels use 16px corners; the dark finder uses 20px corners.
 - Curriculum links jump to headings with sticky-header clearance. Every subject opens a WhatsApp enquiry naming its curriculum, subject, and syllabus code.
 - The trailing enquiry chevron uses the transitions.dev learn-more recipe, with reduced-motion support. Content is visible before JavaScript; no entrance animation hides headings.

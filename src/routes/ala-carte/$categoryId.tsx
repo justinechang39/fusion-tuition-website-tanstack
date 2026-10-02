@@ -6,7 +6,12 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { buildBreadcrumbJsonLd, buildPageJsonLd, buildSeoHead } from '@/lib/seo'
-import { Link, createFileRoute, notFound } from '@tanstack/react-router'
+import {
+  Link,
+  createFileRoute,
+  notFound,
+  redirect,
+} from '@tanstack/react-router'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle2, Plus, Search, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -24,7 +29,13 @@ import {
   useAlaCarteOrder,
 } from './index'
 
+const goHome = () => redirect({ href: '/', statusCode: 301 })
+
 export const Route = createFileRoute('/ala-carte/$categoryId')({
+  server: { handlers: { GET: goHome, HEAD: goHome } },
+  beforeLoad: () => {
+    throw goHome()
+  },
   loader: ({ params }) => {
     const category = categories.find(
       (category) => category.id === params.categoryId,

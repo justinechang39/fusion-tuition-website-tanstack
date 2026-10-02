@@ -42,7 +42,7 @@ assert(
   'classes missing from sitemap',
 )
 assert(
-  !urls.some((url) => /\/demo\/|\/api\/|\/connect$/.test(url)),
+  !urls.some((url) => /\/demo\/|\/api\/|\/connect$|\/ala-carte/.test(url)),
   'utility/redirect in sitemap',
 )
 
@@ -135,6 +135,10 @@ for (const url of urls) {
     ...document.querySelectorAll('script[type="application/ld+json"]'),
   ].map((script) => JSON.parse(script.textContent!))
   assert(schemas.length >= 3, `${path}: structured data`)
+  assert(
+    !document.querySelector('header a[href^="/ala-carte"]'),
+    `${path}: retired navigation link`,
+  )
   if (path === '/classes') {
     assert(
       !document.body.textContent?.includes('Big understanding'),
@@ -142,6 +146,14 @@ for (const url of urls) {
     )
     assert.equal(document.querySelectorAll('h1').length, 1)
     assert(document.querySelector('h1')?.textContent?.includes('Same stream.'))
+    assert(
+      document
+        .querySelector('.classes-intro')
+        ?.textContent?.includes(
+          'We do not mix students from different schools or streams.',
+        ),
+      'class grouping policy',
+    )
     const courses = schemas.find(
       (schema) => schema['@type'] === 'CollectionPage',
     ).mainEntity.itemListElement
@@ -180,6 +192,11 @@ for (const url of urls) {
   )
   if (path === '/classes') {
     assert(markdown.includes('Maximum of three students'))
+    assert(
+      markdown.includes(
+        'Students in each class are from the same school and stream.',
+      ),
+    )
     for (const code of courseCodes)
       assert(markdown.includes(code), `Markdown course ${code}`)
   }
@@ -191,14 +208,6 @@ for (const url of urls) {
     assert(
       image!.endsWith('/blog/cover-science-tuition.jpg'),
       'article social cover',
-    )
-  }
-  if (path.startsWith('/ala-carte/')) {
-    assert(
-      markdown.includes('## Classes') &&
-        markdown.includes('- Chapters:') &&
-        markdown.includes('- Price: SGD'),
-      `${path}: catalogue details`,
     )
   }
 }
@@ -261,7 +270,6 @@ for (const path of [
   '/missing-discovery-test',
   '/blog/missing-discovery-test',
   '/announcements/missing-discovery-test',
-  '/ala-carte/missing-discovery-test',
 ]) {
   const response = await fetch(`${base}${path}`)
   assert.equal(response.status, 404, `${path}: genuine 404`)
@@ -269,6 +277,37 @@ for (const path of [
     response.headers.get('x-robots-tag')?.includes('noindex'),
     `${path}: error noindex`,
   )
+}
+for (const path of [
+  '/ala-carte',
+  '/ala-carte/',
+  '/ala-carte/o-level-chemistry',
+  '/ala-carte/o-level-physics',
+  '/ala-carte/o-level-additional-mathematics',
+  '/ala-carte/igcse-chemistry',
+  '/ala-carte/igcse-physics',
+  '/ala-carte/missing-discovery-test',
+  '/ala-carte?legacy=true',
+]) {
+  for (const method of ['GET', 'HEAD']) {
+    for (const accept of ['text/html', 'text/markdown']) {
+      const response = await fetch(`${base}${path}`, {
+        method,
+        headers: { Accept: accept },
+        redirect: 'manual',
+      })
+      assert.equal(
+        response.status,
+        301,
+        `${method} ${path} ${accept}: redirect`,
+      )
+      assert.equal(
+        new URL(response.headers.get('location')!, base).pathname,
+        '/',
+      )
+      assert.equal(await response.text(), '', `${path}: redirect body`)
+    }
+  }
 }
 const legacy = await fetch(`${base}/classes/legacy-discovery-test`, {
   redirect: 'manual',
