@@ -73,6 +73,10 @@ export default function ClassesPage() {
         containerClassName="classes-hero rounded-none px-0 pb-0"
         className="w-full"
       >
+        <div className="classes-mobile-light" aria-hidden="true">
+          <div className="classes-mobile-rays" />
+          <div className="classes-mobile-sphere" />
+        </div>
         <section className="classes-opening" aria-labelledby="classes-title">
           <div className="classes-opening-copy">
             <h1 id="classes-title">
@@ -83,7 +87,9 @@ export default function ClassesPage() {
               Same stream.
             </h1>
             <p className="classes-intro">
-              We do not mix students from different schools or streams.
+              <span className="classes-policy-highlight">
+                We do not mix students from different schools or streams.
+              </span>
             </p>
             <p className="classes-intro">
               Students learn alongside their friends, so they feel more
