@@ -16,7 +16,7 @@ Physics, Chemistry, and Mathematics tuition supports IGCSE, GCE O Level, A Level
 
 ## Constraints
 
-Preserve the Fusion Tuition logo, shared orange brand, course names, syllabus codes, and contact destinations. Do not invent prices, availability, results, testimonials, or student photographs. The owner has extended the `/classes` design language to `/about` and `/contact`; retain shared navigation, footer, discovery metadata, and other routes. Preserve the two real teachers, their existing backgrounds, and the same-teacher-every-lesson message. Contact remains WhatsApp, telephone, or email; no new booking backend. The owner requests code-led UI work without Painter or generated UI mockups.
+Preserve the Fusion Tuition logo, shared orange brand, course names, syllabus codes, and contact destinations. Do not invent prices, availability, results, testimonials, or student photographs. The owner has extended the `/classes` design language to `/about`, `/contact`, and `/blog`; retain shared navigation, footer, discovery metadata, and other routes. Preserve the two real teachers, their existing backgrounds, and the same-teacher-every-lesson message. Contact remains WhatsApp, telephone, or email; no new booking backend. The owner requests code-led UI work without Painter or generated UI mockups.
 
 ## Audience assumptions
 

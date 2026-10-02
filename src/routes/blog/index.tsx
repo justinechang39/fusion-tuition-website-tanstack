@@ -1,7 +1,7 @@
-import { ArticleCard } from '@/components/content/ArticleCard'
-import { HeroHighlight, Highlight } from '@/components/ui/hero-highlight'
+import { TuitionHero } from '@/components/ui/TuitionHero'
 import {
   type ContentEntrySummary,
+  formatContentDate,
   getCollectionEntries,
   getFeaturedEntry,
 } from '@/lib/content'
@@ -11,8 +11,8 @@ import {
   buildSeoHead,
 } from '@/lib/seo'
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import './blog.css'
 
 const blogEntries = getCollectionEntries('blog')
 const announcementEntries = getCollectionEntries('announcements').slice(0, 3)
@@ -21,24 +21,36 @@ const remainingBlogEntries = featuredEntry
   ? blogEntries.filter((entry) => entry.slug !== featuredEntry.slug)
   : blogEntries
 
-function AnnouncementLinkCard({ entry }: { entry: ContentEntrySummary }) {
+function BlogArticleCard({
+  entry,
+  featured = false,
+}: { entry: ContentEntrySummary; featured?: boolean }) {
   return (
-    <article className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 pl-7 transition-[border-color] duration-200 hover:border-orange-300">
-      <span className="absolute inset-y-0 left-0 w-[3px] bg-teal-200 transition-colors duration-300 group-hover:bg-teal-500" />
-      <p className="mb-1.5 text-xs font-medium uppercase tracking-[0.2em] text-teal-600">
-        Announcement
-      </p>
-      <h3 className="text-base font-semibold leading-snug tracking-tight text-slate-900">
-        <Link
-          to={entry.path}
-          className="transition-colors duration-200 group-hover:text-orange-600"
-        >
-          {entry.title}
-        </Link>
-      </h3>
-      <p className="mt-2 text-sm leading-relaxed text-slate-500">
-        {entry.excerpt}
-      </p>
+    <article>
+      <Link
+        to={entry.path}
+        aria-label={entry.title}
+        className={`blog-card${featured ? ' blog-card-featured' : ''}${featured && entry.coverImage ? ' blog-card-with-image' : ''}`}
+      >
+        <div className="blog-card-copy">
+          <h3>{entry.title}</h3>
+          <div className="blog-card-meta">
+            <span>{entry.category}</span>
+            <time dateTime={entry.publishedAt}>
+              {formatContentDate(entry.publishedAt)}
+            </time>
+          </div>
+          <p>{entry.excerpt}</p>
+          <span className="blog-read" aria-hidden="true">
+            Read article <ArrowRight size={18} />
+          </span>
+        </div>
+        {featured && entry.coverImage ? (
+          <div className="blog-cover">
+            <img src={entry.coverImage} alt="" loading="lazy" />
+          </div>
+        ) : null}
+      </Link>
     </article>
   )
 }
@@ -76,80 +88,78 @@ export const Route = createFileRoute('/blog/')({
 
 function BlogIndexPage() {
   return (
-    <div className="-mx-4 -mt-8">
-      {/* Hero with dot-pattern highlight effect */}
-      <HeroHighlight containerClassName="rounded-none bg-gradient-to-t from-slate-50 to-gray-100">
-        <div className="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }}
-          >
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-orange-600">
-              From Our Teachers
+    <div className="blog-page">
+      <TuitionHero className="blog-hero">
+        <div className="blog-intro">
+          <h1>
+            Study <em>notes.</em>
+          </h1>
+          <div className="blog-intro-copy">
+            <p>
+              <span className="blog-intro-text">
+                Science, mathematics, and revision advice from our teachers.
+              </span>
             </p>
-            <h1 className="mb-5 max-w-3xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-6xl md:leading-[1.1]">
-              Insights for{' '}
-              <Highlight className="bg-gradient-to-r from-orange-300 to-amber-300 text-slate-900">
-                smarter
-              </Highlight>{' '}
-              studying
-            </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg md:leading-8">
-              Practical tips, subject guides, and revision strategies from our
-              teachers to help students build confidence in Physics, Chemistry,
-              and Mathematics.
-            </p>
-          </motion.div>
+          </div>
         </div>
-      </HeroHighlight>
+      </TuitionHero>
 
-      <div className="h-1 bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500" />
+      <div className="blog-body">
+        {featuredEntry ? (
+          <section className="blog-featured" aria-labelledby="blog-featured">
+            <h2 id="blog-featured">Featured article</h2>
+            <BlogArticleCard entry={featuredEntry} featured />
+          </section>
+        ) : (
+          <p>No articles have been published yet.</p>
+        )}
 
-      {/* Content area */}
-      <div className="bg-[linear-gradient(180deg,#fffbf5_0%,#ffffff_12%,#fffdf9_100%)] px-4 pb-20 pt-10 md:px-8 md:pt-14">
-        <div className="mx-auto max-w-6xl">
-          {featuredEntry ? (
-            <section className="mb-12">
-              <h2 className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                Featured
-              </h2>
-              <ArticleCard entry={featuredEntry} />
+        <div className="blog-lower">
+          {remainingBlogEntries.length > 0 ? (
+            <section aria-labelledby="blog-latest">
+              <h2 id="blog-latest">More articles</h2>
+              <div className="blog-articles">
+                {remainingBlogEntries.map((entry) => (
+                  <BlogArticleCard key={entry.slug} entry={entry} />
+                ))}
+              </div>
             </section>
           ) : null}
 
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(300px,0.85fr)]">
-            <section>
-              <h2 className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                Latest articles
-              </h2>
-              <div className="grid gap-5">
-                {remainingBlogEntries.map((entry) => (
-                  <ArticleCard key={entry.slug} entry={entry} compact />
-                ))}
-              </div>
-            </section>
-
-            <aside>
-              <div className="mb-5 flex items-center justify-between gap-4">
-                <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                  Announcements
-                </h2>
+          {announcementEntries.length > 0 ? (
+            <aside
+              className="blog-announcements"
+              aria-labelledby="blog-updates"
+            >
+              <div className="blog-updates-heading">
+                <h2 id="blog-updates">Announcements</h2>
                 <Link
                   to="/announcements"
-                  className="group inline-flex items-center gap-1.5 text-xs font-medium text-orange-600 transition-colors duration-200 hover:text-orange-700"
+                  className="blog-view-all"
+                  aria-label="View all announcements"
                 >
-                  View all
-                  <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  View all <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               </div>
-              <div className="grid gap-4">
+              <div>
                 {announcementEntries.map((entry) => (
-                  <AnnouncementLinkCard key={entry.slug} entry={entry} />
+                  <article key={entry.slug}>
+                    <Link
+                      to={entry.path}
+                      aria-label={entry.title}
+                      className="blog-announcement"
+                    >
+                      <h3>{entry.title}</h3>
+                      <p>{entry.excerpt}</p>
+                      <time dateTime={entry.publishedAt}>
+                        {formatContentDate(entry.publishedAt)}
+                      </time>
+                    </Link>
+                  </article>
                 ))}
               </div>
             </aside>
-          </div>
+          ) : null}
         </div>
       </div>
     </div>
